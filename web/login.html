@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_登录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/ios/ratchet.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitle({title:"登录"});
+       pageUrl = "index.html";
+       loadJs("");
+   </script>
+</head>
+<body>
+<header class="bar bar-nav">
+		  <div onclick="goTo('index.html')"  class="btn btn-link btn-nav pull-left">
+		    <span class="icon icon-left-nav"></span>
+		    返回
+		  </div>
+		  <h1 class="title">小微登录</h1>		  
+</header>
+<div id="dataContent" class="content">
+    <div style="height:100px; line-height:100px;">
+        <div class="iconfont login_icon ">&#xe603;</div>
+    </div>
+    <ul class="table-view" id="loginForm">
+        <li class="table-view-cell ">
+            <span class="iconfont form_icon">&#xe601;</span>
+
+			<div class="input_c" style="width: 80%;" ><input style="font-size: 13px; width: 100%;" type="text" ifs_parent="/" placeholder="请填写手机号/身份证号/用户名" id="lgnId"  maxlength="20"/></div>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell" id="forViewIm">
+            <span class="iconfont form_icon">&#xe602;</span>
+            <table style="width:80%">
+            <tr>
+            <td>
+			<div class="input_c" style="width: 100%;">
+				 <!--<input type="password" ifs_parent="/" id="lgnPwd" onfocus="pwdFocus('clearPwd')" placeholder="登录密码" /></div>-->
+				 <input type="hidden" ifs_parent="/" placeholder="小微之家登录密码" id="lgnPwd">
+		         <input style="font-size: 13px; width: 100%;" class="_nothing"  type="text" id="SIPBox1" name="SIPBox1"  placeholder="请输入登录密码"  value="" readonly="true" />
+	          <!--  <span class="iconfont icon_yy" id="clearPwd">&#xe604;</span>-->
+	            </div></td>
+            </tr></table>
+        </li>
+        
+    </ul>
+    <div style="height:20px"></div>
+    <div class="content-padded">
+    	<div class="btn-primary btn-block fontcenter"  id="sureBtn" onclick="window.location.href='sec/index_b.html'">登录</div>
+    </div>
+    <div class="content-padded height_30">
+        <div class="float_r">
+            <h5><a href="javascript:void(0);" onclick="goTo('forgetpassword_a.html')" class="grey">忘记密码？</a></h5>
+        </div>
+        <div class="float_l">
+            <h5><a href="javascript:void(0);" onclick="nextRegisterStep()" class="grey">注册账号</a></h5>
+        </div>
+    </div>
+    <div style="height:150px;"></div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<script src="js/sip.min.js?v=<VER>"></script>
+<script src="js/password.js?v=<VER>"></script>
+<!-- <script>
+    $(document).ready(function(){
+   		getCookie();
+        $(this).IFSAjax({
+            code: "01_100111",
+            data: null,
+            complete: isViewCode,
+            method: "post"
+        });
+        genKeyboard();
+       getClientInfo();
+    });
+	function addViewCode(){
+		var  htmlStr = '<li class="table-view-cell" id="viewLi">'
+			+'<span class="iconfont form_icon">&#xe605;</span>'
+			+'<div class="input_g"><input type="text" style="font-size: 13px;" placeholder="右侧验证码" id="viewCode" ifs_parent="/" maxlength="4"></div>'
+			+'<span class="repeatmessage"><img src="" id="viewsrc" ></span>'
+			+'</li>';
+          $("#forViewIm").after(htmlStr);
+	}
+	function isViewCode(data){
+		if(data.head._rd == '0000'){
+			if(parseInt(data.body.flag)){
+				addViewCode();
+				$("#viewsrc").ifsVertifyCode();
+                $('#viewLi').show();
+			}
+		}else{
+			_showMsg(data.head._rm);
+		}
+	}
+    $("#sureBtn").click(
+            function () {
+                var userName = $('#lgnId').val();
+                var password = getLoginEncrypt("SIPBox1");
+                $('#lgnPwd').val(password);
+                var stat = $("#viewLi");
+                if (checkEmpty(userName, "请输入用户名/手机号/身份证号") ) {
+                	 if(password == undefined){
+	                    return;
+	                }
+	                 if(stat[0]){
+	                	if(!(checkEmpty2("viewCode","请输入验证码") && checkViewCode($("viewCode").val()))){
+	                		return;
+	                	}
+	                }
+                    var dataJson = $("#loginForm").getJsonData();
+                    var _data = $.extend({},dataJson,info);
+                    $(this).IFSAjax({
+                        code: "01_200201",
+                        data: _data,
+                        complete: success,
+                        method: "post",
+                        lock:"sureBtn"
+                    });
+                }
+            }
+    );
+    function success(data) {
+        if (data.head._rd == '0000') {
+            goTo('sec/index_b.html');
+        } else {
+            if (data.body != undefined && data.body.errFlg != undefined && data.body.errFlg == 1) {
+                //图片验证码添加
+	           	 if(data.body.leftErrTm != null ){
+	           		 if(data.body.leftErrTm != 0)
+	             	 	_showMsg(data.head._rm + "您还有" + data.body.leftErrTm + "次机会！",null);
+	           		 else
+	           			_showMsg("登录密码被锁定");
+	             }else{
+	                _showMsg(data.head._rm , null);
+	             }
+	           	 var stat = $("#viewLi");
+	             if(!stat[0]){
+	                	addViewCode();
+	             }
+                $("#viewsrc").ifsVertifyCode();
+            }else{
+            	var stat = $("#viewLi");
+                if(!stat[0]){
+                	addViewCode();
+             	}
+                $("#viewsrc").ifsVertifyCode();
+            	_showMsg(data.head._rm,null);
+            }
+            getRandom();
+            setProperty2("SIPBox1");
+            clearInput("SIPBox1");
+            $("#viewCode").val("");
+        }
+    }
+    
+    $("#loginForm").on('click','#viewsrc',function(){
+    	$("#viewsrc").ifsVertifyCode();
+    });
+    
+    $("#lgnId").focus(function(){
+    	$("div[name='appenDiv']").each(function(){
+    		$(this).remove();
+    	})
+   		completeKeyboard.hideKeyboard();
+    });
+    
+    if(browser_version.iPhone && browser_version.ios){
+	    $("#SIPBox1").blur(function(){
+		    $("div[name='appenDiv']").each(function(){
+	    		$(this).remove();
+	    	})
+	   		completeKeyboard.hideKeyboard();
+	    });
+    }
+     $("#SIPBox1").focus(function(){
+    			$("#dataContent").append("<div name='appenDiv' style='height:100px;'></div>");
+                completeKeyboard.hideKeyboard();
+    });
+    
+    function genKeyboard(data) {
+     	getRandom();
+		initInput2("SIPBox1");
+		var noNeedHideIds = ["CompleteKeyboard", 
+            "SIPBox1"
+        ];
+		setNeedHide(noNeedHideIds);
+    }
+</script> -->
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>我的如意宝-收益明细</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+   <link href="css/ios/ios-all.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"收益明细"});
+//       pageUrl="login.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('ruyibaoChaxun_a.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">收益明细</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <div class=" overflowh padding_t15">
+        <p class="font_10 grey text-center m0">累计收益（元）</span>
+        <p class=" font_30 red text-center padding_t10 padding_b20 m0">200.00</span>
+    </div>
+    <ul class=" overflowh backgroundWhite border_t ">
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-28</span>
+                <span class="float_r red">+1.70</span>
+            </p>
+        </li> 
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-27</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-26</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-25</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+        <li class="overflowh line-height25 border_b paddingCell">
+            <p class="font_10 overflowh m0">
+                <span class="float_l grey">2015-12-24</span>
+                <span class="float_r grey">+1.70</span>
+            </p>
+        </li>
+    </ul>
+    <div class=" black" style="font-size: 14px; padding-top: 15px;padding-left: 15px; padding-right: 15px; padding-bottom: 10px;text-align:center;">数据加载完成!</div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

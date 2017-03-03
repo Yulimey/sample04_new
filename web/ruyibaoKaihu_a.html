@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>直销银行开户流程</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"填写个人信息"});
+//       pageUrl="login.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('ruyibao_a.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">填写个人信息</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <div class="green" style="font-size: 14px; padding-top: 10px;padding-left: 15px; padding-right: 15px; padding-bottom: 10px;text-align:center;">购买如意宝产品前请先注册民生银行直销银行</div>
+    <div class="content-padded" style="height:22px; width:300px; margin:10px auto 20px;">
+    		<img src="img/step_a.png" width="300" height="22">
+    </div>
+    <ul class="table-view ">
+        <li class="table-view-cell ">
+            <div class="input_f">持卡人</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="custNm" ifs_parent="/">李小亮</div>
+        </li>
+        <!--先隐藏，以后可能会用-->
+        <!--<li class="table-view-cell">-->
+            <!--<div class="input_f">身份证号</div>-->
+            <!--<div class="input_c menu_font_p " style="padding-left: 13px" id="idNo" ifs_parent="/">41022319930238765</div>-->
+        <!--</li>-->
+        <li class="table-view-cell ">
+            <div class="input_f">手机号</div>
+            <div class="input_c menu_font_p" id="mobTel" ifs_parent="/">
+                <input type="text" placeholder="15287650987" id="" ifs_parent="/">
+            </div>
+        </li>
+        <li class="table-view-cell">
+        <div class="loaninfo_li_e" style="padding-left:0;padding-right: 0;">
+            <div class="float_l">实际居住地</div>
+        </div>
+        <div class="loaninfo_li overflowh" style="padding-left:0;padding-right: 0;">
+            <select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+                <option>北京</option>
+                <option>上海</option>
+                <option>南京</option>
+            </select>
+
+            <select style="width: 30%;float: left; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+                <option>北京</option>
+                <option>上海</option>
+                <option>南京</option>
+            </select>
+
+            <select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmDist" name="hmDist" ifs_parent="/">
+                <option>北京</option>
+                <option>上海</option>
+                <option>南京</option>
+            </select>
+        </div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">邮箱</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="lgnPwd">
+                <input type="text" id="SIPBox1" name="SIPBox1" maxlength="20" placeholder="请输入绑定邮箱" readonly/>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+            </div>
+        </li>
+        <li class="table-view-cell  padding_b0">
+             <div class="overflowh">
+                <div class="input_f">登录密码</div>
+                <div class="input_c">
+                    <input type="hidden" ifs_parent="/" id="confirmPwd">
+                    <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="请输入登录密码" readonly/>
+                </div>
+            </div>
+            <div class=" green" style="font-size: 10px;padding-left:15px;margin-left:20%;">此密码用于登录民生银行直销银行使用</div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+         <li class="table-view-cell">
+            <div class="input_f">确认密码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="confirmPwd">
+                <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="请确认登录密码" readonly/>
+            </div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">推荐码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="">
+                <input type="text" id="" name="SIPBox2" maxlength="20"/>
+            </div>
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">验证码</div>
+            <div class="input_d"><input type="text" placeholder="请输入短信验证码" id="msgNumber" ifs_parent="/" maxlength="6"></div>
+            <div class="repeatmessage"><button id="getMsg" class="btn  btn-primary btn-outlined">获取短信验证码</button></div>
+        </li>
+    </ul>
+    <div class="content-padded" style="margin-top:20px;">
+        <!--原先的id:id="fastRegSubmit";onclick="window.location.href='ruyibaoKaihu_b.html'"-->
+        <a  type="button" class="btn btn-primary btn-block" href="#myModalexample">下一步</a>
+    </div>
+    <div id="myModalexample" class="modal">
+        <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#myModalexample"></a>
+            <h1 class="title">错误处理</h1>
+        </header>
+        <div class="content">
+            <p class="content-padded text-center iconfont icon-size" style="font-size: 40px;margin: 30px auto;">&#xe655;</p>
+            <p class="content-padded text-center">xxxxxxxx</p>
+            <p class="content-padded text-center" style="line-height: 37px;">请点击
+                <a type="button" class="btn-zhixiao btn btn-primary" style="font-size: 15px;padding: 10px;" onclick="window.location.href='ruyibaoKaihu_b.html'">直销银行</a>进行处理
+            </p>
+        </div>
+    </div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

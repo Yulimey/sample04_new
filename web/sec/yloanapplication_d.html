@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款审批</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>
+	 	setPageTitle({title: "步骤3.贷款审批"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='yloanapplication_c3.html'">
+				<span class="icon icon-left-nav"></span> 
+				返回
+			</button>
+			<h1 class="title">步骤3.贷款审批</h1>
+		</header>
+		<div class="content" id="dataContent">
+			<div class="green" style="font-size: 14px; padding-top: 10px; background: #fff; padding-left: 15px; padding-right: 15px; padding-bottom: 10px;">恭喜您成功提交申请！您的贷款申请正在审批中，预计审核过程需要5分钟。预计5分钟后产生结果后，我行会通过短信通知您，您可以前往"我的小微"或"贷款管理"查询审核结果。</div>
+			<div class="loaninfo_li_a">
+				<div class="float_l grey" >申请人</div>
+				<div class="float_r" id="appNo" ifs_parent="/">张雪</div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div class="float_l grey">申请金额(元)</div>
+				<div class="float_r" id="custNm" ifs_parent="/">1500,000</div>
+			</div>
+			<div class="loaninfo_li_a">
+				<div class="float_l grey" >申情人证件号</div>
+				<div class="float_r" id="appNo" ifs_parent="/">41022219801011236x</div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div class="float_l grey">申请时间</div>
+				<div class="float_r" id="custNm" ifs_parent="/">2016-02-23 <span>17:23:46</span></div>
+			</div>
+			<div class="loaninfo_li_a">
+				<div class="float_l grey" >产品名称</div>
+				<div class="float_r" id="appNo" ifs_parent="/">民生云快贷</div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div class="float_l grey">产品类型</div>
+				<div class="float_r" id="custNm" ifs_parent="/">抵押类贷款</div>
+			</div>
+			<button type="button" onclick="window.location.href='usercenter.html'" class="btn-primary btn-block margin_t20">确认</button>
+			<div style="height:100px;"></div>
+		</div>
+		
+	</body>
+<!-- <script>
+
+	var request=new Object();
+	request =GetRequest();
+	var appNo=request["appNo"];
+	$(document).ready(function(){
+		//var appNo = $.query.get('appNo');
+		
+	//	var appNo="1437735587004111112";
+	
+		//var objSer = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200615",
+			data : JSON.stringify(datas),
+			complete : success,
+			method : "post"
+		});
+	});
+	
+	function success(data){
+	
+		if(data.head._rd == '0000'){
+			$("#dataContent").bindData(data.body);
+			var vrfyLmt=$("#vrfyLmt").text();
+			$("#vrfyLmt").text(JSRound(vrfyLmt,2,0));
+			var appAmt=$("#appAmt").text();
+			$("#appAmt").text(JSRound(appAmt,2,0));
+			$("#lnRat").append("%");
+			$("#puhRat").append("%");
+			$("#term").append("月");
+			$("#lnOnlyTerm").append("月");
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	}
+	
+	function confirm(){
+		//var appNumObj = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200606",
+			data : JSON.stringify(datas),
+			complete : confirmSuccess,
+			method : "post",
+			lock:"subBtn"
+		});
+		
+	
+	}
+	
+	function confirmSuccess(data){
+		if(data.head._rd == '0000'){
+			
+			window.location="loanapplication_e.html?l="+getUrlParam("l");
+			//nextLoanApplyStep();
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	
+	}
+	
+	//获取入参
+	function GetRequest(){
+		var url=location.search;
+		var theRequest=new Object();
+		if(url.indexOf("?")!=-1){
+			var str=url.substr(1);
+			var strs=str.split("&");
+			for(var i=0;i<strs.length;i++){
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	
+</script> -->
+</html>

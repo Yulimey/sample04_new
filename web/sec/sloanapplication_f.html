@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>民生银行小微之家</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <link href="css/ios/ratchet.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">-->
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+    <script>
+        setPageTitle({title: "贷款申请"});
+        pageUrl = "loanlist.html";
+        loadCss("../");
+    </script>
+    <script>
+        //判断从那个入口来
+        var entrance = $.query.get("entrance");
+        //签约
+        function signContract(v){
+            var datas = {l: getUrlParam("l")};
+            $(this).IFSAjax({
+                code: "01_200800",
+                data: JSON.stringify(datas),
+                async : v,
+                complete: callbackExce,
+                method: "post"
+            });
+        }
+        //签约回调
+        function callbackExce(data) {
+            if (data.head._rd == '0000') {
+                var encBusNo = data.body.busNo;
+                //alert(encBusNo);//调用手机银行
+                submitOrderForComm(encodeURIComponent(encBusNo),"weiHome");
+//            alert("手机银行暂未开发完毕,请登录手机银行签约!");
+            } else {
+                errorTip(data);
+            }
+        }
+        $(document).ready(function(){
+        	 if(entrance=="load"){//说明是从手机银行签约联合登录入口来
+	            signContract(false);
+	        }
+        })
+       
+    </script>
+</head>
+
+<body>
+<header class="bar bar-nav">
+<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='../index.html'">
+    <span class="icon icon-left-nav"></span> 首页
+    </button>
+    <h1 class="title">贷款申请</h1>
+</header>
+
+<div class="content content-height">
+    <div class="content-padded padding_t50d50">
+        <div class="iconfont login_icon green_b ">&#xe636;</div>
+    </div>
+    <div class="aglin_center">
+        <div class="green">恭喜您完成签约卡选择！</div>
+        <h5 style="line-height: 24px;">距离贷款使用还差1步。<br/>
+            进入民生银行网上银行<br/>或手机银行进行贷款签约吧！
+        </h5>
+    </div>
+
+    <div class="content-padded margin_t20 width_70 " style="margin-left: 15%;">
+        <div data-transition="fade" class="btn btn-primary btn-outlined btn-block " onclick="window.location.href='usercenter.html'">网银签约</div>
+    </div>
+</div>
+</body>
+<script>
+    function goToBank() {
+        WangYin.checkIsLogin();
+    }
+
+    function clientLogin(flag){
+        if(flag=="1"){
+            signContract(true);
+        }else{
+            loginForComm(setting.unionLoanBeforeUrl,setting.unionLoanToUrl+"?l="+getUrlParam("l"));//自动登录并跳转到贷款列表页
+        }
+    }
+</script>
+
+</html>

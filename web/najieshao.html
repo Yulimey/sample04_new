@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>关于我们</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="css/ios/ratchet.css" rel="stylesheet">
+	<link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+	<link href="css/ios/cmbc.css" rel="stylesheet">
+	<script src="js/cmbcForClient.js?v=<VER>"></script>
+	<script src="js/browser.js?v=<VER>"></script>
+	 <script>
+		setPageTitleToNav({title:"关于我们"});
+		loadJs("");
+    </script>
+</head>
+<body>
+	<header class="bar">
+		<button class="btn btn-link btn-nav pull-right">
+			<span class="icon icon-person" onclick="goToLogin()"></span>
+		</button>
+		<img src="img/logo_xiaowei.jpg" width="250px" style="padding-top: 6px;" >
+	</header>
+	<div class="content">
+        <div class="banner_au" style="line-height:1px;margin-top: 46px;">
+             <img src="img/najieshao_bg.jpg" width="100%" height="30%"> 
+        </div>
+        <div class="menu_lie border_b border_t padding_t10" style="height:110px;margin-top:15px;display:none;">
+           <div class="width_90 margin_auto">
+                <div class=" title_au" style="padding:0 0 0 18px;">小微之家伴随中小企业一同茁长成长</div>
+                <ul class=" padding_t5 width_100" style="overflow:hidden;">
+                   <li class=" width_25 height_60 li_bg float_l">
+                      <p class="up">注册中小企用户</p>
+                      <p class="down font_18 margin_t15"><span class="font_12">已达</span><span id="registerCnt"> </span><span class="font_12">家</span></p>
+                   </li>
+                   <li class="width_45 height_60 li_bg float_l" >
+                      <p class="up">注册的小企业用户遍布全国</p>
+                      <p class="down font_18 margin_t15"><span id="cityCnt"> </span><span class="font_12">大城市</span></p>
+                   </li>
+                   <li class="width_30 height_60 li_bg float_l" style="background:none;">
+                      <p class="up">成功帮助中小企业融资</p>
+                      <p class="down font_18 margin_t15"><span class="font_12">¥</span><span id="vrfyLmt"> </span><span class="font_12">元</span></p>
+                   </li>
+                </ul>
+            </div>
+         </div>
+         <div class="jieshao padding_t10 margin_t15 border_t">
+              <div class="width_90 margin_auto">
+                <p class="margin_t6 margin_b6 linehei15 text-indent2"><span style="color:#00a458">纳税·网乐贷</span>是为民生银行网乐贷产品项下，专门为纳税良好的小微企业量身打造的专属线上贷款全新功能。</p>
+                <p class="margin_t6 margin_b6 linehei15 text-indent2">广大小微企业用户可直接通过纳税信息向民生银行申请经营性贷款，满足日常经营周转需求。</p>
+				<p class="margin_t6 margin_b6 linehei15 text-indent2">在山东省、广东省、河南省、江苏省、浙江省、山西省、甘肃省、天津市的广大小微企业主，可通过电脑或手机登录民生小微之家互联网贷款申请平台，或通过微众税银平台进入；只需在线5分钟填写信息（营业执照号和纳税人识别号），便可实时提交贷款；5分钟知晓审批结果或额度。</p>
+				<p class="margin_t6 margin_b6 linehei15 text-indent2">无需抵押、担保，省去跑网点和各类办理手续；纳税·网乐贷让您省事省力省心，让您专心做大做强小微企业。</p>
+              </div>  
+         </div>
+         
+    </div>
+</body>
+	<!-- <script>
+		 $(document).ready(function () {
+	        $(this).IFSAjax({
+	            code: "01_200520",
+	            data: null,
+	            complete: success,
+	            method: "post"
+	        });
+	    });
+		function success(data){
+			if(data.head._rd == '0000'){
+				$("#vrfyLmt").html(data.body.vrfyLmt);
+				$("#registerCnt").html(data.body.registerCnt);
+				$("#cityCnt").html(data.body.cityCnt);
+			}else{
+				if(data.head._rm instanceof Array){
+		    		_showMsg(data.head._rm[0].msg,null);
+		    	}else{
+		    		_showMsg(data.head._rm,null);
+		    	}
+			}
+		}
+		function goToLogin(){
+            $(this).IFSAjax({
+                code : "01_201000",//session检查
+                data: null,
+                method : "post",
+                complete:function(result){
+                    if(result.head._rd=="0000"){
+                        goTo("sec/usercenter.html");
+                    }else{
+                        goTo("login.html");
+                    }
+                }
+            });
+        }
+	</script> -->
+</html>

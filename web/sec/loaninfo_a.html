@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>民生银行小微之家</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>
+	 	setPageTitle({title: "步骤4.贷款确认"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='loanlist.html'">
+				<span class="icon icon-left-nav"></span> 
+			</button>
+			<h1 class="title">步骤4.贷款确认</h1>
+		</header>
+		<div class="content" id="dataContent">
+			<div class="green" style="font-size: 14px; padding-top: 10px; background: #fff; padding-left: 15px; padding-right: 15px; padding-bottom: 10px;">恭喜您！您申请的网乐贷贷款，审批通过，贷款信息如下，请您确定是否使用该笔贷款。</div>
+			<div class="loaninfo_li_a">
+				<div class="float_l grey" >申请编号</div>
+				<div class="float_r" id="appNo" ifs_parent="/"></div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div class="float_l grey">申请人</div>
+				<div class="float_r" id="custNm" ifs_parent="/"></div>
+			</div>
+			<div class="loaninfo_li_a">
+				<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+				<div class="float_l grey" style="width: 54%;font-size: 12px;">产品名称</div>
+				<div class="float_r" style="width: 46%;font-size: 12px;" id="busNm" ifs_parent="/"></div>
+				</div>
+				<div style="width: 47%;float: left;">
+				<div class="float_l grey" style="width: 54%;font-size: 12px;">产品类型</div>
+				<div class="float_r" style="width: 46%;font-size: 12px;" id="lmtTypName" ifs_parent="/"></div>
+				</div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+					<div  class="float_l grey" style="width: 54%;font-size: 12px;">申请金额</div>
+					<div  class="float_r" style="width: 46%;font-size: 12px;"id="appAmt" ifs_parent="/"></div>
+				</div>
+				<div style="width: 47%;float: left;">
+					<div class="float_l grey" style="width: 54%;font-size: 12px;">审批金额</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="vrfyLmt" ifs_parent="/"></div>
+				</div>	
+			</div>
+			<div class="loaninfo_li_a">
+				<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+					<div class="float_l grey" style="width: 54%;font-size: 12px;">利息率(年)</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="lnRat" ifs_parent="/"></div>
+				</div>
+				<div style="width: 47%;float: left;">
+					<div class="float_l grey" style="width: 54%; font-size: 12px;">罚息利率(年)</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="puhRat" ifs_parent="/"></div>
+				</div>	
+			</div>
+			<div class="loaninfo_li_b">
+				<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+					<div class="float_l grey" style="width: 54%; font-size: 12px;">额度有效期</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="term" ifs_parent="/"></div>
+				</div>
+				<div style="width: 47%;float: left;">
+					<div class="float_l grey" style="width: 54%; font-size: 12px;">单笔贷款周期</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="lnOnlyTerm" ifs_parent="/"></div>
+				</div>
+			</div>
+			<div class="loaninfo_li_a">
+				<div class="float_l grey">计息方式</div>
+				<div class="float_r" id="payWayName" ifs_parent="/"></div>
+			</div>
+			<div class="loaninfo_li_b">
+				<div class="float_l grey">还款方式</div>
+				<div class="float_r" id="rpyWayName" ifs_parent="/"></div>
+			</div>
+			<button type="button" id="next" class="btn-primary btn-block margin_t20" onclick="goTo('loaninfo_b.html')">确认</button>
+			<div style="height:100px;"></div>
+		</div>
+		
+	</body>
+<!-- <script>
+
+	var request=new Object();
+	request =GetRequest();
+	var appNo=request["appNo"];
+	$(document).ready(function(){
+		//var appNo = $.query.get('appNo');
+		
+	//	var appNo="1437735587004111112";
+	
+		//var objSer = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200615",
+			data : JSON.stringify(datas),
+			complete : success,
+			method : "post"
+		});
+	});
+	
+	function success(data){
+	
+		if(data.head._rd == '0000'){
+			$("#dataContent").bindData(data.body);
+			var vrfyLmt=$("#vrfyLmt").text();
+			$("#vrfyLmt").text(JSRound(vrfyLmt,2,0));
+			var appAmt=$("#appAmt").text();
+			$("#appAmt").text(JSRound(appAmt,2,0));
+			$("#lnRat").append("%");
+			$("#puhRat").append("%");
+			$("#term").append("月");
+			$("#lnOnlyTerm").append("月");
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	}
+	
+	function confirm(){
+		//var appNumObj = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200606",
+			data : JSON.stringify(datas),
+			complete : confirmSuccess,
+			method : "post",
+			lock:"subBtn"
+		});
+		
+	
+	}
+	
+	function confirmSuccess(data){
+		if(data.head._rd == '0000'){
+			
+			window.location="loanapplication_e.html?l="+getUrlParam("l");
+			//nextLoanApplyStep();
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	
+	}
+	
+	//获取入参
+	function GetRequest(){
+		var url=location.search;
+		var theRequest=new Object();
+		if(url.indexOf("?")!=-1){
+			var str=url.substr(1);
+			var strs=str.split("&");
+			for(var i=0;i<strs.length;i++){
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	
+</script> -->
+</html>

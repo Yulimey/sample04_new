@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>申请分配至服务经理</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   	<link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+	<script>
+	 	setPageTitle({title: "步骤4.申请分配至服务经理"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../"); 
+	 	document.body.addEventListener('touchstart', function () { });
+	 </script>
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="window.location.href='yloanapplication_f.html'" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">贷款签约</h1>
+</header>
+<div class="content backgroundWhite">
+	<div class="line-height50 padding_l10 background_ef color_000">申请分配至服务经理</div>
+	<div class="font_12 wangdian_tishi ziliao background_ef padding_l10">尊敬客户，您刚刚确认使用的“云快贷”抵押贷款，已经分配至如下的民生银行网点进行处理</div>
+	<h4 class="padding_l10 padding_t10 font_b" style="color: #000000;">网点信息：</h3>
+	<ul class="font_14 wangdian clearfix">
+		<li><span class="iconfont">&#xe633;</span> 网点名称：北京市海淀区知春路113号</li>
+		<li><span class="iconfont">&#xe6b5;</span> 网点地址：北京市海淀区知春路113号</li>
+		<li><span class="iconfont">&#xe6b6;</span> 网点电话：62610277</li>
+	</ul>
+</div>
+<div class="font_12  padding_l10 padding_t10 grey_c">我行网点正在为您提供一位服务经理，协助您办理后续抵押手续。<br>您的申请正在分配中，预计1个工作日完成分配；请您等候<br>分配成功后，我行将短信通知您，届时请您留意接收短信；您可已登录民生小微之家进行进度查询。</div>
+<div class="content-padded" style="margin-top:20px;">
+    <button  type="button" class="btn btn-primary btn-block" onclick="window.location.href='usercenter.html'">返回用户中心</button>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

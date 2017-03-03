@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>如意宝签约</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+   <link href="css/ios/ios-all.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"绑定银行卡"});
+//       pageUrl="login.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('ruyibaoKaihu_d.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">签约如意宝</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <ul class="height_100 width_100 padding_t20 border_b border_t margin_t10 margin_b10 backgroundWhite">
+        <li class=" width_50 text-center border_r float_l ">
+            <div class="red font_40">3.1480<span class="font_24 midgrey">%</span></div>
+            <p class="font_18 midgrey margin0 padding_t10">七日年化收益率</p>
+        </li>
+        <li class="width_50 text-center float_l ">
+            <div class="red font_40">0.7470</div>
+            <p class="font_18 midgrey margin0 padding_t10">每万份收益（元）</p>
+        </li>
+    </ul>
+    <ul class="table-view ">
+        <li class="table-view-cell ">
+            <div class="input_f">电子账户</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="custNm" ifs_parent="/">6216 9798 0322 8765</div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">产品名称</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="custNm" ifs_parent="/">如意宝-民生加银基金</div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">交易密码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="confirmPwd">
+                <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="请输入电子账户交易密码" readonly/>
+            </div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">推荐码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="">
+                <input type="text" id="" name="SIPBox2" maxlength="20"/>
+            </div>
+        </li>
+    </ul>
+    <div class="content-padded" style="margin-top:20px;margin-bottom:20px;padding-bottom: 20px;">
+        <input class="float_l " type=checkbox id="servicesPto">
+        <div class="float_l menu_font_px" style="margin-top: -5px; margin-left: 5px;">我已阅读并同意<a href="#myModalexample " class="green">《“民生如意宝”业务服务协议》</a>
+        </div>
+    </div>
+    <div class="content-padded" style="margin-top:20px;">
+        <button  type="button" class="btn btn-primary btn-block" onclick="window.location.href='ruyibaoQianyue_b.html'" id="fastRegSubmit">确认签约</button>
+    </div>
+    <div class=" organage" style="font-size: 14px; padding-top: 10px;padding-left: 15px; padding-right: 15px; padding-bottom: 10px;text-align:center;">签约成功后您的电子账户内的活期资金将于每日15点前自动购买如意宝。</div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

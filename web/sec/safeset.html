@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_安全设置</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+   <script> 
+   		setPageTitle({title: "安全设置"});
+	   pageUrl = "usercenter.html";         
+	   loadCss("../");         
+	   loadJs("../");     
+   </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button class="btn btn-link btn-nav pull-left" onclick="goTo('usercenter.html')">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+   <h1 class="title">安全设置</h1>
+</header>
+<div class="content content-height">
+    <ul class="table-view">
+        <li class="table-view-cell active">
+            <div  onclick="goTo('chname.html')" class="navigate-right">
+                用户名设置
+            </div>
+        </li>
+        <li class="table-view-cell active">
+            <div  onclick="goTo('chphone_a.html')" class="navigate-right">
+                修改手机号码
+            </div>
+        </li>
+        <li class="table-view-cell active">
+            <div  onclick="goTo('chpassword.html')" class="navigate-right">
+                密码设置
+            </div>
+        </li>
+        <li class="table-view-cell active">
+            <div  onclick="goTo('chpassword.html')" class="navigate-right">
+                邮箱设置
+            </div>
+        </li>
+        <li class="table-view-cell active">
+            <div  onclick="goTo('informationset_y.html')" class="navigate-right">
+                预留信息设置
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

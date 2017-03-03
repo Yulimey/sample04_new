@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家手机绑定</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+   <script>       
+   				setPageTitle({title: "修改手机号码第二步"});
+        		pageUrl = "chphone_a.html";  
+   				loadCss("../");         
+   				loadJs("../");     
+   	</script>
+    <!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+
+</head>
+<body>
+<header class="bar bar-nav">
+   <button onclick="goTo('chphone_a.html')" class="btn btn-link btn-nav pull-left">
+	   <span class="icon icon-left-nav"></span> 返回
+   </button>
+   <h1 class="title">修改手机号码第二步</h1>
+</header>
+<div class="content content-height content-heightb">
+    <ul class="table-view" id="dataContent">
+        <li class="table-view-cell">
+            <div class="input_b">手机号</div>
+            <div class="input_c">
+                <input type="text" id="mobTel"  ifs_parent="/" maxlength="11" placeholder="请输入新的手机号码"/>
+            </div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_b">验证码</div>
+            <div class="input_d">
+                <input type="text" id="msgNumber" ifs_parent="/" maxlength="6" placeholder="请输入短信验证码"/>
+            </div>
+					<span class="repeatmessage">
+						<button class="btn  btn-primary btn-outlined" id="reqCode">验证码<span id="repeatMessage"></span>
+                        </button>
+					</span>
+        </li>
+      <!-- <input class="none" type="hidden" value="" ifs_parent="/" id="oldMobTel" readonly/> -->  
+    </ul>
+
+    <div class="content-padded padding_t20">
+        <button type="button" id="subBtn" class="btn btn-primary btn-block">绑定</button>
+    </div>
+
+</div>
+
+<!-- <script type="text/javascript">
+	var mobTelStat = false;
+    var oldTel = $.query.get("data");
+    $(function () {
+        $("#oldMobTel").val(oldTel);
+    });
+    var _countDownIntervalTime = setting.countDownIntervalTime;
+    var interValObj;
+    function countDown() {
+        _countDownIntervalTime = _countDownIntervalTime - 1;
+        if (_countDownIntervalTime > 0) {
+            $("#repeatMessage").text(_countDownIntervalTime);
+            $("#reqCode").attr("disabled", "disabled");
+        } else {
+            window.clearInterval(interValObj);
+            $("#repeatMessage").text("");
+            $("#reqCode").removeAttr("disabled");
+            _countDownIntervalTime = setting.countDownIntervalTime;
+        }
+    }
+    $("#subBtn").click(function () {
+        var phoneNum = $("#mobTel").val();
+        var mobTelCode = $('#msgNumber').val();
+        if (!(checkEmpty(phoneNum, "请输入手机号码") && checkPhone(phoneNum))) {
+            return;
+        }
+        if (!(checkEmpty(mobTelCode, "请输入短信验证码") && checkMsgCode(mobTelCode))) {
+            return;
+        }
+        var jsonData = $("#dataContent").getJsonData();
+        var mobTelObj = {l:getUrlParam("l")};
+        jsonData = $.extend({},jsonData,mobTelObj);
+        $(this).IFSAjax({
+            code: "01_200512",
+            data: jsonData,
+            complete: success,
+            method: "post",
+			lock:"subBtn"
+        });
+    });
+
+    function success(data) {
+        if (data.head._rd == '0000') {
+            _showMsg(data.head._rm);
+            setTimeout(function () {
+            	nextChangePhoneStep();
+                //goTo('safeset.html');
+            }, 1500);
+        } else {
+        	$("#msgNumber").val("");
+            _showMsg(data.head._rm);
+        }
+    }
+
+    $("#reqCode").click(function () {
+        var mobTel = $('#mobTel').val();
+        if (!(checkEmpty(mobTel, "请输入手机号码") && checkPhone(mobTel))) {
+            return;
+        }
+        $("div").IFSAjax({
+             code: "01_200703",
+             data: {"usrMessage" : mobTel, "usrType" : "01"},
+             async: false,
+             complete: function(data){
+             	if(data.head._rd == 0000){
+             		if(data.body.valid == "true"){
+             				var mobTelObj = {"mobTel": mobTel, "bsnessTyp": "03"};
+					        $(this).IFSAjax({
+					            code: "01_200301",
+					            data: JSON.stringify(mobTelObj),
+					            complete: sendCodeOk,
+					            method: "post"
+					        });
+             		}else{
+             			
+             			_showMsg("该手机号码已被占用");
+             		}
+             	}else{
+             		_showMsg(data.head._rm);
+             	}
+             },
+             method: "post"
+         });
+        
+    });
+    function sendCodeOk(data) {
+        if (data.head._rd == "0000") {
+            //interValObj = window.setInterval(countDown, 1000);
+             $('#reqCode').ifsWaitingButton(90);
+            _showMsg(data.head._rm);
+        } else {
+            errorTip(data);
+        }
+    }
+     $("#mobTel").on('change',function(){
+		resetWaitingButton($("#reqCode"));
+	});
+     
+     $(".input_c").on("keyup","#mobTel",function(){
+     	var el = $(this);
+     	if($.trim(el.val()).length == 11 && checkPhone(el.val())){
+     	$("div").IFSAjax({
+             code: "01_200703",
+             data: {"usrMessage" : el.val(), "usrType" : "01"},
+             async: false,
+             complete: function(data){
+             	if(data.head._rd == 0000){
+             		if(data.body.valid == "true"){
+             			mobTelStat = true;
+             		}else{
+             			mobTelStat = false;
+             			_showMsg("该手机号码已被占用");
+             		}
+             	}else{
+             		_showMsg(data.head._rm);
+             	}
+             },
+             method: "post"
+         });
+     	}
+     });
+</script> -->
+</body>
+</html>

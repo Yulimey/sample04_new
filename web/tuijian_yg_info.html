@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家推荐</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+    <link href="css/ios/ratchet.css" rel="stylesheet">
+     <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+     <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitle({title: "员工信息验证"});
+       pageUrl = "registered_xa.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="js/sip.min.js?v=<VER>"></script>
+	<script src="js/password.js?v=<VER>"></script>
+</head>
+<body class="t_yuangong_info">
+    <header class="bar bar-nav">
+		<button onclick="window.location.href='../tuijian_tuiguang.html'" class="btn btn-link btn-nav pull-left">
+			<span class="icon icon-left-nav"></span> 返回
+		</button>
+		<h1 class="title">员工信息验证</h1>
+	</header>
+<div class="content content-height content-heightb">
+    <div class="content-padded padding_t30d30">
+        <div class="iconfont blue" style="font-size: 60px; text-align: center;">&#xe617;</div>
+    </div>
+
+    <ul class="table-view " id="dataContent">
+    	    <li class="table-view-cell">
+            <div class="input_f">员工姓名</div>
+            <div class="input_c">
+            	<input type="hidden" ifs_parent="/" id="lgnPwd">
+            	<input type="text" id="SIPBox1" name="SIPBox1" maxlength="20" placeholder="请输入员工姓名"/>
+            </div>
+          <!--  <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">支行机构代码</div>
+            <div class="input_c">
+            	<input type="hidden" ifs_parent="/" id="lgnPwd">
+            	<input type="text" id="SIPBox1" name="SIPBox1" maxlength="20" placeholder="请输入支行机构代码"/>
+            </div>
+          <!--  <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+           <div class="input_f">10位员工号码</div>
+           <div class="input_c">
+           		<input type="hidden" ifs_parent="/" id="confirmPwd">
+           		<input type="text" id="SIPBox2" name="SIPBox2" maxlength="10" placeholder="请输入员工号码"/>
+           	</div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+           <div class="input_f">社区网点号码</div>
+           <div class="input_c">
+           		<input type="hidden" ifs_parent="/" id="confirmPwd">
+           		<input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="该项为选填项"/>
+           	</div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+           <div class="input_f">证件号码</div>
+           <div class="input_c">
+           		<input type="hidden" ifs_parent="/" id="confirmPwd">
+           		<input type="text" id="SIPBox2" name="SIPBox2" maxlength="18" placeholder="请输入证件号码"/>
+           	</div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+           <div class="input_f">手机号码</div>
+           <div class="input_c">
+           		<input type="hidden" ifs_parent="/" id="confirmPwd">
+           		<input type="text" id="SIPBox2" name="SIPBox2" maxlength="11" placeholder="请输入手机号"/>
+           	</div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+    </ul>
+    <div class="content-padded padding_t20 padding_b20">
+        <button class="btn btn-primary btn-block" onclick="window.location.href='tuijian_yg_tuiguang.html'">确认</button>
+    </div>
+</body>
+</html>

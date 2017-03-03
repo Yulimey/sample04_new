@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>资产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		 pageUrl = "usercenter.html";           
+		loadCss("../"); 
+		loadJs("../");
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='info_f_fang.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">编辑房产信息</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+			<div class="prod-card margin_t20">
+				<div class="control-content active">
+					<div class="loaninfo_li_e">
+						<div class="float_l">请选择您的房产地址</div>
+					</div>
+					<div class="loaninfo_li border_b" style="height:50px;">
+							<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+		
+							</select>
+		
+							<select style="width: 30%;float: left; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+		
+							</select>
+		
+							<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmDist" name="hmDist" ifs_parent="/">
+		
+							</select>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_30">楼盘关键字</div>
+						<div class="float_r width_70">
+							<label class="width_100 font_14 center-block fontright" >泰和宜园</label>
+							<input class="width_100 fontright font_14" style="display: none;" type="text" id="licNo" ifs_parent="/" placeholder="请输入楼盘关键字" maxlength="15">
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_50">楼栋</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>1号楼</option>
+								<option>2号楼</option>
+								<option>3号楼</option>
+							</select>
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_50">房号</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>1604</option>
+								<option>1011</option>
+								<option>1002</option>
+							</select>
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_50">是否是现居住地址</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>是</option>
+								<option>否</option>
+							</select>
+						</div>
+					</div>
+		            <div class="loaninfo_li_e  border_b">
+						<div class="float_l width_50">房屋面积</div>
+						<div class="float_r width_50">
+							<label class="width_100 font_14 center-block fontright" >120平</label>
+							<input class="width_100 fontright font_14 margin_b0" style="display: none;" type="text" id="licNo" ifs_parent="/" placeholder="请输入房领" maxlength="15">
+						</div>
+					</div>
+					<div class="loaninfo_li_e">
+						<div class="float_l width_50">房屋是否共有</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>是</option>
+								<option>否</option>
+							</select>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="fang-gongyouren">
+				<div class="menu_font_p black padding_l15" >共有人信息<a class="float_r padding_r15 font_12" href="info_f_fang_c.html"><span class=" font_14 blue iconfont ">&#xe688;</span> 添加</a></div>
+				<div class="signed-detail" onclick="goTo('info_f_fang_d.html')">
+			    	<div class="signed-title border_b">
+			    		张三
+			    	</div>
+			    	<ul class="signed-edu border_bn">
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人关系</span>
+			    			<span class="float_r red">配偶</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人证件号</span>
+			    			<span class="float_r">410234198010234657</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人联系方式</span>
+			    			<span class="float_r">15832575836</span>
+			    		</li>
+			    	</ul>
+			    </div>
+			    <div class="signed-detail" onclick="goTo('info_f_fang_d.html')">
+			    	<div class="signed-title border_b">
+			    		李四
+			    	</div>
+			    	<ul class="signed-edu border_bn">
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人关系</span>
+			    			<span class="float_r red">父亲</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人证件号</span>
+			    			<span class="float_r">410234198010234657</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人联系方式</span>
+			    			<span class="float_r">15832575836</span>
+			    		</li>
+			    	</ul>
+			    </div>
+			    <div class="signed-detail" onclick="goTo('info_f_fang_d.html')">
+			    	<div class="signed-title border_b">
+			    		王五
+			    	</div>
+			    	<ul class="signed-edu border_bn">
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人关系</span>
+			    			<span class="float_r red">兄弟</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人证件号</span>
+			    			<span class="float_r">410234198010234657</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">共有人联系方式</span>
+			    			<span class="float_r">15832575836</span>
+			    		</li>
+			    	</ul>
+			    </div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="save()">保存</button>
+			    <button id="delFamilyInfo" type="button" class="btn btn-negative btn-block margin_t20 fontcenter">删除</button>
+			</div>
+		</div>
+	</body>
+</html>

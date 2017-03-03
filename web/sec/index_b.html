@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>小微之家</title>
+    		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+   <script>   
+		setPageTitle({title: "企业信息"});
+   		pageUrl = "usercenter.html";         
+		loadCss("../");         
+		loadJs("../");     
+   	</script>
+	</head>
+	<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-right" onclick="goTo('usercenter.html')">
+				<span class="icon icon-person"><span class="red-dot"></span></span>
+			</button>
+			<img src="../img/logo_xiaowei.jpg" width="250px" style="padding-top: 6px;" >
+		</header>
+		<div class="content ">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				</ol> -->
+
+				<!-- Wrapper for slides 
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="../img/banner.jpg" width="100%" alt="...">
+					</div>
+					<div class="item">
+						<img src="../img/banner02.jpg" width="100%" alt="...">
+					</div>
+				</div>-->
+				<div class="slider">
+					<div class="slide-group ">
+						<div class="slide" onclick="goTo('shuakadai.html');">
+							<img src="../img/banner09.jpg" width="100%" height="auto">
+						</div>
+						<div class="slide" onclick="goTo('../apply.html');">
+							<img src="../img/banner.jpg" width="100%" height="auto">
+						</div>
+						<div class="slide" onclick="goTo('../about_us.html');">
+							<img src="../img/banner02.jpg" width="100%" height="auto">
+						</div>
+					</div>
+				</div>
+				<!-- Controls -->
+				<!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    
+				  </a>-->
+			</div>
+			<!--index新增预留信息20161209-->
+	       <div class="ylxx_background">
+	       		<div class="ylxx_content">
+	            		<a href="informationset_y.html">预留信息:中国民生银行小微之家</a>
+	           </div>
+	       </div>
+	       <!--index新增预留信息20161209-->
+			<!--index新增Start20160405-->
+			<div class="index-title-bar">
+				推荐贷款产品
+			</div>
+			<ul class="table-view">
+				<li class="table-view-cell media active" onclick="window.location.href='../licaizhiya.html'">
+					<a href="" class="navigate-right">
+						<img class="media-object pull-left" src="../img/licaizhiya_logo.png">
+						<div class="media-body padding_t5">
+							理财质押
+							<p>信用贷款，额度最高<span class="red">30万</span>，必须材料为营业执照和银联pos商户编码</p>
+						</div>
+					</a>
+					<span class="iconfont icon-navigate-right">&#xe67b;</span>
+				</li>
+			  <li class="table-view-cell media active" onclick="window.location.href='../apply.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/wangledai_logo.png">
+			      <div class="media-body padding_t5">
+			        网乐贷
+			        <p>信用贷款，额度最高<span class="red">50万</span>，必须材料为营业执照和银联pos商户编码</p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			  <li class="table-view-cell media active" onclick="window.location.href='../nawangledai.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/nashui_logo.png">
+			      <div class="media-body padding_t5">
+			        纳税.网乐贷
+			        <p>信用贷款，额度最高<span class="red">50万</span>，必须材料申请人企业纳税识别号</p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			  <li class="table-view-cell media active" onclick="window.location.href='../yunkuaidai.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/yunkuaidai_logo.png">
+			      <div class="media-body padding_t5">
+			        云快贷
+			        <p>抵押贷款，额度最高<span class="red">300万</span>，极速申请5分钟知晓额度</p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			   <li class="table-view-cell media active" onclick="window.location.href='../shuakadai.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/shuakadai_logo.png">
+			      <div class="media-body padding_t5">
+			        刷卡贷
+			        <p>信用贷款，额度最高<span class="red">20万</span>，极速申请5分钟知晓额度</p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			</ul>
+			<!--index新增End20160405-->
+			<div class="menu_lie margin_20 border_t border_b float_l" onclick="goTo('usercenter.html')">
+					<div class="iconfont menu_icon organage padding_t15">&#xe618;</div>
+					<div class="float_l padding_l15 padding_t15 black ">用户中心</div>
+					<div class="float_l menu_font_px padding_l15 padding_t15 grey">设置我的账户</div>
+					<div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+						查看详情
+					</div>
+			</div>
+			<div class="menu_lie margin_20 border_t  border_b float_l"  onclick="goTo('contactus_b.html')">
+					<div class="iconfont menu_icon blue padding_t15">&#xe62e;</div>
+					<div class="float_l padding_l15 padding_t15 black">联系客服</div>
+					<div class="float_l menu_font_px padding_l15 padding_t15 grey">有问题找小微</div>
+					<div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+						查看详情
+					</div>
+			</div>
+
+		</div>
+
+	</body>
+	<!-- <script>
+	 function login(){
+         $(this).IFSAjax({
+             code : "01_201000",//session检查
+             data: null,
+             method : "post",
+             complete:function(result){
+                 if(result.head._rd=="0000"){
+                     goTo("usercenter.html");
+                 }else{
+                     goTo("../login.html");
+                 }
+             }
+         });
+     }
+     
+     function goRegister(){
+     	$(this).IFSAjax({
+             code : "01_201000",//session检查
+             data: null,
+             method : "post",
+             complete:function(result){
+                 if(result.head._rd=="0000"){
+                     _showMsg("您已经注册！");
+                 }else{
+                     goTo("registered01.html");
+                 }
+             }
+         });
+     }
+     
+     function goLoanlist(){
+     	$(this).IFSAjax({
+             code : "01_201000",//session检查
+             data: null,
+             method : "post",
+             complete:function(result){
+                 if(result.head._rd=="0000"){
+                 	goTo("loanlist.html");
+                 }else{
+                     goTo("login.html");
+                 }
+             }
+         });
+     }
+     
+     function iLoanCheck(url){
+    	 var datas = {busBrd:"01",clsTyp:"01"};
+     	 //判断是否在白名单
+     	 $(this).IFSAjax({
+					code : "01_200619",//白名单检查
+					data: datas,
+					complete : whiteList,
+					method : "post"
+				});
+     }
+     function whiteList(data){
+     	if(data.head._rd == '0000'){
+			 	//业务操作前，判断是否登录
+         		$(this).IFSAjax({
+					code : "01_200602",//若担保检查
+					data: null,
+					complete : success,
+					method : "post"
+				});
+		}else{
+			if(data.head._rm instanceof Array){
+	    		_showTimeMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showTimeMsg(data.head._rm,null);
+	    	}
+		}
+     }
+     
+	function success(data){
+		if(data.head._rd == '0000'){
+			AuthCheck();
+		}else{
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+ 
+	function AuthCheck(){
+		 $(this).IFSAjax({
+				code : "01_200603",//认证权限检查
+				data: null,
+				complete : jump,
+				method : "post"
+			});
+	}
+	
+	function jump(data){
+		if(data.head._rd == '0000'){
+			if("1"==data.body.athSt){
+				goTo("loanapplication_b2.html");//1-已授权
+			}else if("0"==data.body.athSt){
+				$(this).IFSAjax({
+					code : "01_200618",//检查次数
+					data: null,
+					complete : checkNum,
+					method : "post"
+				});
+				//goTo("loanlist.html");//0-未授权
+			}else{
+				goTo("loanapplication_a.html");//null-新用户
+			}
+		}else{
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+	
+	
+	function checkNum(data){
+		if(data.head._rd == '0000'){
+			goTo("loanapplication_a.html");//3次以内都会跳转到认证银行卡页面
+		}else {
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+	var _showMsgTimeStr = '<div class="error fontcenter" id="showMsg"> </div>';
+	function _showTimeMsg(msg,func){
+		if(document.getElementById("showMsg") != null){
+			$('#showMsg').remove();
+		}
+		$('body').append(_showMsgTimeStr);
+		$('#showMsg').text(msg);
+		setTimeout(function(){
+				$("#showMsg").fadeToggle("slow",null);
+				if(document.getElementById("showMsg") != null){
+					$('#showMsg').remove();
+				}
+			},3000);
+	}
+	</script> -->
+
+</html>

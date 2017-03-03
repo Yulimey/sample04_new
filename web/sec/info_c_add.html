@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_联系人信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+   <script>      
+   			setPageTitle({title: "联系人信息"});
+	   		pageUrl = "info_a.html";    
+   			loadJs("../");     
+   	</script>
+    <!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+  <div onclick="goTo('info_a.html')" class="btn btn-link btn-nav pull-left">
+	  <span class="icon icon-left-nav"></span>
+	  返回
+ </div>
+ <h1 class="title">联系人信息</h1>
+</header>
+<div class="content content-height" id="dataContent">
+    <input type="hidden" id="id"  ifs_parent="/">
+    <div class="loaninfo_li_c border_b margin_t20 border_t" style="height: 60px;">
+				<div class="float_l " style="width: 23%; padding-top: 8px;">姓名</div>
+				<div class="float_l "style="width: 47%; padding-top: 5px;">
+					<input type="text" id="rltnNm" ifs_parent="/" class="width_100 " placeholder="请输入真实姓名"  maxlength="10" >
+				</div>
+				<div class="float_l "style="width: 30%;">
+					<select style="float: left;font-size: 14px; padding-left: 20px;" class="selectdiv selectdivz" id="rltnTyp" ifs-select-code="XW000003" ifs_parent="/">
+					</select>
+				</div>
+	</div>
+    <div class="loaninfo_li_c border_b">
+        <div class="float_l width_30">手机号</div>
+        <div class="float_r width_70"><input type="text" id="mobTel" ifs_parent="/" class="width_100 fontright"
+                                             maxlength="11"   placeholder="如：13500000000"/></div>
+    </div>
+    <div class="loaninfo_li_c border_b">
+        <div class="float_l width_30">身份证号</div>
+        <div class="float_r width_70"><input type="text" id="idNo" ifs_parent="/" class="width_100 fontright"
+                                             placeholder="请输入18位身份证号" maxlength="18" /></div>
+    </div>
+    <div class="content-padded">
+        <button id="saveFamilyInfo" type="button" class="btn btn-primary btn-block margin_t20 fontcenter">保存</button>
+    </div>
+</div>
+</body>
+
+<!-- <script>
+    $(function () {
+        $("[ifs-select-code]").ifsSelect();
+    });
+    $("#saveFamilyInfo").click(function () {
+        var jsonData = $("#dataContent").getJsonData();
+        if(!(checkEmpty(jsonData.rltnNm,"请输入联系人姓名") && checkUserName(jsonData.rltnNm))){
+            return;
+        }
+        if(!checkEmpty(jsonData.rltnTyp,"请选择联系人关系")){
+            return;
+        }
+        if(!(checkEmpty(jsonData.mobTel,"请输入联系人手机号") && checkPhone(jsonData.mobTel))){
+            return;
+        }
+        if(!(checkEmpty(jsonData.idNo,"请输入联系人身份证号") && checkIdcard(jsonData.idNo))){
+            return;
+        }
+        $(this).IFSAjax({
+            code: "01_200514",
+            data: JSON.stringify(jsonData),
+            complete: callBack,
+            method: "post"
+        });
+    });
+
+    function callBack(data) {
+        if (data) {
+            if (data.head._rd == "0000") {
+                _showMsg(data.head._rm);
+                setTimeout(function () {
+                    goTo('info_a.html');
+                }, 1000);
+            } else {
+                _showMsg(data.head._rm);
+            }
+        }
+    }
+</script> -->
+</html>

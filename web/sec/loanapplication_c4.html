@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请社交信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+	    <script>
+		 	setPageTitle({title: "步骤4.贷款确认"});
+		   	pageUrl = "loanlist.html";        
+		 	loadCss("../");         
+		 	loadJs("../");     
+		 </script>
+</head>
+
+<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='usercenter.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t20" style="position:relative;">
+		         <div class="menu_font_p black padding_l15" >社交信息</div>
+	        </div>
+			<div class="loaninfo_li_e border_b margin_t20 border_t" style="height:46px;">
+				<div class="float_l width_30">QQ</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="cmpnNm" ifs_parent="/" placeholder="请输入QQ号码" maxlength="12" />
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">微信号</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请填入微信号"   maxlength="15"/>
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">支付宝账号</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请填入支付宝账号" maxlength="15">
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">电子邮箱</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请填入正确的电子邮箱地址" maxlength="20">
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">推荐码</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请填写好友所给推荐码" maxlength="20">
+				</div>
+			</div>
+	        <div class="loaninfo_li_e border_b">
+				<div class="float_l width_70"><input type="text" placeholder="请输入短信验证码"></div>
+				<div class="float_r width_30" style="padding-top:10px;float:right;">
+                    <button class="btn btn-primary btn-outlined">获取短信验证码</button>
+				</div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='loanapplication_d.html'">下一步</button>
+			</div>
+		</div>
+</body>
+</html>

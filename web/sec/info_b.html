@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家企业信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+   <script>   
+   			setPageTitle({title: "企业信息"});
+	   		pageUrl = "usercenter.html";         
+   			loadCss("../");         
+   			loadJs("../");     
+   	</script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='usercenter.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">企业信息</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+			<div class="loaninfo_title margin_t20 border_t  border_b">企业基本信息</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">企业名称</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="cmpnNm" ifs_parent="/" placeholder="请输入工商注册名称" maxlength="50" />
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">营业执照</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="如：111020011111111"   maxlength="15"/>
+				</div>
+			</div>
+			<div class="loaninfo_li_e">
+				<div class="float_l">企业所在地</div>
+			</div>
+			<div class="loaninfo_li " style="height: 50px;">
+					<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+							
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px; margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+							
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmDist" name="hmDist" ifs_parent="/">
+							
+					</select>
+
+				</div>
+			<div class="loaninfo_li_e border_b">
+						<input style="padding-left: 0px; width: 100%;font-size: 14px;" class=" font_14" type="text" id="rgAdr" name="rgAdr" ifs_parent="/" placeholder="请输入详细地址"  maxlength="100" />
+					
+				</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">银联商户号</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111"  maxlength="15" >
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">从业年限</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" placeholder="1~99" id="oprtnPrd" ifs_parent="/"  maxlength="2" />
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">本地经营年限</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" class="busYear " placeholder="1~99" id="lclOprtnPrd" ifs_parent="/"  maxlength="2"/>
+				</div>
+			</div>
+			<div class="loaninfo_li_e ">
+				<select style="font-size: 14px;" class="selectdiv selectdivz" ifs-select-code="IP000024" id="indst" ifs_parent="/">
+					
+				</select>
+			</div>
+			<div class="loaninfo_li border_b">
+				
+			</div>
+			<div class="loaninfo_li_c border_b" style="height:60px;">
+				
+				<div >
+					<select style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz" ifs-select-code="XW000010" id="empNum" ifs_parent="/">
+						
+					</select>
+				</div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="save()">保存</button>
+			</div>
+			<div   style="height:250px;"></div>
+		</div>
+	</body>
+
+<!-- <script>
+    function save() {
+        var cmpnNm = $("#cmpnNm").val();
+        if(!(checkEmpty(cmpnNm,"请输入企业名称") && checkcmpnNm(cmpnNm))){
+            return;
+        }
+        var licNo = $("#licNo").val();
+        if(!(checkEmpty(licNo,"请输入营业执照") && checklicNo(licNo))){
+            return;
+        }
+        var cupShpId = $("#cupShpId").val();
+        if($.trim(cupShpId)!=""){
+            if(!checkcupShp(cupShpId)){
+                return;
+            }
+        }
+        var rgAdr = $("#rgAdr").val();
+        if($.trim(rgAdr)!=""){
+            if(!checkrgAdr(rgAdr)){
+                return;
+            }
+        }
+       var lclOprtnPrd =  $("#lclOprtnPrd").val();
+        if($.trim(lclOprtnPrd)!=""){
+            if(!checklclOprin(lclOprtnPrd)){
+                return;
+            }
+        }
+        var oprtnPrd = $("#oprtnPrd").val();
+        if($.trim(oprtnPrd)!=""){
+            if(!checkoprtnPrd(oprtnPrd)){
+                return;
+            }
+        }
+        var data = $("#dataContent").getJson();
+        $(this).IFSAjax({
+            code: "01_200508",
+            data: data,
+            complete: success1,
+            method: "post"
+        });
+    }
+    function success1(data) {
+    	if(data){
+    		if(data.head._rd == '0000'){
+    			_showMsg(data.head._rm);
+    		}else{
+    			_showMsg(data.head._rm);
+    		}
+    	}
+    }
+    
+    $(document).ready(function(){
+    	$("#hmPrvnc").initCitySelect();
+    	$("[ifs-select-code]").ifsSelect();
+    	 $(this).IFSAjax({
+			code : "01_200507",
+			data : null,
+			complete : success,
+			method : "post",
+			async: false
+		}); 
+    });
+   
+    function success(data){
+    	if(data){
+    		if(data.head._rd == '0000'){
+    			$("#dataContent").bindData(data.body);
+    			if(data.body.cmpnId!=undefined){
+    				$("#cmpnId").val(data.body.cmpnId);
+    			}
+    		}
+    	}
+    }
+</script> -->
+
+</html>

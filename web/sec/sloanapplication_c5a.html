@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请2</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		 pageUrl = "usercenter.html";           
+		loadCss("../"); 
+		loadJs("../");
+   	</script>
+</head>
+
+<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='sloanapplication_c5.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t15 padding_b15" >
+		         <div class="menu_font_p black padding_l15" >短信验证</div>
+	        </div>
+			<div class="loaninfo_li_e border_b border_t">
+				<div class="float_l width_70"><input type="text" placeholder="请输入短信验证码"></div>
+				<div class="float_r width_30" style="padding-top:10px;float:right;">
+                    <button class="btn btn-primary btn-outlined">获取短信验证码</button>
+				</div>
+			</div>
+			<!--<div>
+	            <div class="padding_t15 padding_b15" >
+			         <div class="menu_font_p black padding_l15" >推荐码</div>
+		        </div>
+				<div class="loaninfo_li_e border_b border_t">
+					<div class="float_l width_70"><input type="text" placeholder="请输入推荐码（选填）"></div>
+				</div>
+				<p class="tishi text-center padding_t10">若参与好友推荐活动，请输入好友给的推荐码</p>
+			</div>-->
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='sloanapplication_d.html'">提交申请</button>
+			</div>
+		</div>
+</body>
+</html>

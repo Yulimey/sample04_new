@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_用户名设置</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+	<link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+	<link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+    <script>
+    	setPageTitle({title: "用户名设置"});
+        pageUrl = "safeset.html";
+       loadCss("../");
+        loadJs("../");
+    </script>
+    <!--  <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+   <header class="bar bar-nav">
+     <button onclick="goTo('safeset.html')" class="btn btn-link btn-nav pull-left">
+     <span class="icon icon-left-nav"></span> 返回
+     </button>
+     <h1 class="title">设置用户名</h1>
+     </header>
+<div class="content content-height content-heightb">
+    <ul class="table-view margin_t20" id="dataContent">
+        <li class="table-view-cell">
+            <span class="input_b">用户名</span>
+
+            <div class="input_c">
+                <input type="text" id="lgnId" ifs_parent="/" placeholder="请输入用户名" maxlength="20"/>
+            </div>
+        </li>
+        <li class="table-view-cell">
+            <span class="input_b">验证码</span>
+
+            <div class="input_d">
+                <input type="text" id="msgNumber" ifs_parent="/" maxlength="6" placeholder="请输入短信验证码"/>
+            </div>
+			<span class="repeatmessage">
+				<button id="getMsg" class="btn btn-primary btn-outlined">验证码</button>
+			</span>
+        </li>
+    </ul>
+    <div class="content-padded padding_t20">
+        <button id="subBtn" class="btn btn-primary btn-block">提交</button>
+    </div>
+    <div class="content-padded fontcenter height_30">
+        <h5>
+            用户名是您在小微之家的<span class="green">登录</span>标示<br/>
+        </h5>
+    </div>
+</div>
+</body>
+<!-- <script>
+    $(document).ready(function () {
+        $(this).IFSAjax({
+            code: "01_200513",
+            data: null,
+            complete: getName,
+            method: "post"
+        });
+    });
+    function getName(data) {
+        if (data) {
+            if (data.head._rd == '0000') {
+                $("#dataContent").bindData(data.body);
+            } else {
+                _showMsg(data.head._rm);
+            }
+        }
+    }
+    $("#subBtn").click(function () {
+        if (!(checkEmpty($("#lgnId").val(), "请输入用户名") && checkNickNm($("#lgnId").val()))) {
+            return;
+        }
+        if (!(checkEmpty($("#msgNumber").val(), "请输入短信验证码") && checkMsgCode($("#msgNumber").val()))) {
+            return;
+        }
+        
+        var json = $("#dataContent").getJson();
+        $(this).IFSAjax({
+            code: "01_200511",
+            data: json,
+            complete: success,
+            method: "post"
+        });
+    });
+    function success(data) {
+        if (data.head._rd == '0000') {
+            _showMsg(data.head._rm);
+            setTimeout(function () {
+                goTo("safeset.html");
+            }, 1000);
+        } else {
+        	$("#msgNumber").val("");
+            _showMsg(data.head._rm);
+        }
+    }
+    $("span.repeatmessage").click(function () {
+    	var name = $("#lgnId").val();
+    	if(!(checkEmpty(name, "请输入用户名") && checkNickNm(name)) ){
+    		return;
+    	}
+        $("div").IFSAjax({
+        	code: "01_200704",
+            data: {"usrMessage" : name, "usrType" : "03"},
+            async: false,
+            complete: function(data){
+            	if(data.head._rd == 0000){
+                	if(data.body.valid == "true"){
+                		var mobTelStr = {"bsnessTyp": "07"};
+                        $(this).IFSAjax({
+                            code: "01_200307",
+                            data: mobTelStr,
+                            method: "post",
+                            complete: function (data) {
+                                if (data.head._rd == "0000") {
+                                    $("#getMsg").attr("disabled", "disabled");
+                                    controlBtn(setting.countDownIntervalTime);
+                                }
+                                _showMsg(data.head._rm);
+                            }
+                        });
+                	}else{
+                			_showMsg("该用户名已被占用");
+                			return;
+                	}
+                }else{
+                	_showMsg(data.head._rm);
+                	return;
+                }
+            },
+            method: "post"
+        });
+        
+    });
+    function controlBtn(timer) {
+        if (timer == 0) {
+            $("#getMsg").removeAttr("disabled", "disabled").html("验证码");
+            return;
+        }
+        setTimeout(function () {
+            $("#getMsg").html("验证码" + (--timer));
+            controlBtn(timer);
+        }, 1000);
+    }
+    
+</script> -->
+</html>

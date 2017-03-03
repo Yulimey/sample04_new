@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请企业信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='loanapplication_c.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t15">
+		         <div class="menu_font_p black padding_l15" >企业信息</div>
+	        </div>
+			<div class="loaninfo_li_e border_b margin_t15 border_t" style="height:46px;">
+				<div class="float_l width_30">企业名称</div>
+				<div class="float_r width_70">					<input class="width_100 fontright font_14" type="text" id="cmpnNm" ifs_parent="/" placeholder="请输入工商注册名称" maxlength="50" />
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">营业执照</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="如：111020011111111"   maxlength="15"/>
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">银联商户号</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">期望贷款金额</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+				</div>
+			</div>
+			<div class="loaninfo_li_e">
+				<div class="float_l">企业经营地</div>
+                <a href="#"><span style="float:right;padding-right:5px;line-height:45px;color:#666666;">地图</span><div class=" iconfont blue float_r" style="font-size:20px;">&#xe60a;</div></a>
+			</div>
+			<div class="loaninfo_li " style="height: 50px;">
+					<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+							
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px; margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+							
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmDist" name="hmDist" ifs_parent="/">
+							
+					</select>
+
+				</div>
+			<div class="loaninfo_li_e border_b">
+						<input style="padding-left: 0px; width: 100%;font-size: 14px;" class=" font_14" type="text" id="rgAdr" name="rgAdr" ifs_parent="/" placeholder="请输入详细地址"  maxlength="100" />
+					
+			</div>
+
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='loanapplication_c3.html'">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

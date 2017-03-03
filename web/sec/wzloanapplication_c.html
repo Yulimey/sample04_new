@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>民生银行小微之家</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/ios/ratchet.css" rel="stylesheet">
+        <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+        <link href="../css/ios/cmbc.css" rel="stylesheet">
+        <script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+	    <script>
+		 	setPageTitle({title: "步骤4.贷款确认"});
+		   	pageUrl = "loanlist.html";        
+		 	loadJs("../");     
+		 </script>
+	<body>
+		<header class="bar bar-nav">
+        <button onclick="window.location.href='index_b.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span>返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="getdata">
+            <div class="padding_t15">
+		         <div class="menu_font_p black padding_l15" >个人信息</div>
+	        </div>
+			<div>
+				<ul class="table-view margin_t15" >
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">姓名</div>
+						<div class="input_i fontright">
+							<label id="custNm" ifs_parent="/">李瑞</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">身份证号</div>
+						<div class="input_i fontright">
+							<label id="idNo" ifs_parent="/">320333199412013200</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">手机号</div>
+						<div class="input_i fontright">
+							<label id="mobTel" ifs_parent="/">13813173260</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f" style="width: 60%;">申请金额(万元)</div>
+						<div class="input_i fontright" style="width: 40%;">
+							<label id="mobTel" ifs_parent="/">20</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="loaninfo_li_c border_b  border_t margin_b15  font_14" style="height:auto;padding-top:0;">
+				<div class="loaninfo_li_e" style="padding-left:0; padding-right: 0;">
+					<div class="float_l" style="color:#999;">实际居住地</div>
+					<div class="float_r" style="color:#333;">北京 北京 顺义</div>
+				</div>
+				<div class="padding_b10" style="color:#333;">北京市顺义区顺安南路民生银行总部基地</div>
+			</div>
+			<div>
+				<ul class="table-view margin_t15" >
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">婚姻状况</div>
+						<div class="input_i fontright">
+							<label id="custNm" ifs_parent="/">已婚</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">配偶姓名</div>
+						<div class="input_i fontright">
+							<label id="idNo" ifs_parent="/">李乐</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f" style="width: 40%;">配偶证件号码</div>
+						<div class="input_i fontright" style="width: 60%;">
+							<label id="mobTel" ifs_parent="/">410222199006254100</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f" style="width: 60%;">配偶手机号码</div>
+						<div class="input_i fontright" style="width: 40%;">
+							<label id="mobTel" ifs_parent="/">13841152369</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div style="margin:15px 10px 30px;">
+				<button id="subBtn" onclick="window.location.href='wzloanapplication_c1.html'" type="button" class="btn btn-primary btn-block">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

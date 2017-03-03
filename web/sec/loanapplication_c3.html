@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请资产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		pageUrl = "usercenter.html";           
+		loadCss("../");
+		loadJs("../");
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='loanapplication_c2.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t20" style="position:relative;">
+		         <div class="menu_font_p black padding_l15" >资产（车产）信息</div>
+                 <button class="btn btn-link" style="position:absolute;right:0;top:20px;">
+                    跳过此步
+                   <span class="icon icon-right"></span>
+                 </button>
+	        </div>
+			<div class="signed-detail" onclick="goTo('loanapplication_c3c.html')">
+			    	<div class="signed-title border_b">
+			    		一汽大众SUV(京BA660)
+			    	</div>
+			    	<ul class="signed-edu border_bn">
+			    		<li class="overflowh">
+			    			<span class="float_l">所有人</span>
+			    			<span class="float_r red">张三</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">保险到期日</span>
+			    			<span class="float_r">2018-12-29</span>
+			    		</li>
+			    	</ul>
+		    </div>
+		    <div class="signed-detail" onclick="goTo('loanapplication_c3c.html')">
+		    	<div class="signed-title border_b">
+		    		一汽大众SUV(京BA660)
+		    	</div>
+		    	<ul class="signed-edu border_bn">
+		    		<li class="overflowh">
+		    			<span class="float_l">所有人</span>
+		    			<span class="float_r red">张三</span>
+		    		</li>
+		    		<li class="overflowh">
+		    			<span class="float_l">保险到期日</span>
+		    			<span class="float_r">2018-12-29</span>
+		    		</li>
+		    	</ul>
+		    </div>
+		   <ul class="table-view margin_t10 grey_c">
+		        <li class="table-view-cell">
+		            <div  onclick="goTo('loanapplication_c3b.html')" class="navigate-right">
+		                +添加车产信息
+		            </div>
+		        </li>
+		    </ul>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='loanapplication_c3a.html'">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

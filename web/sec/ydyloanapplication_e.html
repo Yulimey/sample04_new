@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款信息确认</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>
+	 	setPageTitle({title: "步骤4.贷款确认"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='ydyEstateList.html'">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤4.贷款信息确认</h1>
+		</header>
+		<div class="content" id="dataContent">
+			<div class="tishi font_12 padding_l15 padding_t10 padding_b10"><span class="iconfont">&#xe6ce;</span> 恭喜您！您申请的云抵押贷款，已产生评估价值！信息如下; 请您确认是否继续线下网点办理该笔贷款。房屋评估价值非最终的贷款审批额度；最终审批额度根据您线下提供收入信息而定。</div>
+			<div>
+				<div class="menu_font_p black padding_l15" ><span class="iconfont blue font_20">&#xe6db;</span> 已产生评估价值的所有房产</div>
+				<div class="signed-detail">
+				    	<div class="signed-title border_b">
+				    		雨花南路9号花好月苑10幢105
+				    	</div>
+				    	<ul class="signed-edu border_bn">
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋城区</span>
+				    			<span class="float_r">江苏省南京市玄武区</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">估值</span>
+				    			<span class="float_r red">300万</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋具体地址</span>
+				    			<span class="float_r">雨花南路9号花好月苑10幢105</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋面积(平)</span>
+				    			<span class="float_r">180</span>
+				    		</li>
+				    	</ul>
+			    </div>
+			    <div class="signed-detail">
+				    	<div class="signed-title border_b">
+				    		雨花南路9号花好月苑10幢105
+				    	</div>
+				    	<ul class="signed-edu border_bn">
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋城区</span>
+				    			<span class="float_r">江苏省南京市玄武区</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">估值</span>
+				    			<span class="float_r red">300万</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋具体地址</span>
+				    			<span class="float_r">雨花南路9号花好月苑10幢105</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋面积(平)</span>
+				    			<span class="float_r">180</span>
+				    		</li>
+				    	</ul>
+			    </div>
+			</div>
+			<div class="margin_t15">
+				<div class="menu_font_p black padding_l15" ><span class="iconfont blue">&#xe6b1;</span> 贷款基本信息</div>
+				<div class="loaninfo_li_a margin_t10">
+					<div class="float_l grey" >估值编号</div>
+					<div class="float_r" id="appNo" ifs_parent="/">S404160809123123</div>
+				</div>
+				<div class="loaninfo_li_b">
+					<div class="float_l grey">申请人</div>
+					<div class="float_r" id="custNm" ifs_parent="/">张三</div>
+				</div>
+				<div class="loaninfo_li_a">
+					<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+					<div class="float_l grey" style="width: 54%;font-size: 12px;">产品名称</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="busNm" ifs_parent="/">云抵押</div>
+					</div>
+					<div style="width: 47%;float: left;">
+					<div class="float_l grey" style="width: 54%;font-size: 12px;">房产估值价格</div>
+					<div class="float_r" style="width: 46%;font-size: 12px;" id="lmtTypName" ifs_parent="/">600万</div>
+					</div>
+				</div>
+				<div class="loaninfo_li_a">
+					<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+						<div class="float_l grey" style="width: 54%;font-size: 12px;">利息率(年)</div>
+						<div class="float_r" style="width: 46%;font-size: 12px;" id="lnRat" ifs_parent="/">10.8%</div>
+					</div>
+					<div style="width: 47%;float: left;">
+						<div class="float_l grey" style="width: 54%; font-size: 12px;">罚息利率(年)</div>
+						<div class="float_r" style="width: 46%;font-size: 12px;" id="puhRat" ifs_parent="/">21.2%</div>
+					</div>	
+				</div>
+				<div class="loaninfo_li_b">
+					<div style="width: 50%; float: left; border-right: 1px solid #ccc; margin-right: 2%;">
+						<div class="float_l grey" style="width: 54%; font-size: 12px;">额度有效期</div>
+						<div class="float_r" style="width: 46%;font-size: 12px;" id="term" ifs_parent="/">10年</div>
+					</div>
+					<div style="width: 47%;float: left;">
+						<div class="float_l grey" style="width: 54%; font-size: 12px;">单笔贷款周期</div>
+						<div class="float_r" style="width: 46%;font-size: 12px;" id="lnOnlyTerm" ifs_parent="/">10年</div>
+					</div>
+				</div>
+				<div class="loaninfo_li_a">
+					<div class="float_l grey font_12">计息方式</div>
+					<div class="float_r font_12" id="payWayName" ifs_parent="/">按日计息，随借随还</div>
+				</div>
+				<div class="loaninfo_li_b" style="height: 60px; line-height: 20px;">
+					<div class="grey font_12">还款方式1</div>
+					<div class=" font_12" id="rpyWayName" ifs_parent="/">每月付息，到期还本；每月等额本息；每月等额本金</div>
+				</div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='ydyloanapplication_f.html'">我要贷款</button>
+			</div>
+			<div style="height:100px;"></div>
+		</div>
+	</body>
+</html>

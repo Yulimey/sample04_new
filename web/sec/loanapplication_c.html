@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>民生银行小微之家</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/ios/ratchet.css" rel="stylesheet">
+        <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+        <link href="../css/ios/cmbc.css" rel="stylesheet">
+        <script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+	    <script>
+		 	setPageTitle({title: "步骤4.贷款确认"});
+		   	pageUrl = "loanlist.html";        
+		 	loadCss("../");         
+		 	loadJs("../");     
+		 </script>
+	</head>
+
+	<body>
+		<header class="bar bar-nav">
+        <button onclick="window.location.href='index_b.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span>返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="getdata">
+            <div class="padding_t15">
+		         <div class="menu_font_p black padding_l15" >个人信息</div>
+	        </div>
+			<div>
+				<ul class="table-view margin_t15" >
+					<li class="table-view-cell">
+						<div class="input_f">姓名</div>
+						<div class="input_i fontright">
+							<label id="custNm" ifs_parent="/"></label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f">身份证号</div>
+						<div class="input_i fontright">
+							<label id="idNo" ifs_parent="/"></label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f">手机号</div>
+						<div class="input_i fontright">
+							<label id="mobTel" ifs_parent="/"></label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f line-height30 p0">教育情况</div>
+							<div>
+							<select style="width: 100%; font-size: 14px;padding-left: 20px;" class="selectdiv selectdivz">
+		                        <option>本科</option>
+							    <option>研究生</option>
+							    <option>博士</option>
+							    <option>大专</option>
+							</select>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f" style="width: 30% !important;">申请金额(万)</div>
+						<div class="input_i float_r red padding_r15" style="width: 60% !important;">
+							<input class="width_100 fontright font_14" placeholder="请输入申请金额" type="text">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="postData">
+				<div class="loaninfo_li_c border_b  border_t margin_b15" style="height:auto;padding-top:0;">
+	                <div class="loaninfo_li_e" style="padding-left:0;">
+						<div class="float_l">请选择您的户籍所在地</div>
+					</div>
+					<div class="overflowh">
+						<select style="width: 100%; font-size: 14px;padding-left: 20px;" class="selectdiv selectdivz" id="reg" ifs_parent="/" name="reg" value="本地" ifs-select-code="XW000001">
+	                        <option>本地</option>
+						    <option>非本地但居住本地三年以上</option>
+						    <option>非本地但居住本地三年以内</option>
+						    <option>外籍人士</option>
+						</select>
+					</div>
+				</div>
+				<div class="loaninfo_li_c border_b  border_t margin_b15" style="height:auto;padding-top:0;">
+					<div class="loaninfo_li_e" style="padding-left:0; padding-right: 0;">
+						<div class="float_l">实际居住地</div>
+						<div class="float_r" onclick="window.location.href='loanapplication_c1.html'"><span class=" iconfont blue" style="font-size:20px;">&#xe60a;</span><span style="padding-right:5px;line-height:45px;color:#666666;">地图</span></div>
+					</div>
+					<div class="loaninfo_li overflowh" style="padding-left:0;padding-right: 0;">
+						<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+	
+						</select>
+	
+						<select style="width: 30%;float: left; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+	
+						</select>
+	
+						<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz margin_b0" id="hmDist" name="hmDist" ifs_parent="/">
+	
+						</select>
+					</div>
+					<div class="loaninfo_li_e p0" style="padding-left:0;padding-right: 0;"><input style="border:none; font-size:14px; width: 100%;" type="text" placeholder="请输入详细地址" ></div>
+				</div>
+                <div class="loaninfo_li_c border_b border_t margin_b15" style="height:auto;padding-top:0;">
+	                <div class="loaninfo_li_e" style="padding-left:0;">
+						<div class="float_l">婚姻情况</div>
+					</div>
+					<div>
+						<select style="width: 100%; font-size: 14px;padding-left: 20px;" class="selectdiv selectdivz" id="reg" ifs_parent="/" name="reg" value="已婚" ifs-select-code="XW000001">
+	                    <option value="未婚">未婚</option>
+	                    <option value="已婚">已婚</option>
+						</select>
+					</div>
+	                <div class="loaninfo_li_e border_b" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_30">配偶姓名</div>
+						<div class="float_r width_70">
+							<input class="width_100 fontright font_14" placeholder="请输入真实姓名" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+						</div>
+					</div>
+	                <div class="loaninfo_li_e border_b" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_30">证件号码</div>
+						<div class="float_r width_70">
+							<input class="width_100 fontright font_14" placeholder="请输入正确的证件号码" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+						</div>
+					</div>
+	                <div class="loaninfo_li_e" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_30">手机号码</div>
+						<div class="float_r width_70">
+							<input class="width_100 fontright font_14" placeholder="请输入正确的手机号码" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+						</div>
+					</div>
+				</div>
+                <div class="loaninfo_li_c border_b border_t margin_b15" style="height:auto;padding-top:0;">
+	                <div class="loaninfo_li_e" style="padding-left:0;">
+						<div class="float_l">联系人关系</div>
+					</div>
+					<div>
+						<select style="width: 100%; font-size: 14px;padding-left: 20px;" class="selectdiv selectdivz" id="reg" ifs_parent="/" name="reg" value="父亲" ifs-select-code="XW000001">
+                        <option value="父亲">父亲</option>
+                        <option value="母亲">母亲</option>
+                        <option value="兄弟">兄弟</option>
+                        <option value="姐妹">姐妹</option>
+						</select>
+					</div>
+	                <div class="loaninfo_li_e border_b" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_40">联系人姓名</div>
+						<div class="float_r width_60">
+							<input class="width_100 fontright font_14" placeholder="请输入真实姓名" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+						</div>
+					</div>
+	                <div class="loaninfo_li_e border_b" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_40">联系人证件号码</div>
+						<div class="float_r width_60">
+							<input class="width_100 fontright font_14" placeholder="请输入正确的证件号码" type="text" id="cupShpId" ifs_parent="/" placeholder="如：111020011111111" maxlength="15">
+						</div>
+					</div>
+	                <div class="loaninfo_li_e" style="padding-left:0;padding-right:0;">
+						<div class="float_l width_40">联系人手机</div>
+						<div class="float_r width_60">
+							<input class="width_100 fontright font_14" placeholder="请输入正确的手机号码" type="text" id="cupShpId" ifs_parent="/" placeholder="如：1350125****" maxlength="15">
+						</div>
+					</div>
+				</div>
+				<div style="margin:15px 10px 30px;">
+					<button id="subBtn" onclick="window.location.href='loanapplication_c2.html'" type="button" class="btn btn-primary btn-block">下一步</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

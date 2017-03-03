@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_手机验证</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	 <link href="css/ios/ratchet.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">
+	<script src="js/cmbcForClient.js?v=<VER>"></script>
+	<script src="js/browser.js?v=<VER>"></script>
+    <script>
+		setPageTitleToNav({title:"手机验证"});
+		pageUrl="login.html";
+		loadCss("");
+		loadJs("");
+	</script>
+	<!-- <script>
+		WangYin.checkPage();
+	</script> --> 
+</head>
+<body>
+
+<header class="bar bar-nav">
+    <h1 class="title">手机验证</h1>
+</header>
+
+<div class="content" id="mobileNumber">
+	<input type="hidden" id="mobTel" ifs_parent="/"/>
+    <div class="content-padded fontcenter ">
+        <h5>点击发送<span class="green">验证码</span>到您注册的手机：</h5>
+    </div>
+    <div class="content-padded fontcenter padding_t20">
+        <h1><label id="encryptMobTel" ifs_parent="/"></label></h1>
+    </div>
+
+    <ul class="table-view margin_20">
+        <li class="table-view-cell">
+            <div class="input_b">验证码</div>
+            <div class="input_d"><input type="text" placeholder="请输入短信验证码" id="msgNumber" ifs_parent="/"></div>
+            <div class="repeatmessage"><button id="getMsg" class="btn  btn-primary btn-outlined">验证码</button></div>
+        </li>
+    </ul>
+
+    <div class="content-padded padding_t20">
+        <button onclick="submitMobVaild()" data-transition="fade" class="btn btn-primary btn-block">提交</button>
+    </div>
+    <br/><br/>
+
+    <div class="content-padded button_registered">
+        <button  onclick="goTo('registered01.html')"
+           class="btn btn-primary btn-block btn-outlined button_registered_size">注册</button>
+    </div>
+
+</div>
+<!-- <script type="text/javascript">
+		
+		$(function(){
+			WangYin.mobileVaildLoad(function(json){
+			   	 $("#mobileNumber").bindData(json.body);
+			});
+		});
+		function submitMobVaild(){
+            var msgNumber  = $("#msgNumber").val();
+            if(!(checkEmpty(msgNumber,"请输入手机动态验证码"))){
+                return;
+            }
+			WangYin.mobileVaildSubmit(msgNumber,$("#mobTel").val());
+		}
+		
+		$("div.repeatmessage").click(function(){
+			var mobTel = $("#mobTel").val();
+			var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "05"};
+			$(this).IFSAjax({
+			    code : "01_200301",
+			    data : mobTelStr,
+			    method : "post",
+			    complete : function(data){
+			    	if(data.head._rd == "0000"){
+			    		$("h5").html('我们已经发送了<span class="green">验证码</span>到您注册的手机:');
+			    		$("#getMsg").attr("disabled","disabled");
+			    		controlBtn(setting.countDownIntervalTime);
+			    	}
+			    	_showMsg(data.head._rm);
+			    }
+			  });
+		});
+		
+		function controlBtn(timer){
+			if(timer == 0){
+				$("h5").html('点击发送<span class="green">验证码</span>到您注册的手机：');
+				$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+				return;
+			}
+			setTimeout(function(){
+				$("#getMsg").html("验证码"+(--timer));
+				controlBtn(timer);
+			},1000);
+		}
+		
+</script> -->
+</body>
+</html>

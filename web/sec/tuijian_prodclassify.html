@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>选择产品</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitleToNav({title:"选择产品"});
+        loadCss("../");
+		loadJs("../");             
+   	</script>
+</head>
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='tuijian_fenxiang.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">选择产品</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+			<div onclick="window.location.href='../yunkuaidai.html'"><img src="../img/banner05.jpg" class="width_100"></div>
+            <div class="padding_t15" style="position:relative;">
+		         <div class="menu_font_p black padding_l15" >请选择您需要的产品</div>
+	        </div>
+	        <!-- 贷款类产品Start-->
+			<div class="index-title-bar margin_t15">
+				贷款类产品
+			</div>
+			<ul class="table-view">
+			  <li class="table-view-cell media active" onclick="window.location.href='../yunkuaidai.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/yunkuaidai_logo.png">
+			      <div class="media-body padding_t5">
+			        云快贷
+			        <p>抵押贷款，实时审批额度，最快3天放款，额度最高<span class="red">300万</span></p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			  <li class="table-view-cell media active" onclick="window.location.href='../nawangledai.html'">
+			    <a href="" class="navigate-right">
+			      <img class="media-object pull-left" src="../img/wangledai_logo.png">
+			      <div class="media-body padding_t5">
+			        网乐贷
+			        <p>信用贷款，额度最高<span class="red">20万</span>，必须材料为营业执照、POS商户编码。</p>
+			        <p>现在申请享受百万大礼：首次成功申请网乐贷回馈<span class="red">50元</span>话费。</p>
+			      </div>
+			    </a>
+			    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+			   <li class="table-view-cell media active" onclick="window.location.href='../nawangledai.html'">
+				    <a href="" class="navigate-right">
+				      <img class="media-object pull-left" src="../img/nashui_logo.png">
+				      <div class="media-body padding_t5">
+				        纳税•网乐贷
+				        <p>信用贷款，额度最高<span class="red">20万</span>，必须材料为营业执照、纳税人识别号。</p>
+				        <p>现在申请享受百万大礼：首次成功申请纳税网乐贷回馈<span class="red">30元</span>话费，首次提用纳税网乐贷再送<span class="red">100元</span>话费。</p>
+				      </div>
+				    </a>
+			    		<span class="iconfont icon-navigate-right">&#xe67b;</span>
+			  </li>
+		    </ul>
+		   <!-- 贷款类产品End-->
+		</div>
+	</body>
+</html>

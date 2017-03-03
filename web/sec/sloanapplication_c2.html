@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请房产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   	<link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		pageUrl = "usercenter.html";           
+		loadCss("../");
+		loadJs("../");
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='sloanapplication_c.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t15 padding_l10 padding_r10" style="position:relative;">
+		         <div class="black" >银行卡信息</div>
+		         <p class="tishi_orange font_12 padding_t10 m0">为了提高审核通过率，建议添加客户本人名下最多3张银行卡，至少1张信用卡；最长用于刷卡消费的银行卡信息，如有多张可填写多个银行卡号，最多填写3个银行卡号</p>
+	        </div>
+			<div class="signed-detail2" onclick="goTo('sloanapplication_c2b.html')">
+			    	<div class="signed-title padding_l15 padding_r15">
+			    		尾号1900&nbsp;<span class="card_leixing">信用卡</span>
+			    		<a class="float_r font_12" href="sloanapplication_c2b.html">编辑</a>
+			    	</div>
+			    	<ul class="signed-edu background_f8 border_bn padding_l15 padding_r15">
+			    		<li class="overflowh">
+			    			<span class="float_l">所属银行</span>
+			    			<span class="float_r red">民生银行</span>
+			    		</li>
+			    		<li class="overflowh">
+			    			<span class="float_l">银行卡号</span>
+			    			<span class="float_r red">6226 2200 2533 1900</span>
+			    		</li>
+			    	</ul>
+		    </div>
+		   
+		    <ul class="table-view margin_t10 grey_c">
+		        <li class="table-view-cell">
+		            <div onclick="window.location.href='sloanapplication_c2a.html'" class="text-center">
+		                +添加银行卡
+		            </div>
+		        </li>
+		    </ul>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='sloanapplication_c3.html'">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

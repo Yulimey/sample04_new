@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_登录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/ios/ratchet.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+    <script>
+        setPageTitleToNav({title:"账号验证"});
+//        pageUrl="login.html";
+        loadCss("");
+        loadJs("");
+    </script>
+    <script src="js/sip.min.js?v=<VER>"></script>
+    <script src="js/password.js?v=<VER>"></script>
+	<!-- <script>
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('index.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">小微之家登录</h1>
+</header>
+<div class="content" id="dataContent">
+    <div class="content-padded padding_t50d50">
+        <div class="iconfont login_icon ">&#xe603;</div>
+    </div>
+    <ul class="table-view content-padded form_borderlr " id="loginForm">
+    	<li class="table-view-cell menu_font_p">
+			您好,请输入民生小微之家账号和密码
+		</li>
+        <li class="table-view-cell ">
+            <span class="iconfont form_icon">&#xe601;</span>
+
+            <div class="input_c">
+                <input type="text" ifs_parent="/" placeholder="请输入手机号/身份证号/用户名" id="lgnId"/>
+            </div>
+            <!--<span class="iconfont icon_yy" onclick="clearContent('lgnId')">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell"  id="forViewIm">
+            <span class="iconfont form_icon">&#xe602;</span>
+
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="lgnPwd">
+                <input type="text" id="SIPBox1" name="SIPBox1"  placeholder="请输登录入密码"  value="" readonly="true" />
+            </div>
+        </li>
+      <!--  <li class="table-view-cell hide" id="viewLi">
+            <span class="iconfont form_icon">&#xe605;</span>
+
+            <div class="input_c"><input type="text" placeholder="右侧验证码" id="viewCode" ifs_parent="/" maxlength="4"></div>
+            <span class="repeatmessage"><img width="50px" height="20px" src="" id="viewsrc"></span>
+        </li>-->
+    </ul>
+    <div class="content-padded padding_t20">
+        <button type="button" class="btn btn-primary btn-block" id="sureBtn">登录</button>
+    </div>
+</div>
+</body>
+<!-- <script>
+    $(document).ready(function(){
+        getCookie();
+        $(this).IFSAjax({
+            code: "01_100111",
+            data: null,
+            complete: isViewCode,
+            method: "post"
+        });
+        genKeyboard();
+    });
+    function addViewCode(){
+        var  htmlStr = '<li class="table-view-cell" id="viewLi">'
+                +'<span class="iconfont form_icon">&#xe605;</span>'
+                +'<div class="input_g"><input type="text" placeholder="右侧验证码" id="viewCode" ifs_parent="/" maxlength="4"></div>'
+                +'<span class="repeatmessage"><img src="" id="viewsrc" ></span>'
+                +'</li>';
+        $("#forViewIm").after(htmlStr);
+    }
+    function isViewCode(data){
+        if(data.head._rd == '0000'){
+            if(parseInt(data.body.flag)){
+                addViewCode();
+                $("#viewsrc").ifsVertifyCode();
+                $('#viewLi').show();
+            }
+        }else{
+            _showMsg(data.head._rm);
+        }
+    }
+    $("#sureBtn").click(
+            function () {
+                var userName = $('#lgnId').val();
+                var password = getLoginEncrypt("SIPBox1");
+                $('#lgnPwd').val(password);
+                var stat = $("#viewLi");
+                if (checkEmpty(userName, "请输入用户名/手机号/身份证号") ) {
+                    if(password == undefined){
+                        return;
+                    }
+                    if(stat[0]){
+                        if(!(checkEmpty2("viewCode","请输入验证码") && checkViewCode($("viewCode").val()))){
+                            return;
+                        }
+                    }
+                    var dataJson = $("#loginForm").getJson();
+                    $(this).IFSAjax({
+                        code: "01_200201",
+                        data: dataJson,
+                        complete: success,
+                        method: "post",
+                        lock:"sureBtn"
+                    });
+                }
+            }
+    );
+    function success(data) {
+        if (data.head._rd == '0000') {
+            goTo('sec/index_b.html');
+        } else {
+            if (data.body != undefined && data.body.errFlg != undefined && data.body.errFlg == 1) {
+                //图片验证码添加
+                if(data.body.leftErrTm != null ){
+                    _showMsg(data.head._rm + "您还有" + data.body.leftErrTm + "次机会！",null);
+                }else{
+                    _showMsg(data.head._rm , null);
+                }
+                var stat = $("#viewLi");
+                if(!stat[0]){
+                    addViewCode();
+                }
+                $("#viewsrc").ifsVertifyCode();
+            }else{
+                if(data.head._rd == "PE93"){
+                    var stat = $("#viewLi");
+                    if(!stat[0]){
+                        addViewCode();
+                    }
+                    $("#viewsrc").ifsVertifyCode();
+                }
+                _showMsg(data.head._rm,null);
+            }
+            clearInput("SIPBox1");
+            $("#viewCode").val("");
+        }
+    }
+
+    $("#loginForm").on('click','#viewsrc',function(){
+        $("#viewsrc").ifsVertifyCode();
+    });
+
+    function genKeyboard(data) {
+        getRandom();
+        initInput2("SIPBox1");
+        var noNeedHideIds = ["CompleteKeyboard",
+            "SIPBox1"
+        ];
+        setNeedHide(noNeedHideIds);
+    }
+    
+     $("#lgnId").focus(function(){
+   		completeKeyboard.hideKeyboard();
+    });
+</script> -->
+</html>

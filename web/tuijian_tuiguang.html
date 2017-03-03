@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>小微之家_推荐</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/ios/ratchet.css" rel="stylesheet">
+		<link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+		<link href="css/ios/cmbc.css" rel="stylesheet">
+		<link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css" />
+		<script src="js/cmbcForClient.js?v=<VER>"></script>
+		<script src="js/browser.js?v=<VER>"></script>
+		<script>
+			loadCss("");
+			loadJs("");
+		</script>
+	</head>
+
+	<body class="tuijian">
+		<div class="tuijian_title" onclick="window.location.href='tuijian_xize.html'">
+			<img src="img/banner08.jpg" width="100%" height="auto" />
+		</div>
+		
+		<div class="tuijian_con">
+			<div class="tuijian_xqing">
+				<h4 class="text-center padding_r5 font_16" >活动介绍</h4>
+				<p>1. 该活动适用于云快贷、网乐贷、纳税网乐贷、网乐贷＋产品；</p>
+				<p>2. 推荐人成功推荐亲友首次申请以上产品，亲友审批通过并完成首次支用，推荐人查询推荐状态为已生效，可获得价值50元京东E卡，多推多送，每月最高奖励2000元！</p>
+				<p>3. 活动期限：即日起至2016年12月15日</p>
+				<div class="text-center icon_xize margin_t10" onclick="window.location.href='tuijian_xize.html'"><img src="img/xize_icon.png" width="15" height="15">活动细则，点击查看 ></div>
+			</div>
+			<div class="tuijian_nologin" style="padding-top: 30px; display: none;">
+				<div class="cry"><img src="img/dealLose1.png" width="50%" height="auto"></div>
+				<p style="padding-top: 10px !important;">实名认证未通过，暂不能进行推荐!</p>
+				<div class="clearfix fenxiang_btn">
+				    <div class="center-block">
+				       <button onclick="goTo('login.html')">返回用户中心</button>
+				    </div>
+			    </div>
+			</div>
+			<div class="tuijian_nologin" style="padding-top: 20px;display: none;">
+				<div class="cry"><img src="img/qidai.png" width="40%" height="auto"></div>
+				<p style="padding-top: 10px !important;">推荐功能即将上线，敬请期待！</p>
+			</div>
+			<div class="tuijian_nologin" style="display: none;">
+				<div class="text-center padding_t30"><span class="iconfont" style="font-size: 40px !important;color: #F96A66 !important;">&#xe6ba;</span></div>
+				<p>您还没有登录哦!<br>登录后方可获取您的专属推荐通道</p>
+				<div class="clearfix fenxiang_btn">
+				    <div class="center-block">
+				       <button onclick="goTo('login.html')">登录</button>
+				    </div>
+			    </div>
+			</div>
+			<div class="fenxiang_way">
+				<div class="padding_t10">
+					<img src="img/tuijian_title_bg.png" width="100%" height="auto" />
+				</div>
+				<dl class="tuijian_pyquan clearfix margin_t10">
+					<dt>
+					    <div class="tuijian_title font_14 margin_b10">1、分享朋友圈或<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;微信转发好友</div>
+				    		<div style="color:#feda5e;height: 45px; line-height: 45px;" class="text-center"><span class="iconfont" style="font-size: 50px;">&#xe6c7;</span></div>
+				      	<div class="fenxiang_way_btn"><button class="text-center redR font_14 margin_t10 " onclick="window.location.href='tuijian_yindao.html'">点此分享</button></div>
+			    	    </dt>
+					<dd>
+						<div class="tuijian_title font_14">2、下载专属二维码<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						<p class="text-center m0"><img src="img/code_fenxiang.jpg" width="65" height="65"></p>
+					    <div class="fenxiang_way_btn"><button class="text-center redR font_14" onclick="window.location.href='tuijian_code.html'">点击放大</button></div>
+					</dd>
+				</dl>
+				<div class="margin_t10">
+					<p class="tuijian_title">3、您可以将推荐码告知好友，请他申请时填写</p>
+					<p class="yaoq_code"><span class="redR">CY0Z6PX</span><span class="float_r">（长按推荐码复制）</span></p>
+				</div>
+				<div class="clearfix fenxiang_btn">
+				    <div class="center-block">
+				       <button onclick="goTo('sec/tuijian_chaxun.html')">我的推荐结果</button>
+				    </div>
+			    </div>
+			</div>
+		</div>
+	</body>
+</html>

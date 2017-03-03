@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>如意宝签约</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+   <link href="css/ios/ios-all.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+    <script>
+        setPageTitle({title: "签约成功"});
+        pageUrl = "loanlist.html";
+        loadCss("../");
+        loadJs("../");
+    </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+    <!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+    <script>
+        //判断从那个入口来
+        var entrance = $.query.get("entrance");
+        //签约
+        function signContract(v){
+            var datas = {l: getUrlParam("l")};
+            $(this).IFSAjax({
+                code: "01_200800",
+                data: JSON.stringify(datas),
+                async : v,
+                complete: callbackExce,
+                method: "post"
+            });
+        }
+        //签约回调
+        function callbackExce(data) {
+            if (data.head._rd == '0000') {
+                var encBusNo = data.body.busNo;
+                //alert(encBusNo);//调用手机银行
+                submitOrderForComm(encodeURIComponent(encBusNo),"weiHome");
+//            alert("手机银行暂未开发完毕,请登录手机银行签约!");
+            } else {
+                errorTip(data);
+            }
+        }
+        $(document).ready(function(){
+        	 if(entrance=="load"){//说明是从手机银行签约联合登录入口来
+	            signContract(false);
+	        }
+        })
+       
+    </script>
+</head>
+
+<body>
+<header class="bar bar-nav">
+    <button class="btn btn-link btn-nav pull-left" onclick="window.location.href='index.html'">
+        <span class="icon icon-left-nav"></span> 首页
+    </button>
+    <h1 class="title">签约如意宝</h1>
+</header>
+
+<div class="content content-height">
+    <div class="content-padded padding_t50d50">
+        <div class="iconfont login_icon green_b ">&#xe671;</div>
+    </div>
+    <div class="aglin_center">
+        <div class="green lead">恭喜您完成如意宝签约！</div>
+        <h5 style="line-height: 24px;">
+            电子账户：6216 9678 5468 2222</br>
+            产品名称：如意宝-民生加银基金</br>
+        </h5>
+    </div>
+
+    <div class="content-padded margin_t20 width_70 " style="margin-left: 15%;">
+        <div  data-transition="fade" class="btn btn-primary btn-outlined btn-block " onclick="window.location.href='ruyibaoChaxun_a.html'">我的如意宝</div>
+    </div>
+    <div class="content-padded">
+        <h5 class="green text-center">温馨提示:</h5>
+        <h6 class=" text-center" style="line-height: 24px;" >您电子账户内的活期余额将于每日15点前自动申购如意宝请将资金转入电子账户</h6>
+    </div>
+</div>
+</body>
+<!-- <script>
+    function goToBank() {
+        WangYin.checkIsLogin();
+    }
+
+    function clientLogin(flag){
+        if(flag=="1"){
+            signContract(true);
+        }else{
+            loginForComm(setting.unionLoanBeforeUrl,setting.unionLoanToUrl+"?l="+getUrlParam("l"));//自动登录并跳转到贷款列表页
+        }
+    }
+</script> -->
+
+</html>

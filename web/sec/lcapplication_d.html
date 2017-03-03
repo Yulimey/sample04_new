@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请社交信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+    <script>
+        setPageTitle({title: "步骤4.贷款确认"});
+        pageUrl = "loanlist.html";
+        loadCss("../");
+        loadJs("../");
+    </script>
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="window.location.href='lcapplication_c.html'" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span> 返回
+    </button>
+    <h1 class="title">步骤4.提交申请</h1>
+</header>
+<div class="content content-heightc" id="dataContent">
+    <div class="padding_t20" style="position:relative;">
+        <div class="menu_font_p black padding_l15" >申请信息</div>
+    </div>
+    <div class="loaninfo_li_e border_b margin_t20 border_t" style="height:46px;">
+        <div class="float_l width_30">贷款到期日：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="cmpnNm" ifs_parent="/" placeholder="2016-12-30" maxlength="12" />
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_40">贷款利率（%）：</div>
+        <div class="float_r width_60">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="10.2%"   maxlength="15"/>
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">支付方式：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="自主支付" maxlength="15">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">还款方式：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="利随本清" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">手机号：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="18612001234" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">贷款卡号：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="6222600020001234" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">贷款帐号：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="6222600020001234" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">贷款卡：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="民生银行顺义新城支行" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">申请金额：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="10000" maxlength="20">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_30">推荐码：</div>
+        <div class="float_r width_70">
+            <input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="" maxlength="15">
+        </div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l width_70 "><input class="padding_l0 font_14" type="text" placeholder="请输入短信验证码"></div>
+        <div class="float_r width_30" style="float:right;">
+            <button class="btn btn-primary btn-outlined">获取验证码</button>
+        </div>
+    </div>
+    <div class="content-padded">
+        <button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='lcapplication_e1.html'">提交申请</button>
+    </div>
+</div>
+</body>
+</html>

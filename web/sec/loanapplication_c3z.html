@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请资产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='usercenter.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t20" style="position:relative;">
+		         <div class="menu_font_p black padding_l15" >资产信息</div>
+                 <button class="btn btn-link" style="position:absolute;right:0;top:20px;">
+                    跳过此步
+                   <span class="icon icon-right"></span>
+                 </button>
+	        </div>
+			<div class="loaninfo_title margin_t20 border_t  border_b">车产信息</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">牌照号</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="cmpnNm" ifs_parent="/" placeholder="请输入车牌号" maxlength="50" />
+				</div>
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">所有人</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入车产所有人"   maxlength="15"/>
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">保险到期日</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入保险到期日" maxlength="15">
+				</div>
+			</div>
+            <div class="loaninfo_title margin_t20 border_t  border_b">房产信息</div>
+			<div class="loaninfo_li_e">
+					<div class="float_l">请选择您的房产地址</div>
+                    <a href="#"><span style="float:right;padding-right:5px;line-height:45px;color:#666666;">地图</span><div class=" iconfont blue float_r" style="font-size:20px;">&#xe60a;</div></a>
+			</div>
+			<div class="loaninfo_li " style="height:50px;">
+					<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+
+					</select>
+
+					<select style="width: 30%;float: left; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmDist" name="hmDist" ifs_parent="/">
+
+					</select>
+			</div>
+			<div class="loaninfo_li_e border_b">
+						<input style="padding-left: 0px; width: 100%;font-size: 14px;" class=" font_14" type="text" id="rgAdr" name="rgAdr" ifs_parent="/" placeholder="请输入详细地址" maxlength="100">
+					
+			</div>
+			<div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">房产面积</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入房产面积" maxlength="15">
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">所有人</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入房产所有人" maxlength="15">
+				</div>
+			</div>
+            <div class="loaninfo_li_e border_b">
+				<div class="float_l width_30">房龄</div>
+				<div class="float_r width_70">
+					<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入房领" maxlength="15">
+				</div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='loanapplication_c4.html'">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

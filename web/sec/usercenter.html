@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_登录</title>
+    	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	 <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>  
+	 	setPageTitle({title: "用户中心"});
+	   	pageUrl = "index_b.html";        
+		 loadCss("../");         
+		 loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->  
+</head>
+<body>
+<header class="bar bar-nav">
+    <button class="btn btn-link btn-nav pull-left" onclick="goTo('index_b.html')">
+        <span class="icon icon-left-nav"></span>
+        首页
+   </button>
+   <h1 class="title">用户中心</h1>
+ </header>
+<div class="content">
+	<div id="dataContent">
+		<div class="login-time">
+			<span >上次登录方式：</span><span class="organage"  id="chnlNoName" ifs_parent="/"></span>
+			<span >登录时间：</span><span class="organage"  id="lgnDt" ifs_parent="/" ></span>
+			<span class="iconfont icon-message" onclick="goTo('messageCenter.html');">&#xe696;<span class="red-dot"></span></span>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<div class="slider">
+				<div class="slide-group ">
+					<div class="slide" onclick="goTo('../licaizhiya.html');">
+						<img src="../img/banner_lczy01.png" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('../ydy.html');">
+						<img src="../img/banner10.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('../yunkuaidai.html');">
+						<img src="../img/banner05.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('../shuakadai.html');">
+						<img src="../img/banner09.jpg" width="100%" height="auto">
+					</div>
+				    <div class="slide" onclick="goTo('../apply.html');">
+						<img src="../img/banner.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('../nawangledai.html');">
+						<img src="../img/banner06.jpg" width="100%" height="auto">
+					</div>
+                    <div class="slide" onclick="goTo('../ruyibao_a.html');">
+						<img src="../img/banner04.jpg" width="100%" height="auto">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="margin_b10 margin_t10">
+	        <div class="menu_font_p black padding_l15">我的贷款</div>
+	    </div>
+	    <div class="credLine border_b margin_b15 ">
+	        <ul>
+	          <li onclick="window.location.href='../apply.html'">
+	             <p class="prodname m0 color_000">网乐贷</p>
+	             <p class="font_16">
+	             	<span class="font_12 organage">当前额度</span><span class="organage "> 20万&nbsp;&nbsp;</span> 
+	             	<span class="font_12 border_l">&nbsp;&nbsp;最高额度</span> <span class="organage">30万&nbsp;&nbsp;</span>
+	             	<span class="border_l font_12">&nbsp;&nbsp;信用授信</span>
+	             </p>
+	          </li> 
+	          <li onclick="window.location.href='../yunkuaidai.html'">
+	             <p class="prodname m0 color_000">云快贷</p>
+	             <p class="font_16">
+	             	<span class="font_12 organage">当前额度</span><span class="organage "> 100万&nbsp;&nbsp;</span> 
+	             	<span class="font_12 border_l">&nbsp;&nbsp;最高额度</span> <span class="organage">300万&nbsp;&nbsp;</span>
+	             	<span class="border_l font_12">&nbsp;&nbsp;住房抵押</span>
+	             </p>
+	          </li> 
+	          <li onclick="window.location.href='../shuakadai.html'">
+	             <p class="prodname m0 color_000">刷卡贷</p>
+	             <p class="font_16">
+	             	<span class="font_12 organage">当前额度</span><span class="organage "> 15万&nbsp;&nbsp;</span> 
+	             	<span class="font_12 border_l">&nbsp;&nbsp;最高额度</span> <span class="organage">20万&nbsp;&nbsp;</span>
+	             	<span class="border_l font_12">&nbsp;&nbsp;信用授信</span>
+	             </p>
+	          </li>
+				<li onclick="window.location.href='../licaizhiya.html'">
+					<p class="prodname m0 color_000">理财质押</p>
+					<p class="font_16">
+						<span class="font_12 organage">当前额度</span><span class="organage "> 15万&nbsp;&nbsp;</span>
+						<span class="font_12 border_l">&nbsp;&nbsp;最高额度</span> <span class="organage">30万&nbsp;&nbsp;</span>
+						<span class="border_l font_12">&nbsp;&nbsp;信用授信</span>
+					</p>
+				</li>
+	        </ul>
+	    </div>
+    </div>
+    <div class="clearfix">
+    		<div class="menu_lie2X_a padding_t30d30 border_t border_b border_r" onclick="seeLoanDetail()">
+	        <div class="iconfont menu_icon blue width_30">&#xe607;</div>
+	        <!-- 用户中心修改20160405，只加了一个onclick进入贷款列表页-->
+		  	<div class="menu_font width_70" onclick="window.location.href='loanlist02.html'">
+		  		<div class="menu_font_t black">我的小微</div>
+		  		<div class="menu_font_px grey">贷款申请进度</div>
+		  		<div class="menu_font_p blue">查看详情</div>
+		  	</div>
+	    </div>
+	    <div class="menu_lie2X_c padding_t30d30 border_t border_b" onclick="seeLoanDetail()">
+	        <div class="iconfont menu_icon blue width_30">&#xe697;</div>
+	        <!-- 用户中心修改20160405，只加了一个onclick进入贷款列表页-->
+		  	<div class="menu_font width_70" onclick="window.location.href='tuijian_tuiguang.html'">
+		  		<div class="menu_font_t black">我的推荐</div>
+		  		<div class="menu_font_px grey">推荐结果详情</div>
+		  		<div class="menu_font_p blue">查看详情</div>
+		  	</div>
+	    </div>
+	    <div class="menu_lie2X_c padding_t30d30 border_b  border_r" onclick="seeLoanDetail()">
+	        <div class="iconfont menu_icon blue width_30">&#xe6db;</div>
+	        <!-- 用户中心修改20160405，只加了一个onclick进入贷款列表页-->
+		  	<div class="menu_font width_70" onclick="window.location.href='ydyestatelist.html'">
+		  		<div class="menu_font_t black">房产评估</div>
+		  		<div class="menu_font_px grey">房产评估详情</div>
+		  		<div class="menu_font_p blue">查看详情</div>
+		  	</div>
+	    </div>
+	    <div class="menu_lie2X_a padding_t30d30 border_b">
+	        <p class="iconfont text-center" style="font-size:50px;">&#xe8b6;</p>
+	        <p class="text-center font_12">敬请期待</p>
+	    </div>
+    </div>
+    <div>
+    		
+    </div>
+    <div class="margin_b10 margin_t10">
+        <div class="menu_font_p black padding_l15">我的账户</div>
+    </div>
+    <div class="menu_lie  border_t bg_border float_l" onclick="userInfo()">
+        <div class="iconfont menu_icon_c blue padding_t15">&#xe646;</div>
+        <div class="float_l padding_l15 padding_t15 black">基本信息</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+    <div class="menu_lie  bg_border float_l" onclick="companyInfo()">
+        <div class="iconfont menu_icon_c padding_t15" style="color: #FF9A58;">&#xe63a;</div>
+        <div class="float_l padding_l15 padding_t15 black">企业信息</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+    <div class="menu_lie bg_border float_l" onclick="safeSet()">
+        <div class="iconfont menu_icon_c padding_t15" style="color:#FC5B3E;font-size: 24px;">&#xe668;</div>
+        <div class="float_l padding_l15 padding_t15 black">资产信息</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+     <div class="menu_lie bg_border float_l" onclick="safeSet()" style="display: none;">
+        <div class="iconfont menu_icon_c padding_t15" style="color:#46DBD5;font-size: 23px;">&#xe667;</div>
+        <div class="float_l padding_l15 padding_t15 black">社交信息</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div> 
+    <div class="menu_lie bg_border float_l" onclick="window.location.href='zloanapplication_a.html'">
+        <div class="iconfont menu_icon_c padding_t15" style="color:#46DBD5;font-size: 23px;">&#xe6ca;</div>
+        <div class="float_l padding_l15 padding_t15 black">征信授权</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+    <div class="menu_lie border_b float_l" onclick="window.location.href='safeset.html'">
+        <div class="iconfont menu_icon_c padding_t15" style="color:#43CE8D;">&#xe642;</div>
+        <div class="float_l padding_l15 padding_t15 black">安全设置</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+    <div class="menu_lie margin_t15 border_t  border_b float_l" onclick="contactus()">
+        <div class="iconfont menu_icon_c padding_t15" style="color:#58A7EC;">&#xe62e;</div>
+        <div class="float_l padding_l15 padding_t15 black">联系客服</div>
+        <div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+            <span class="icon icon-right-nav"></span>
+        </div>
+    </div>
+    <div class="menu_lie margin_t15 border_t  border_b black  float_l" >
+        <div id="loginOut"  type = "button" class="padding_l15 padding_t15 fontcenter">退出登录</div>
+    </div>
+</div>
+</body>
+ <!-- <script>
+        var cardFlag = 0;
+        var countloan = 0;
+		function loginOut() {
+			$(this).IFSAjax({
+				code : "01_200202",
+				data : null,
+				complete : success,
+				method : "post"
+			});
+		}
+		function success(data) {
+			if (data.head._rd == '0000') {
+				goTo("../login.html");
+			}else{
+				_showMsg(data.head._rm);
+			}
+		}
+
+		function seeLoanDetail() {
+			goTo('loanlist.html');
+		}
+		function authApply() {
+			if(!cardFlag){
+				goTo('loanapplication_a.html');
+			}
+		}
+		function userInfo() {
+			goTo("info_a.html");
+		}
+		function companyInfo() {
+			goTo("info_b.html");
+		}
+		function safeSet() {
+			goTo("safeset.html");
+		}
+		function contactus() {
+			goTo("contactus_c.html");
+		}
+		
+		$(document).ready(function(){
+			$(this).IFSAjax({
+				code : "01_200510",
+				data : null,
+				complete : getData,
+				method : "post"
+			});
+		});
+		function getData(data){
+			if(data){
+				if(data.head._rd == "0000"){
+					if(data.body){
+						cardFlag = parseInt(data.body.stt,10);
+						var mobTelFlg = parseInt(data.body.mobTelFlg,10);
+						var idNoFlg = parseInt(data.body.idNoFlg,10);
+						var stt = parseInt(data.body.stt,10);
+						if(!mobTelFlg){
+							$("#mobTelFlg").attr("class","iconfont grey_b");
+						}
+						if(!idNoFlg){
+							$("#idNoFlg").attr("class","iconfont grey_b");
+						}
+						if(!stt){
+							$("#stt").attr("class","iconfont grey_b");
+						}
+						$("#dataContent").bindData(data.body);
+						var vrfyLmt=$("#vrfyLmt").text();
+						$("#vrfyLmt").text(JSRound(vrfyLmt,2,0));
+					}
+				}else{
+					errorTip(data);
+				}
+				
+			}
+		}
+		
+		$("#loancard").click(function(){
+			if(!cardFlag){
+				goTo('loanapplication_a.html');
+			}
+		});
+		
+		$("#countloan").click(function(){
+			if(countloan != 0){
+				goTo('loanlist02.html');
+			}
+		});
+		 $("#loginOut").click(function () {
+		        var cfg ={
+		            "title":"提示",
+		            "msg":"确定退出登录吗?",
+		            "ok_btn":"true",
+		            "ok_text":"确定",
+		            "ok_func":"loginOut()",
+		            "cancle_text":"取消",
+		            "cancle_func":""
+		        };
+		        confirmInfo(cfg);
+   		 });
+		var _$w=$(window).width();
+		initImg();
+		function initImg(){
+			var imgW=640,imgH=260;;
+			$("img").eq(0).css({"width":_$w+"px","height":(_$w/imgW)*imgH+"px"});
+		}
+	</script> -->
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>推荐结果查询</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="../css/ios/cmbc.css" rel="stylesheet">
+   <link href="../css/ios/ios-all.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"绑定银行卡"});
+//       pageUrl="login.html";
+       loadCss("../");
+       loadJs("../");
+   </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('../tuijian_tuiguang.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">推荐结果查询</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <ul class="table-view ">
+        <li class="table-view-cell ">
+            <div class="input_f">起始日期</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="confirmPwd">
+                <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="" readonly/>
+            </div>
+            <span class="iconfont blue line-height30 float_r">&#xe675;</span>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">终止日期</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="confirmPwd">
+                <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="" readonly/>
+            </div>
+            <span class="iconfont blue line-height30 float_r">&#xe675;</span>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+    </ul>
+    <div class=" organage" style="font-size: 14px;padding-left: 15px; padding-right: 15px;text-align:center;">提示：可查最大范围六个月，可查跨度为三个月</div>
+    <div class="content-padded" style="margin-top:20px;">
+        <button  type="button" class="btn btn-primary btn-block" onclick="window.location.href='tuijian_jieguo.html'">查询</button>
+    </div>
+</div>
+</body>
+</html>

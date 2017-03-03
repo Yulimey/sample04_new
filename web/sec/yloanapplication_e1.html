@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>我再考虑考虑</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>
+	 	setPageTitle({title: "我再考虑考虑"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='yloanapplication_e.html'">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">我再考虑考虑</h1>
+		</header>
+		<div class="content position_a z-index_1" id="dataContent">
+			<div class="green font_14 padding_t10 background_ef padding_b10 text-center">客户确认贷款有效期为7天！</div>
+
+				<div class="loaninfo_li_b">
+					<div class="float_l" >1.利息率高</div>
+					<div class="float_r" id=""><input type="checkbox"></div>
+					<div class="borderb_f7 margin_t30"></div>
+				</div>
+				<div class="loaninfo_li_b">
+					<div class="float_l">2.不着急用钱，贷款金额少</div>
+					<div class="float_r" id=""><input type="checkbox"></div>
+					<div class="borderb_f7 margin_t30"></div>
+				</div>
+				<div class="loaninfo_li_b">
+					<div class="float_l" >3.尝试体验，不差钱</div>
+					<div class="float_r" id=""><input type="checkbox"></div>
+					<div class="borderb_f7 margin_t30"></div>
+				</div>
+				<div class="loaninfo_li_b">
+					<div class="float_l">4.其他</div>
+					<div class="float_r" id=""><input type="checkbox"></div>
+				</div>
+
+			<div class="content-padded">
+			<button type="button" id="next" onclick="window.location.href='usercenter.html'" class="btn btn-primary btn-block margin_t20">确认</button>
+		
+			</div>
+		</div>
+	</body>
+<!-- <script>
+
+	var request=new Object();
+	request =GetRequest();
+	var appNo=request["appNo"];
+	$(document).ready(function(){
+		//var appNo = $.query.get('appNo');
+		
+	//	var appNo="1437735587004111112";
+	
+		//var objSer = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200615",
+			data : JSON.stringify(datas),
+			complete : success,
+			method : "post"
+		});
+	});
+	
+	function success(data){
+	
+		if(data.head._rd == '0000'){
+			$("#dataContent").bindData(data.body);
+			var vrfyLmt=$("#vrfyLmt").text();
+			$("#vrfyLmt").text(JSRound(vrfyLmt,2,0));
+			var appAmt=$("#appAmt").text();
+			$("#appAmt").text(JSRound(appAmt,2,0));
+			$("#lnRat").append("%");
+			$("#puhRat").append("%");
+			$("#term").append("月");
+			$("#lnOnlyTerm").append("月");
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	}
+	
+	function confirm(){
+		//var appNumObj = "{\"appNo\" : \""+appNo+"\"}";
+		var datas = {l:getUrlParam("l")};
+		$(this).IFSAjax({
+			code : "01_200606",
+			data : JSON.stringify(datas),
+			complete : confirmSuccess,
+			method : "post",
+			lock:"subBtn"
+		});
+		
+	
+	}
+	
+	function confirmSuccess(data){
+		if(data.head._rd == '0000'){
+			
+			window.location="loanapplication_e.html?l="+getUrlParam("l");
+			//nextLoanApplyStep();
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	
+	}
+	
+	//获取入参
+	function GetRequest(){
+		var url=location.search;
+		var theRequest=new Object();
+		if(url.indexOf("?")!=-1){
+			var str=url.substr(1);
+			var strs=str.split("&");
+			for(var i=0;i<strs.length;i++){
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	
+</script> -->
+</html>

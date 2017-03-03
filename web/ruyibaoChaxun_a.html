@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>我的如意宝</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+   <link href="css/ios/ios-all.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"绑定银行卡"});
+//       pageUrl="login.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('ruyibaoQianyue_b.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">我的如意宝</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <div class="shouYi">
+        <h5 class="margin_t0 white padding_l20">昨日收益(元)</h5>
+        <p class="height200 font_80 text-center white">1.07</p>
+        <h5 class="height41 margin_t0 white padding_l20 backgroundS m0">6216 9200 4377 1900 / 李小亮</h5>
+    </div>
+    <ul class=" overflowh width_100 padding_t20 backgroundWhite border_t">
+        <li class=" width_50 text-center borderFg_r float_l ">
+            <p class=" font_12 midgrey margin0">如意宝余额(元)</p>
+            <div class="red font_24">10000</div>
+        </li>
+        <li class="width_50 text-center float_l ">
+            <p class="font_12 midgrey margin0">累计收益（元）</p>
+            <div class="red font_24">200</div>
+        </li>
+    </ul>
+    <ul class="overflowh height width_100 border_b backgroundWhite padding_t20 padding_b20">
+        <li class=" width_50 text-center borderFg_r float_l ">
+            <p class=" font_12 midgrey margin0">七日年化收益率</p>
+            <div class="red font_24">2.9750%</div>
+        </li>
+        <li class="width_50 text-center float_l ">
+            <p class="font_12 midgrey margin0">每万份收益（元）</p>
+            <div class="red font_24">0.7409</div>
+        </li>
+    </ul>
+    <ul class="content-padded" style="margin-top:20px;">
+        <li class="float_l width_50 padding_r3">
+            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='ruyibaoChaxun_b.html'" id="fastRegSubmit">交易明细</button>
+        </li>
+        <li class="float_l width_50 ">
+            <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='ruyibaoChaxun_d.html'" id="fastRegSubmit">收益明细</button>
+        </li>
+    </ul>
+    <!--<ul class=" overflowh backgroundBlue margin_t20 border_b border_t">
+        <li class="float_l text-center font_20 width_50 borderBlue_r  padding_t15 padding_b15"><a class=" white" href="">转出</a></li>
+        <li class="float_l text-center font_20 width_50  padding_t15 padding_b15"><a class=" white" href="">转入</a></li>
+    </ul>-->
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

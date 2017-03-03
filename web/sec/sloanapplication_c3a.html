@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>资产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		 pageUrl = "usercenter.html";           
+		loadCss("../");             
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='sloanapplication_c3.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">添加车产信息</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+			<div class="prod-card margin_t20">
+				<div class="control-content  active">
+				    <div class="loaninfo_title border_b">车产信息</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_30">牌照号</div>
+						<div class="float_r width_70">							
+							<input class="width_100 fontright font_14"  type="text" id="cmpnNm" ifs_parent="/" placeholder="请输入车牌号" maxlength="50" />
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_30">所有人</div>
+						<div class="float_r width_70">							
+							<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入车产所有人"   maxlength="15"/>
+						</div>
+					</div>
+		            <div class="loaninfo_li_e">
+						<div class="float_l width_30">保险到期日</div>
+						<div class="float_r width_70">
+							<input class="width_100 fontright font_14" type="date" id="txt_date" ifs_parent="/" placeholder="请输入保险到期日" maxlength="15"/>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="save()">保存</button>
+			</div>
+			<div class="content-padded" style="display: none;">
+		        <button id="delFamilyInfo" type="button" class="btn btn-negative btn-block margin_t20 fontcenter">删除</button>
+		    </div>
+		</div>
+	</body>
+</html>

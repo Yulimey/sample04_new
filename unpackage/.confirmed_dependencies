@@ -1,0 +1,202 @@
+{
+  "web/index.html": {
+    "resources": [
+      "web/img/banner04.jpg",
+      "web/fonts/ratchicons.ttf",
+      "web/js/browser.js",
+      "web/img/banner.jpg",
+      "web/css/ios/ratchet.min.css",
+      "web/js/ifs-router.js",
+      "web/img/logo_xiaowei.jpg",
+      "web/js/cmbcForClient.js",
+      "web/img/banner02.jpg",
+      "web/js/encrypt-all.js",
+      "web/js/ifs-all.js",
+      "web/js/context.js",
+      "web/js/ifs-config.js",
+      "web/css/ios/cmbc.css",
+      "web/img/wangledai_logo.png",
+      "web/css/android/andriod-all.css",
+      "web/img/yunkuaidai_logo.png",
+      "web/fonts/iconfont.woff",
+      "web/img/nashui_logo.png",
+      "web/js/jquery-ratchet-all.js",
+      "web/css/ios/ratchet-theme-ios.css",
+      "web/ruyibao_a.html",
+      "web/apply.html"
+    ],
+    "refer": [
+      "web/ruyibao_a.html",
+      "web/apply.html"
+    ]
+  },
+  "web/ruyibao_a.html": {
+    "resources": [
+      "web/img/xuanchuan.jpg",
+      "web/css/keyboard.css",
+      "web/css/ios/ratchet.css",
+      "web/fonts/ratchicons.woff",
+      "web/img/xuanchuan_title.png",
+      "web/index.html",
+      "web/img/msLogo.jpg"
+    ],
+    "refer": [
+      "web/index.html"
+    ]
+  },
+  "web/apply.html": {
+    "resources": [
+      "web/img/wanglejia_02.jpg",
+      "web/img/wanglejia_01.jpg",
+      "web/css/ios/ratchet.css"
+    ],
+    "refer": []
+  },
+  "web/yunkuaidai.html": {
+    "resources": [
+      "web/js/browser.js",
+      "web/img/tuijian.jpg",
+      "web/css/ios/cmbc.css",
+      "web/img/fangch.jpg",
+      "web/css/ios/ratchet.css",
+      "web/fonts/ratchicons.woff",
+      "web/js/cmbcForClient.js",
+      "web/img/yunkuaidai.jpg",
+      "web/css/ios/ratchet-theme-ios.css",
+      "web/img/shiyong.jpg"
+    ],
+    "refer": []
+  },
+  "web/sec/index_b.html": {
+    "resources": [
+      "web/img/banner02.jpg",
+      "web/js/browser.js",
+      "web/img/banner.jpg",
+      "web/css/ios/cmbc.css",
+      "web/css/ios/ratchet.css",
+      "web/fonts/ratchicons.woff",
+      "web/img/logo_xiaowei.jpg",
+      "web/fonts/iconfont.woff",
+      "web/js/cmbcForClient.js",
+      "web/css/ios/ratchet-theme-ios.css"
+    ],
+    "refer": []
+  },
+  "web/najieshao.html": {
+    "resources": [
+      "web/js/browser.js",
+      "web/js/ifs-router.js",
+      "web/fonts/ratchicons.woff",
+      "web/img/logo_xiaowei.jpg",
+      "web/js/cmbcForClient.js",
+      "web/img/h1_bg.jpg",
+      "web/js/encrypt-all.js",
+      "web/js/ifs-all.js",
+      "web/js/context.js",
+      "web/img/najieshao_bg.jpg",
+      "web/js/ifs-config.js",
+      "web/css/ios/cmbc.css",
+      "web/img/li_bg.jpg",
+      "web/css/ios/ratchet.css",
+      "web/css/ios/ratchet-theme-ios.css",
+      "web/js/jquery-ratchet-all.js"
+    ],
+    "refer": []
+  },
+  "web/leshouyin.html": {
+    "resources": [
+      "web/img/leshouyin_btn.jpg",
+      "web/js/browser.js",
+      "web/js/ifs-router.js",
+      "web/js/cmbcForClient.js",
+      "web/js/encrypt-all.js",
+      "web/js/ifs-all.js",
+      "web/img/leshouyin_01.jpg",
+      "web/js/context.js",
+      "web/js/ifs-config.js",
+      "web/css/ios/cmbc.css",
+      "web/css/ios/ratchet.css",
+      "web/css/android/andriod-all.css",
+      "web/css/ios/ratchet-theme-ios.css",
+      "web/js/jquery-ratchet-all.js",
+      "web/sec/loanapplication_a.html"
+    ],
+    "refer": [
+      "web/sec/loanapplication_a.html"
+    ]
+  },
+  "web/sec/loanapplication_a.html": {
+    "resources": [
+      "web/fonts/ratchicons.woff"
+    ],
+    "refer": []
+  },
+  "web/tuijian_tuiguang.html": {
+    "resources": [
+      "web/img/detail_one.png",
+      "web/js/browser.js",
+      "web/css/keyboard.css",
+      "web/img/tuijian_tuiguang_title.jpg",
+      "web/js/ifs-router.js",
+      "web/img/con_code.png",
+      "web/js/cmbcForClient.js",
+      "web/img/con_zhuanfa.png",
+      "web/js/encrypt-all.js",
+      "web/js/ifs-all.js",
+      "web/js/context.js",
+      "web/js/ifs-config.js",
+      "web/img/detail_three.png",
+      "web/css/ios/cmbc.css",
+      "web/img/tuijian_tuiguang_detail.jpg",
+      "web/img/way_nologin.png",
+      "web/css/ios/ratchet.css",
+      "web/img/tuijian_tuiguang_way.jpg",
+      "web/css/android/andriod-all.css",
+      "web/fonts/iconfont.woff",
+      "web/js/jquery-ratchet-all.js",
+      "web/img/detail_two.png",
+      "web/css/ios/ratchet-theme-ios.css"
+    ],
+    "refer": []
+  },
+  "web/sec/sloanapplication_c3.html": {
+    "resources": [
+      "web/fonts/ratchicons.ttf",
+      "web/js/browser.js",
+      "web/js/ifs-router.js",
+      "web/fonts/ratchicons.woff",
+      "web/js/cmbcForClient.js",
+      "web/js/encrypt-all.js",
+      "web/js/context.js",
+      "web/js/ifs-all.js",
+      "web/js/ifs-config.js",
+      "web/css/ios/cmbc.css",
+      "web/css/ios/ratchet.css",
+      "web/css/android/andriod-all.css",
+      "web/css/ios/ratchet-theme-ios.css",
+      "web/js/jquery-ratchet-all.js"
+    ],
+    "refer": []
+  },
+  "web/sec/yloanapplication_f1.html": {
+    "resources": [
+      "web/css/ios/cmbc.css",
+      "web/css/ios/ratchet.css",
+      "web/fonts/ratchicons.woff",
+      "web/sec/yloanapplication_f2.html",
+      "web/fonts/iconfont.woff",
+      "web/css/ios/ratchet-theme-ios.css"
+    ],
+    "refer": [
+      "web/sec/yloanapplication_f2.html"
+    ]
+  },
+  "web/sec/yloanapplication_f2.html": {
+    "resources": [
+      "web/sec/yloanapplication_f1.html"
+    ],
+    "refer": [
+      "web/sec/yloanapplication_f1.html"
+    ]
+  }
+}

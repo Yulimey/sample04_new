@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>小微之家</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/ios/ratchet.min.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">
+	<script src="js/cmbcForClient.js?v=<VER>"></script>
+	<script src="js/browser.js?v=<VER>"></script>
+    <script>
+		setPageTitleToNav({title:"小微之家"});
+        loadCss("");
+		loadJs("");
+    </script>
+</head>
+<body>
+	<header class="bar bar-nav">
+		<button class="btn btn-link btn-nav pull-right">
+			<span class="icon icon-person" onclick="goToLogin()"></span>
+		</button>
+		<img src="img/logo_xiaowei.jpg" width="250px" style="padding-top: 6px;" >
+	</header>
+	<div class="content">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<div class="slider">
+				<div class="slide-group ">
+					<div class="slide" onclick="goTo('tuijian_tuiguang.html');">
+						<img src="img/banner08.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('licaizhiya.html');">
+						<img src="img/banner_lczy01.png" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('drawReward_dao.html');">
+						<img src="img/banner11.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('ydy.html');">
+						<img src="img/banner10.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('yunkuaidai.html');">
+						<img src="img/banner05.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('shuakadai.html');">
+						<img src="img/banner09.jpg" width="100%" height="auto">
+					</div>
+				    
+				    <div class="slide" onclick="goTo('apply.html');">
+						<img src="img/banner.jpg" width="100%" height="auto">
+					</div>
+                    <div class="slide" onclick="goTo('ruyibao_a.html');">
+						<img src="img/banner04.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('nawangledai.html');">
+						<img src="img/banner06.jpg" width="100%" height="auto">
+					</div>
+					<div class="slide" onclick="goTo('about_us.html');">
+						<img src="img/banner02.jpg" width="100%" height="auto">
+					</div>
+
+				</div>
+			</div>
+		</div>
+       <!--index新增预留信息20161209-->
+       <div class="ylxx_background">
+       		<div class="ylxx_content">
+            	<a href="sec/informationset_y.html"><span class="iconfont ylxx-set font_20">&#xe6e0</span>&nbsp;设置预留信息</a>
+           </div>
+       </div>
+		<!--index新增Start20160405-->
+		<div class="index-title-bar">
+			推荐贷款产品
+		</div>
+		<ul class="table-view">
+			<li class="table-view-cell media active" onclick="window.location.href='licaizhiya.html'">
+				<a href="" class="navigate-right">
+					<img class="media-object pull-left" src="img/licaizhiya_logo.png">
+					<div class="media-body padding_t5">
+						理财质押
+						<p>信用贷款，额度最高<span class="red">30万</span>，必须材料为营业执照和银联pos商户编码</p>
+					</div>
+				</a>
+				<span class="iconfont icon-navigate-right">&#xe67b;</span>
+			</li>
+		  <li class="table-view-cell media active" onclick="window.location.href='apply.html'">
+		    <a href="" class="navigate-right">
+		      <img class="media-object pull-left" src="img/wangledai_logo.png">
+		      <div class="media-body padding_t5">
+		        网乐贷
+		        <p>信用贷款，额度最高<span class="red">30万</span>，必须材料为营业执照和银联pos商户编码</p>
+		      </div>
+		    </a>
+		    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+		  </li>
+		  <li class="table-view-cell media active" onclick="window.location.href='nawangledai.html'">
+		    <a href="" class="navigate-right">
+		      <img class="media-object pull-left" src="img/nashui_logo.png">
+		      <div class="media-body padding_t5">
+		        纳税.网乐贷
+		        <p>信用贷款，额度最高<span class="red">30万</span>，必须材料申请人企业纳税识别号</p>
+		      </div>
+		    </a>
+		    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+		  </li>
+		  <li class="table-view-cell media active" onclick="window.location.href='yunkuaidai.html'">
+		    <a href="" class="navigate-right">
+		      <img class="media-object pull-left" src="img/yunkuaidai_logo.png">
+		      <div class="media-body padding_t5">
+		        云快贷
+		        <p>抵押贷款，实时审批额度，最快3天放款，额度最高<span class="red">300万</span></p>
+		      </div>
+		    </a>
+		    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+		  </li>
+		  <li class="table-view-cell media active" onclick="window.location.href='shuakadai.html'">
+		    <a href="" class="navigate-right">
+		      <img class="media-object pull-left" src="img/shuakadai_logo.png">
+		      <div class="media-body padding_t5">
+		        刷卡贷
+		        <p>信用贷款，额度最高<span class="red">20万</span>，极速申请5分钟知晓额度</p>
+		      </div>
+		    </a>
+		    <span class="iconfont icon-navigate-right">&#xe67b;</span>
+		  </li>
+		</ul>
+		<!--index新增End20160405-->
+		
+		<!--推荐豪友更新20160804 start-->
+		<div class="tuijian_block clearfix" onclick="window.location.href='tuijian_tuiguang.html'">
+			<div class="float_l" style="width: 70%;">
+				<p class="font_18" style="color: #282828;margin-bottom: 5px;">推荐壕友，获<span class="red">豪礼</span></p>
+				<p class="m0" style="line-height:1.5;">朋友联络真的不需要打电话、约吃饭。来个实惠的，推荐给他以上极速审批贷款，助他实现梦想！</p>
+			</div>
+			<div class="float_r" style="width: 20%;">
+				<img src="img/hongbao.png" width="100%" height="auto"/>
+			</div>
+		</div>
+		<div class="menu_lie2X_a padding_t30d30  border_b" onclick="goTo('login.html')">
+			<div class="iconfont menu_icon organage width_30">&#xe634;</div>
+			<div class="menu_font width_70 border_r">
+				<div class="menu_font_t black">用户登录</div>
+				<div class="menu_font_px grey">简单 快速 安全</div>
+				<div class="menu_font_p green">马上登录</div>
+			</div>
+		</div>
+		<div class="menu_lie2X_b padding_t30d30  border_b" onclick="nextRegisterStep()">
+			<div class="iconfont menu_icon blue_b width_30">&#xe617;</div>
+			  	<div class="menu_font">
+			  		<div class="menu_font_t black">实名注册</div>
+			  		<div class="menu_font_px grey">3秒注册 后顾无忧</div>
+			  		<div class="menu_font_p blue">马上注册</div>
+			 	</div>
+		</div>
+		<div class="menu_lie margin_t15 border_t border_b float_l" onclick="goLoanlist()">
+			<div class="iconfont menu_icon blue padding_t15">&#xe607;</div>
+	  		<div class="float_l padding_l15 padding_t15 black " >我的小微</div>
+	  		<div class="float_l menu_font_px padding_l15 padding_t15 grey" >贷款申请记录</div>
+	  		<div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+	  			查看详情
+	  		</div>
+		</div>
+		<div class="menu_lie margin_t15 border_t  border_b float_l"  onclick="goTo('contactus.html')">
+	  		<div class="iconfont menu_icon blue padding_t15">&#xe62e;</div>
+	  		<div class="float_l padding_l15 padding_t15 black" >联系客服</div>
+	  		<div class="float_l menu_font_px padding_l15 padding_t15 grey" >有问题找小微</div>
+		  		<div class="float_r padding_l15 padding_t15 menu_font_p grey_b padding_r10">
+		  			查看详情
+		  	</div>
+		</div>
+	</div>
+</body>
+</html>

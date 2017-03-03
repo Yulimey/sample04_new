@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>民生银行小微之家</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/ios/ratchet.css" rel="stylesheet">
+        <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+        <link href="../css/ios/cmbc.css" rel="stylesheet">
+        <script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+	    <script>
+		 	setPageTitle({title: "房产估值"});
+		   	pageUrl = "loanlist.html";        
+		 	loadJs("../");     
+		 </script>
+	</head>
+	<body>
+		<header class="bar bar-nav">
+        <button onclick="window.location.href='index_b.html'" class="btn btn-link btn-nav pull-left">
+			<span class="icon icon-left-nav"></span>返回
+		</button>
+			<h1 class="title">房产估值</h1>
+		</header>
+		<div class="content content-heightc" id="getdata">
+			<div class="content-padded text-center">
+		    		<img src="../img/assess1.png" width="90%" height="auto">
+		    </div>
+            <div>
+		         <div class="menu_font_p black padding_l15" ><span class="iconfont blue">&#xe6da;</span> 个人信息</div>
+	        </div>
+			<div class="margin_t10">
+				<ul class="table-view">
+					<li class="table-view-cell">
+						<div class="input_f">姓名</div>
+						<div class="input_i fontright">
+							<label id="custNm" ifs_parent="/">李丹</label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f">身份证号</div>
+						<div class="input_i fontright">
+							<label id="idNo" ifs_parent="/">130182197909238730</label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f">手机号</div>
+						<div class="input_i fontright">
+							<label id="mobTel" ifs_parent="/">15934029485</label>
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f" style="width: 30% !important;"><span class="red">*</span>营业执照</div>
+						<div class="input_i float_r red padding_r15" style="width: 60% !important;">
+							<input class="width_100 fontright" placeholder="请输入营业执照号" type="text">
+						</div>
+					</li>
+					<li class="table-view-cell">
+						<div class="input_f" style="width: 30% !important;"><span class="red">*</span>推荐码</div>
+						<div class="input_i float_r red padding_r15" style="width: 60% !important;">
+							<input class="width_100 fontright" placeholder="请输入推荐码" type="text">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div>
+			    <div class="menu_font_p black padding_l15" ><span class="iconfont blue font_20">&#xe6db;</span> 房产信息</div>
+			    <div class="signed-detail2" onclick="goTo('ydyloanapplication_a2.html')">
+				    	<div class="signed-title padding_l15">
+				    		雨花南路9号花好月苑10幢105
+				    		<a class="float_r padding_r15 font_12" href="ydyloanapplication_a1.html">编辑</a>
+				    	</div>
+				    	<ul class="signed-edu background_f8 border_bn padding_l15 padding_r15">
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋城区</span>
+				    			<span class="float_r">江苏省南京市玄武区</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋具体地址</span>
+				    			<span class="float_r">雨花南路9号花好月苑10幢105</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房屋面积(平)</span>
+				    			<span class="float_r">119</span>
+				    		</li>
+				    	</ul>
+			    </div>
+			    <ul class="table-view margin_t10 grey_c">
+			        <li class="table-view-cell">
+			            <div class="font_12 text-center" onclick="window.location.href='ydyloanapplication_a2.html'" class="text-center">
+			                <span class="iconfont blue">&#xe688;</span> 添加房产信息
+			            </div>
+			        </li>
+			    </ul>
+				<div class="content-padded margin_20">
+					<button id="subBtn" type="button" class="btn btn-primary btn-block" onclick="window.location.href='ydyloanapplication_b.html'">提交信息</button>
+				</div>
+			</div>
+			<div style="height:100px"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>民生小微之家</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   <link href="css/ios/ratchet.css" rel="stylesheet">
+    <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+	<script src="js/browser.js?v=<VER>"></script>
+    <script>
+		setPageTitle({title:"乐收银"});
+        pageUrl="index.html";
+        loadCss("");
+		loadJs("");
+    </script>
+    
+</head>
+
+<body class="leshouyin">
+<!-- <header class="bar bar-nav"> -->
+   <!-- <button onclick="window.location.href='index.html'" class="btn btn-link btn-nav pull-left"> -->
+   <!--     <span class="icon icon-left-nav"></span> 返回 -->
+   <!-- </button> -->
+   <!-- <h1 class="title">网乐贷</h1> -->
+<!-- </header> -->
+<div class="content" >
+    <div >
+        <img src="img/leshouyin_01.jpg"  style="display: block;" width="100%" height="auto">
+        <div onclick="window.location.href='sec/loanapplication_a.html'"><img src="img/leshouyin_btn.jpg"  style="display: block;" width="100%" height="auto"></div>
+    </div>
+</div>
+<!-- <script>
+	var _$w=$(window).width();
+	initImg();
+	initButton();
+	function initImg(){
+		var imgW=800,imgH=1214;;
+		$("img").eq(0).css({"width":_$w+"px","height":(_$w/imgW)*imgH+"px"});
+	}
+	
+	function initButton(){
+		var btW=800,btH=186;
+		$("img").eq(1).css({"width":_$w+"px","height":(_$w/btW)*btH+"px"});
+	}
+	function goToLogin(){
+            $(this).IFSAjax({
+                code : "01_201000",//session检查
+                data: null,
+                method : "post",
+                complete:function(result){
+                	if(result.head!=undefined){
+						_RANDOM_TOKEN=result.head? result.head._token:"";
+					};
+                    if(result.head._rd=="0000"){
+                    	 var datas = {busBrd:"01",clsTyp:"01"};
+                    	 //判断是否在白名单
+				     	 $(this).IFSAjax({
+									code : "01_200619",//白名单检查
+									data: datas,
+									complete : whiteList,
+									method : "post"
+								});
+                    }else{
+                        goTo("login.html");
+                    }
+                }
+            });
+        }
+        
+         function whiteList(data){
+	     	if(data.head._rd == '0000'){
+				 	iLoanCheck();
+			}else{
+				if(data.head._rm instanceof Array){
+		    		_showTimeMsg(data.head._rm[0].msg,null);
+		    	}else{
+		    		_showTimeMsg(data.head._rm,null);
+		    	}
+			}
+	     }
+        
+        function iLoanCheck(url){
+         //业务操作前，判断是否登录
+         $(this).IFSAjax({
+					code : "01_200602",//若担保检查
+					data: null,
+					complete : success,
+					method : "post"
+				});
+     }
+ //added by fanxu begin    
+	function success(data){
+		if(data.head._rd == '0000'){
+			AuthCheck();
+		}else{
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+ 
+	function AuthCheck(){
+		 $(this).IFSAjax({
+				code : "01_200603",//认证权限检查
+				data: null,
+				complete : jump,
+				method : "post"
+			});
+	}
+	
+	function jump(data){
+		if(data.head._rd == '0000'){
+			if("1"==data.body.athSt){
+				goTo("sec/loanapplication_b2.html");//1-已授权
+			}else if("0"==data.body.athSt){
+				$(this).IFSAjax({
+					code : "01_200618",//检查次数
+					data: null,
+					complete : checkNum,
+					method : "post"
+				});
+				//goTo("loanlist.html");//0-未授权
+			}else{
+				goTo("sec/loanapplication_a.html");//null-新用户
+			}
+		}else{
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+	
+	
+	function checkNum(data){
+		if(data.head._rd == '0000'){
+			goTo("sec/loanapplication_a.html");//3次以内都会跳转到认证银行卡页面
+		}else {
+			if(data.head._rm instanceof Array){
+	    		_showMsg(data.head._rm[0].msg,null);
+	    	}else{
+	    		_showMsg(data.head._rm,null);
+	    	}
+		}
+	}
+	var _showMsgTimeStr = '<div class="error fontcenter" id="showMsg"> </div>';
+	function _showTimeMsg(msg,func){
+		if(document.getElementById("showMsg") != null){
+			$('#showMsg').remove();
+		}
+		$('body').append(_showMsgTimeStr);
+		$('#showMsg').text(msg);
+		setTimeout(function(){
+				$("#showMsg").fadeToggle("slow",null);
+				if(document.getElementById("showMsg") != null){
+					$('#showMsg').remove();
+				}
+			},3000);
+	}
+</script> -->
+</body>
+</html>

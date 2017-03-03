@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款信息确认</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+	 <script>
+	 	setPageTitle({title: "步骤4.贷款确认"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+<body>
+		<header class="bar bar-nav">
+			<button class="btn btn-link btn-nav pull-left" onclick="window.location.href='ydyEstateList.html'">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤4.贷款信息确认</h1>
+		</header>
+		<div class="content" id="dataContent">
+			<div class="tishi font_12 padding_l15 padding_t10 padding_b10"><span class="iconfont">&#xe6cd;</span> 非常抱歉！您提供的房产信息，目前不能评估出价值，请您选择支行网点，进行线下评估！</div>
+			<div>
+				<div class="menu_font_p black padding_l15" ><span class="iconfont blue font_20">&#xe6db;</span> 已产提交评估的房产信息</div>
+				<div class="signed-detail">
+				    	<div class="signed-title border_b">
+				    		估值编号：R0000001111111111111
+				    	</div>
+				    	<ul class="signed-edu border_bn">
+				    		<li class="overflowh">
+				    			<span class="float_l">申请人</span>
+				    			<span class="float_r">张小雨</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房产1</span>
+				    			<span class="float_r">雨花南路9号花好月苑10幢105</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房产2</span>
+				    			<span class="float_r">雨花南路9号花好月苑6幢406</span>
+				    		</li>
+				    		<li class="overflowh">
+				    			<span class="float_l">房产3</span>
+				    			<span class="float_r">雨花南路9号花好月苑27幢508</span>
+				    		</li>
+				    	</ul>
+			    </div>
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='ydyloanapplication_f.html'">选择网点</button>
+			</div>
+			<div style="height:100px;"></div>
+		</div>
+	</body>
+</html>

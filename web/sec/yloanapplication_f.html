@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>选择网点</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   	<link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+    <script src="sec/js/sip.min.js?v=<VER>"></script>
+    <script src="sec/js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+	<script>
+	 	setPageTitle({title: "步骤5.选择网点"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="window.location.href='yloanapplication_e.html'" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">步骤5.选择网点</h1>
+</header>
+<div class="content backgroundWhite">
+	<div class="green font_14 padding_t15 background_ef padding_b10 padding_lr4">抵押贷款产品，需要您前往民生银行网点办理后续抵押手续。因此需要您选择距离您比较近的民生银行网点。</div>
+	<div class="border_t">
+		<div class=" font_16 line-height30 padding_l10 color_000 margin_t10 padding_r10">北京中关村支行
+			<span class="float_r marginJuzhong" style="color:#eee;"><input type="radio" name="radio1"/> </span>
+		</div>
+		<div class="font_12 padding_l10 margin_10b"><img src="../img/xz_map.jpg" width="15px" class="margin_r5">北京市海淀区知春路113号<span class="margin_l20">010-62610277</span></div>
+	</div>
+	<div class="border_t">
+		<div class=" font_16 line-height30 padding_l10 color_000 margin_t10 padding_r10">北京中关村支行
+			<span class="float_r marginJuzhong" style="color:#eee;"><input type="radio" name="radio1"/> </span>
+		</div>
+		<div class="font_12 padding_l10 margin_10b"><img src="../img/xz_map.jpg" width="15px" class="margin_r5">北京市海淀区知春路113号<span class="margin_l20">010-62610277</span></div>
+	</div>
+	<div class="border_t border_b">
+		<div class=" font_16 line-height30 padding_l10 color_000 margin_t10 padding_r10">北京中关村支行
+			<span class="float_r marginJuzhong" style="color:#eee;"><input type="radio" name="radio1"/> </span>
+		</div>
+		<div class="font_12 padding_l10 margin_10b"><img src="../img/xz_map.jpg" width="15px" class="margin_r5">北京市海淀区知春路113号<span class="margin_l20">010-62610277</span></div>
+	</div>
+	
+	
+	<div class="content-padded" style="margin-top:20px;">
+        <button  type="button" class="btn btn-primary btn-block" onclick="window.location.href='yloanapplication_f1.html'">确认</button>
+    </div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

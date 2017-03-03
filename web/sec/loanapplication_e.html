@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>民生银行小微之家</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">-->
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+    <script src="../js/browser.js?v=<VER>"></script>
+   <script>  
+   			setPageTitle({title: "贷款申请确认"});
+	   		pageUrl = "loanlist.html";        
+   			loadCss("../");             
+   			
+   	</script>
+</head>
+<body>
+<header class="bar bar-nav">
+ <h1 class="title">贷款申请确认</h1>
+</header>
+<div class="content content-height">
+    <div class="content-padded padding_t50d50">
+        <div class="iconfont login_icon green_b ">&#xe606;</div>
+    </div>
+    <div class="aglin_center" style="margin-left:20px;margin-right:20px;">
+        <span class="green" id="prompt">您已确认信息，请您稍等！！</span>
+    </div>
+    <div class="content-padded margin_t20 width_70 " style="margin-left: 15%;">
+        <button onclick="loanList()" type="button" class="btn btn-primary btn-outlined btn-block ">进入我的小微</button>
+    </div>
+</div>
+</body>
+<script>
+    function loanList(){
+        goTo('loanlist.html');
+    }
+    $(document).ready(function(){
+			var objSer = {l:getUrlParam("l")};
+			$(this).IFSAjax({
+				code : "01_200616",
+				data : JSON.stringify(objSer),
+				complete : success,
+				method : "post"
+			});
+	});
+    
+    function success(data){
+		if(data.head._rd == '0000'){
+			var s ='<span class="blue">您申请的贷款已确认！</span>';
+								
+			if ("no"== data.body.yesOrNo) {
+				s+=data.body.msg;
+			}else{
+				s+=data.body.msg;
+			}
+			$("#prompt").html(s);
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	}
+</script>
+</html>

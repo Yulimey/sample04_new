@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>民生银行小微之家</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet"> 
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script>
+	 	setPageTitle({title: "预留信息"});
+	   	pageUrl = "";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+</head>
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='safeset.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span>返回
+			</button>
+			<h1 class="title">预留信息设置</h1>
+		</header>
+		<div class="content " id="dataContent">
+			<ul class="table-view" id="dataul">
+				<li class="table-view-cell">
+					<span class="input_b"  style="font-size: 14px; width: 22%;">原预留信息</span>
+					<div class="input_c" style=" width: 70%;">
+						<input style=" width: 100%; font-size: 14px;" type="text" placeholder="请输入原预留信息" id="crdNo" ifs_parent=                          "/" maxlength="23" />
+						<input type="hidden" id="bkNm" ifs_parent="/" readonly />
+						<input type="hidden" id="bkNo" ifs_parent="/" />
+					</div>
+					<span class="iconfont icon_yy">&#xe604;</span>
+				</li>
+				<li class="table-view-cell">
+					<span class="input_b" style="font-size: 14px; width: 22%;">新预留信息</span>
+					<div class="input_c" id="bkNm" ifs_parent="/" style="font-size: 14px;">
+					</div> 
+					<span class="iconfont icon_yy">&#xe604;</span>
+				</li>
+			</ul>
+			<h5 style="text-align: center;" class="organage" id="bkMsg"> </h5>
+			<div class="content-padded">
+				<h5 class="green" style="line-height: 18px;">
+				预留信息竟在小微之家登陆成功后显示，若显示的相关信息与您预留信息不符，说明您进入的不是民生小微之家服务功能，请立即退出并及时联系95568，以免造成资金损失，预留信息支持3-10个数字，字母，符号或中文字符。
+
+				</h5>
+				</h6>
+			</div>
+			<div class="content-padded padding_t20">
+				<button type="button" id="money" class="btn btn-primary btn-block" onclick="window.location.href='sloanapplication_b.html'">保存</button>
+			</div>
+			<div class="text-center font_14 margin_t15"><a href="index_b.html">返回首页</a></div>
+		</div>
+	</body>
+
+</html>

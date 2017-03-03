@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_注册</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   <link href="css/ios/ratchet.css" rel="stylesheet">
+  <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+  <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+    <script>
+        setPageTitle({title: "用户注册"});
+        pageUrl = "index.html";
+        loadCss("");
+        loadJs("");
+    </script>
+</head>
+<body>
+<header class="bar bar-nav">
+    <div onclick="goTo('index.html')" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </div>
+    <h1 class="title">注册账号</h1>
+
+</header>
+<div class="content content-heightb">
+    <div class="content-padded padding_t30d30">
+        <div class="iconfont blue" style="font-size: 60px; text-align: center;">&#xe617;</div>
+    </div>
+
+    <ul class="table-view content-padded form_borderlr " id="dataContent">
+        <li class="table-view-cell ">
+            <div class="input_b" style="width:25%;font-size:13px;">姓名</div>
+            <div class="input_c"><input type="text" id="custNm" style="font-size:13px;" ifs_parent="/" maxlength="20" placeholder="请输入真实姓名"/>
+            </div>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_b" style="width:25%;font-size:13px;">身份证</div>
+            <div class="input_c"><input type="text" id="idNo" style="font-size:13px;" ifs_parent="/" maxlength="18" placeholder="请输入18位身份证号"></div>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_b" style="width:25%;font-size:13px;">手机</div>
+            <div class="input_c"><input type="text" id="mobTel" style="font-size:13px;" ifs_parent="/" maxlength="11" placeholder="如：13500000000">
+            </div>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_b" style="width:25%;font-size:13px;">图片验证码</div>
+            <div class="input_d" style="width:40%"><input type="text" id="viewCode" ifs_parent="/" maxlength="4" style="font-size:13px;" placeholder="请输入图片验证码"
+                                        class="padding_l10"></div>
+            <span class="repeatmessage"><img id="picCode" src=""/></span>
+        </li>
+        <li class="table-view-cell">
+            <div class="input_b" style="width:25%;font-size:13px;" >短信验证码</div>
+            <div class="input_d" style="width:40%"><input type="text" id="msgNumber" style="font-size:13px;" ifs_parent="/" maxlength="6" placeholder="请输入短信验证码"
+                                        class="padding_l10"/></div>
+            <span class="repeatmessage"><button id="reqCode" class="btn  btn-primary btn-outlined">验证码<span
+                    id="repeatMessage"></span></button></span>
+        </li>
+    </ul>
+    <h5 style="text-align: center;" class="organage" id="bkMsg"> </h5>
+    <div class="content-padded padding_t20">
+        <button id="goNext" type="button" class="btn btn-primary btn-block">下一步</button>
+    </div>
+
+</div>
+</body>
+<!-- <script type="text/javascript">
+	var mobTelStat = false;
+    $(document).ready(function () {
+        getCookie();
+        $("#picCode").ifsVertifyCode();//加载图片验证码
+    });
+    var _countDownIntervalTime = setting.countDownIntervalTime;
+    var interValObj;
+    function countDown() {
+        _countDownIntervalTime = _countDownIntervalTime - 1;
+        if (_countDownIntervalTime > 0) {
+            $("#repeatMessage").text(_countDownIntervalTime);
+            $("#reqCode").attr("disabled", "disabled");
+        } else {
+            window.clearInterval(interValObj);
+            $("#repeatMessage").text("");
+            $("#reqCode").removeAttr("disabled");
+            _countDownIntervalTime = setting.countDownIntervalTime;
+        }
+    }
+    //请求短信验证码
+    $("#reqCode").click(function () {
+        var mobTel = $("#mobTel").val();
+        if (checkEmpty(mobTel,"请输入手机号码") && checkPhone(mobTel)) {
+        	$("div").IFSAjax({
+	            code: "01_200703",
+	            data: {"usrMessage" : mobTel, "usrType" : "01"},
+	            async:false,
+	            complete: function(data){
+	            	if(data.head._rd == 0000){
+	            		if(data.body.valid == "true"){
+	            			    var mobTelObj = {"mobTel": mobTel, "bsnessTyp": "01"};
+					            var mobTelStr = JSON.stringify(mobTelObj);
+					            $(this).IFSAjax({
+					                code: "01_200301",
+					                data: mobTelStr,
+					                method: "post",
+					                complete: function (data) {
+					                    if (data.head._rd == "0000") {
+					                        $('#reqCode').ifsWaitingButton(90);
+					                        _showMsg(data.head._rm, null);
+					                        if(data.body.cueMessage!=null){
+					                         	$("#bkMsg").text(data.body.cueMessage);
+					                        }
+					                    } else {
+					                        errorTip(data);
+					                        $("#bkMsg").text('');
+					                    }
+					                }
+					            });
+	            		}else{
+	            			
+	                		_showMsg("该手机号已被注册");
+	                	}
+	            	}else{
+	            		//_showMsg(data.head.rm);
+	            	}
+	            },
+	            method: "post"
+	        });
+           
+        }
+    });
+    
+    $("#mobTel").on('change',function(){
+		resetWaitingButton($("#reqCode"));
+		$("#bkMsg").text('');
+	});
+    
+    //提交数据
+    $("#goNext").click(function () {
+        var jsonData = $("#dataContent").getJsonData();
+        if (!(checkEmpty(jsonData.custNm, "请输入真实姓名") && checkUserName(jsonData.custNm))) {
+            return;
+        }
+        if (!(checkEmpty(jsonData.idNo, "请输入身份证号") && checkIdcard(jsonData.idNo))) {
+            return;
+        }
+        if (!(checkEmpty(jsonData.mobTel, "请输入手机号码") && checkPhone(jsonData.mobTel))) {
+            return;
+        }
+        if (!(checkEmpty(jsonData.viewCode, "请输入图片验证码") && checkViewCode(jsonData.viewCode))) {
+            return;
+        }
+        if (!(checkEmpty(jsonData.msgNumber, "请输入短信验证码") && checkMsgCode(jsonData.msgNumber))) {
+            return;
+        }
+        $(this).IFSAjax({
+            code: "01_200101",
+            data: JSON.stringify(jsonData),
+            complete: success,
+            method: "post",
+            lock:"goNext"
+        });
+    });
+    function success(data) {
+        if (data.head._rd == "0000") {
+            var jsonObj = {};
+            jsonObj["custNm"] = data.body.custNm;
+            jsonObj["idNo"] = data.body.idNo;
+            jsonObj["mobTel"] = data.body.mobTel;
+            nextRegisterStep(data.body.custNm,data.body.idNo,data.body.mobTel);
+            //window.location = "registered_xb.html?data=" + JSON.stringify(jsonObj);
+        } else {
+            errorTip(data);
+            $("#picCode").ifsVertifyCode();//加载图片验证码
+            $("#viewCode").val("");
+            $("#msgNumber").val("");
+        }
+    }
+    $("#picCode").click(function () {
+        $("#picCode").ifsVertifyCode();
+    });
+    
+    $(".input_c").on("keyup","#idNo",function(){
+    	var el = $(this);
+    	if($.trim(el.val()).length == 18 && checkIdcard(el.val())){
+    	$("div").IFSAjax({
+            code: "01_200703",
+            data: {"usrMessage" : el.val(), "usrType" : "02"},
+            complete: function(data){
+            	if(data.head._rd == 0000){
+            		if(data.body.valid == "true"){
+            		}else{
+                		_showMsg("该身份证已被注册");
+            		}
+            	}else{
+            		_showMsg(data.head.rm);
+            	}
+            },
+            method: "post"
+        });
+    	}
+    });
+    
+    $(".input_c").on("keyup","#mobTel",function(){
+    	var el = $(this);
+    	if($.trim(el.val()).length == 11 && checkPhone(el.val())){
+    	$("div").IFSAjax({
+            code: "01_200703",
+            data: {"usrMessage" : el.val(), "usrType" : "01"},
+            async:false,
+            complete: function(data){
+            	if(data.head._rd == 0000){
+            		if(data.body.valid == "true"){
+            			//mobTelStat = true;
+            		}else{
+            			//mobTelStat = false;
+                		_showMsg("该手机号已被注册");
+                	}
+            	}else{
+            		//_showMsg(data.head.rm);
+            	}
+            },
+            method: "post"
+        });
+    	}
+    });
+</script> -->
+</html>

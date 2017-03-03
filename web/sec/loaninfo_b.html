@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>民生银行小微之家</title>
+    		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/ios/ratchet.css" rel="stylesheet">
+        <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+        <link href="../css/ios/cmbc.css" rel="stylesheet">
+		<script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+		<script>    
+				setPageTitle({title: "步骤5.贷款签约"});
+	   			pageUrl = "loanlist.html";      
+				loadCss("../");         
+				loadJs("../");     
+		</script>
+		<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+	</head>
+	<body>
+		<header class="bar bar-nav">
+			<a onclick="window.location.href='loanlist.html'" data-transition="fade" class="btn btn-link btn-nav pull-left" onclick="goTo('loanlist.html')">
+				<span class="icon icon-left-nav"></span>
+			</a>
+			<h1 class="title">步骤5.贷款签约</h1>
+
+		</header>
+		<div class="content content-heightb" id="signContract">
+			<h5 class="margin_t20 padding_l10 black">选择签约卡</h5>	
+			<div class="loaninfo_li_c margin_t20 border_t border_b" style="height: 90px;">
+				<div >
+					<select id="crdIdInstCd" style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz">
+						<option>6226 2209 1002 1900</option>
+						<option>6226 2209 1002 1900</option>
+						<option>6226 2209 1002 1900</option>
+					</select>
+				</div>
+				<p class="padding_b10 organage">民生银行</p>
+			</div>
+			<h5 class="margin_t20 padding_l10 black">每月还款日期</h5>	
+			<div class="loaninfo_li_c margin_t20 border_t border_b" style="height: 60px;">
+				<div >
+					<select id="crdIdInstCd" style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+			</div>
+			<div class="content-padded fontcenter " >
+				<div id="signSure" data-transition="fade"  class="btn btn-primary btn-block margin_t20 fontcenter" onclick="goTo('sloanapplication_f.html')">确认签约卡</div>
+			</div>
+			<div style="height:100px;"></div>
+		</div>
+	</body>
+
+	<!-- <script >
+	$(document).ready(function(){
+			var request=new Object();
+			request =GetRequest();
+			var appNo=request["appNo"];
+			
+			//var appNo="1437735587004111112";
+			$("#appNo").val(appNo);
+			// var objSer = "{\"appNo\" :\""+appNo+"\"}";
+			var objSer = {l:getUrlParam("l")};
+			$(this).IFSAjax({
+				code : "01_200616",
+				data : JSON.stringify(objSer),
+				complete : success,
+				method : "post"
+			});
+			$("[ifs-select-code]").ifsSelect();
+			$("#rltnTyp").on('change',function(){
+					getUserInfo($(this).val());
+			});
+			getUserInfo($("#rltnTyp").attr("ifs-select-value"));
+			
+		});
+	function success(data){
+		if(data.head._rd == '0000'){
+			var s ='<span class="blue">您申请的贷款已确认！</span>';
+								
+			if ("no"== data.body.yesOrNo) {
+				s+=data.body.msg;
+			}else{
+				s+=data.body.msg;
+			}
+			$("#prompt").html(s);
+			if(data.body.applCrdInfList!=undefined && data.body.applCrdInfList.length>0){
+				var crdHtml="";
+				var crds= data.body.applCrdInfList;
+				$.each(crds, function(k, v) {
+					crdHtml += "<option value='"+v.crdId+"_"+v.instCd+"'>" + v.crdId + "</option>";
+				});
+				$("#crdIdInstCd").append(crdHtml);
+				var crdVal=$("#crdIdInstCd").val();
+				var crdvals=crdVal.split("_");
+				$("#crdId").val(crdvals[0]);
+				$("#instCd").val(crdvals[1]);
+			}
+			//else{
+				//$("#prompt").html("<h5>请您至附近网点线下<span class=\"green\">开户</span>！</h5>")
+			//	$("#prompt").html("<h5>"+data.body.msg+"</h5>")
+			//}
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		}
+	}
+	//获取入参
+	function GetRequest(){
+		var url=location.search;
+		var theRequest=new Object();
+		if(url.indexOf("?")!=-1){
+			var str=url.substr(1);
+			var strs=str.split("&");
+			for(var i=0;i<strs.length;i++){
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	
+	function submitLoan(){
+		 if(!(checkEmpty2("rltnNm") && checkUserName($("#rltnNm").val()))){
+			 return;
+		 }
+		 if(!checkEmpty2("rltnTyp","请选择亲戚关系")){
+			 return;
+		 }
+		 if(!(checkEmpty2("mobTel")&&checkPhone($("#mobTel").val()))){
+			 return;
+		 }
+		 if(!(checkEmpty2("idNo")&&checkIdcard($("#idNo").val()))){
+			 return;
+		 }
+		 if (!(checkEmpty($("#crdId").val(), "请选择银行卡号!"))) {
+            return;
+         }
+		 if (!(checkEmpty($("#rpyDay").val(), "请选择还款日期!"))) {
+	            return;
+	     }
+        var param=$('#signContract').getJsonData();
+        if($("#id").val()==undefined || $("#id").val()==""){
+        	param.list=[];
+        	param.list.push($('#signContract').getJsonData());
+        }
+        param.l=getUrlParam("l");
+        var signs=JSON.stringify(param);
+		//var signs=$("#signContract").getJson();
+		$(this).IFSAjax({
+				code : "01_200601",
+				data : signs,
+				complete : signsSuccess,
+				method : "post",
+				lock:"signSure"
+			});
+		
+	}
+	
+	function signsSuccess(data){
+		if(data.head._rd == '0000'){
+			if(data.body.appStt=="09"){
+				//window.location="loanapplication_f.html";
+				nextLoanApplyStep();
+			}else{
+				window.location="loanapplication_g.html?msg="+encodeURI(encodeURI(data.head._rm));
+			}
+		}else{
+			if(data.head._rm instanceof Array){
+            	_showMsg(data.head._rm[0].msg,null);
+            }else{
+            	_showMsg(data.head._rm,null);
+            }
+		
+		}
+	
+	}
+	
+	$("#crdIdInstCd").change(function(){
+		var  crdVal=$("#crdIdInstCd").val();
+		var crdvals=crdVal.split("_");
+		$("#crdId").val(crdvals[0]);
+		$("#instCd").val(crdvals[1]);
+	});
+	function getrpyDay(){
+			$("<div>").IFSAjax({
+	            code: setting.DATADIC,
+	            data: {
+	                dataTypeNo: 'XW000062'
+	            },
+	            async: false,
+	            complete: function(data){
+	            	if ("0000" == data.head._rd) {
+	            		var s="";
+	                    data = data.body.dicMap;
+	                    var list=data.XW000062;
+	                    for(var i=0;i<list.length;i++){
+	                    	var k=i+1;
+	                    	var obj=list[i];
+	                    	var name=obj.dataName.substring(0,obj.dataName.length-1);
+	                    	if(k%10==1){
+	                    		s+='<div class="row"><ul class="pagination">';
+	                    		s+='<li><a href="javascript:void(0)" a_value="'+obj.dataNo+'" >'+name+'</a></li>';
+	                    	}
+	                    	else if(k%10==0){
+	                    		s+='<li><a href="javascript:void(0)" a_value="'+obj.dataNo+'" >'+name+'</a></li>';
+	                    		s+='</ul></div>';
+	                    	}else{
+	                    		s+='<li><a href="javascript:void(0)" a_value="'+obj.dataNo+'" >'+name+'</a></li>';
+	                    	}
+	                    }
+	                    if(list.length%10!=0)s+='</ul></div>';
+	                    $("#rpyDay_down").html(s);
+	                }
+	            }
+	        });
+		};
+		
+		function getUserInfo(val){
+			if(val==""){
+				$("#rltnNm").prop("disabled",true);
+				$("#idNo").prop("disabled",true);
+				$("#mobTel").prop("disabled",true);
+				$("#rltnNm").val("");
+				$("#idNo").val("");
+				$("#mobTel").val("");
+				$("#id").val("");
+			}else{
+					$(this).IFSAjax({
+					code : "01_200901",
+					data : {rltnTyp:val},
+					token : true,
+					complete : function(data) {
+						if ("0000" == data.head._rd) {
+							if(data.body.list){
+								$("#signContract").bindData(data.body.list[0]);
+								$("#rltnNm").prop("disabled",true);
+								$("#idNo").prop("disabled",true);
+								$("#mobTel").prop("disabled",true);
+							}else{
+								$("#rltnNm").prop("disabled",false);
+								$("#idNo").prop("disabled",false);
+								$("#mobTel").prop("disabled",false);
+								$("#rltnNm").val("");
+								$("#idNo").val("");
+								$("#mobTel").val("");
+								$("#id").val("");
+							}
+							
+						}
+					}
+				});
+			
+			}
+			
+		}
+		
+		$("#idNo").keyup(function(){
+			var idNoVal=$(this).val();
+			if(idNoVal.length==18 && checkIdcard(idNoVal)){
+				$(this).IFSAjax({
+		            code: "01_200705",
+		            data: {"idNo" : idNoVal},
+		            complete: function(data){
+		            	if(data.head._rd == 0000){
+		            		
+		            	}else{
+		            		_showMsg("证件号不能与直系亲属或本人相同",null);
+		            		$("#idNo").val('');
+		            	}
+		            },
+		            method: "post"
+		        });
+			}
+						
+		});
+	</script> -->
+
+</html>

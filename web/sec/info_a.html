@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家_基本信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+	<script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+   <script> 
+   			setPageTitle({title: "基本信息"});
+	   		 pageUrl = "usercenter.html";
+   			loadJs("../");
+   	</script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='usercenter.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">基本信息</h1>
+		</header>
+		<div class="content" id="dataContent">
+			<div class="segmented-control height_30 margin_t20 content-padded">
+				<a class="control-item active" href=""  id="userinfo">个人信息</a>
+				<a class="control-item " href="" id="needactive">直系亲属</a>
+				<a class="control-item " href="" id="countre">关联账号</a>
+			</div>
+			<div class="card margin_t20">
+				<span id="div1" class="control-content active ">
+   	<div class="loaninfo_li_e border_b">
+        <div class="float_l">姓名</div>
+        <div class="float_r" id="idcustNm">
+				<div  id="custNm" ifs_parent="/"></div>
+		</div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l">证件类型</div>
+        <div class="float_r" id="idTypName" ifs_parent="/">身份证</div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l">证件号码</div>
+        <div class="float_r" id="idNo" ifs_parent="/"></div>
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l">性别</div>
+        <div class="float_r" id="gnrdName"  ></div>
+        <input type="hidden" id="gnrd" ifs_parent="/" >
+    </div>
+    <div class="loaninfo_li_e border_b">
+        <div class="float_l">年龄</div>
+        <div class="float_r" id="age" ifs_parent="/"></div>
+    </div>
+    <div class="loaninfo_li_e border_b"style="height: 60px;">
+        <div  >
+            <select style="width: 100%; margin-top: 10px; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz" id="reg" ifs_parent="/" ifs-select-code="XW000001">		
+			</select>
+			</div>
+	</div>
+		<div class="loaninfo_li_e">
+					<div class="float_l">请选择您的实际居住地区</div>
+		</div>
+				<div class="loaninfo_li " style="height: 50px; padding-top: 10px;">
+					<select style="width: 30%;float: left;font-size: 14px; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmPrvnc" name="hmPrvnc" ifs_parent="/" ifs-select-cascade='#hmCt'>
+							
+					</select>
+
+					<select style="width: 30%;float: left; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmCt" name="hmCt" ifs-select-cascade='#hmDist' ifs_parent="/">
+							
+					</select>
+
+					<select style="width: 30%;float: left;font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;" class="selectdiv selectdivz" id="hmDist" name="hmDist" ifs_parent="/">
+							
+					</select>
+					
+					
+
+				</div>
+				<div class="loaninfo_li_e border_b">
+						<input style="padding-left: 0px; width: 100%;font-size: 14px;" class=" font_14" type="text" id="hmAdr" name="hmAdr" ifs_parent="/" placeholder="请输入详细地址" maxlength="100" />
+					
+				</div>
+		<div class="loaninfo_li_e border_b">
+			<div class="float_l width_30" >从业年限</div>
+			<div class="float_r width_70" >
+				<input class="width_100 fontright font_14" type="text"  id="oprtnPrd" name="oprtnPrd" ifs_parent="/" placeholder="1~99"   maxlength="2"  >
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b" style="height: 60px; ">
+			<div >
+				<select  style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz"  id="mrgStt" ifs_parent="/" ifs-select-code="IP000017">
+					
+				</select>
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b" style="height: 60px; ">
+			<div >
+				<select style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz"  id="chldnStt" ifs_parent="/" ifs-select-code="XW000002">
+					
+				</select>
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b" style="height: 60px; ">
+			<div >
+				<select style="width: 100%; font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz"  id="hsStt" ifs_parent="/" class="fontright "  ifs-select-code="IP000018">
+					
+				</select>
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b" style="height: 60px; ">
+			
+			<div >
+				<select style="width: 100%;  font-size: 14px;padding-left: 20px;"  class="selectdiv selectdivz"  id="edDg" ifs_parent="/" ifs-select-code="IP000028">
+					
+				</select>
+			</div>
+		</div>
+		<div class="loaninfo_li_e border_b">
+			<div class="float_l width_30">住宅电话</div>
+			<div class="float_r width_70 ">
+				<input class="width_100 fontright font_14"  type="text" id="hmAdrTel" name="hmAdrTel" ifs_parent="/" placeholder="区号-电话" maxlength="13">
+			</div>
+		</div>
+		<div class="content-padded">
+			<button onclick="saveUserInfo()" type="button" class="btn btn-primary btn-block margin_t20 fontcenter">保存</button>
+		</div>
+		<div   style="height:250px;"></div>
+   	</span>
+	<span id="div2" class="control-content ">
+		<ul class="table-view">
+		  <li class="table-view-cell loaninfo_li_d">
+		    <div onclick="goTo('info_c_add.html')" class="navigate-right">
+		      	添加新的联系人
+		    </div>
+		  </li>
+		</ul>
+   	</span>
+				<span id="div3" class="control-content ">
+   		<div class="loaninfo_li_c border_b">
+			<div class="float_l width_30">QQ账号</div>
+			<div class="float_r width_70">
+				<input class="width_100 fontright"  type="text" id="qq" ifs_parent="/" placeholder="请输入QQ号码"  maxlength="13">
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b">
+			<div class="float_l width_30">微信账号</div>
+			<div class="float_r width_70">
+				<input class="width_100 fontright"  type="text" id="wechat" ifs_parent="/" placeholder="请输入微信帐号" maxlength="20">
+			</div>
+		</div>
+		<div class="loaninfo_li_c border_b">
+			<div class="float_l width_30">邮箱账号</div>
+			<div class="float_r width_70">
+				<input class="width_100 fontright"  type="text" id="email" ifs_parent="/" placeholder="请输入邮箱" maxlength="40">
+			</div>
+		</div>
+		<div class="content-padded">
+		 <button onclick="saveRelation()" type="button" class="btn btn-primary btn-block margin_t20 fontcenter">保存</button>
+   		</div>
+   	</span>
+			</div>
+		</div>
+
+	</body>
+
+<!-- <script>
+	$(function() {
+		$("[ifs-select-code]").ifsSelect();
+		$("#hmPrvnc").initCitySelect();
+		setTimeout(function(){
+			$(this).IFSAjax({
+				code : "01_200504",
+				data : "",
+				complete : success,
+				method : "post"
+			});
+		},200);
+		var url = document.referrer;
+		if(url.indexOf('info_c') >= 0){
+			$("#countre").attr("class","control-item");
+			$("#userinfo").attr("class","control-item");
+			$("#needactive").attr("class","control-item active");
+			$(".card span").attr("class","control-content");
+			$("#div2").attr("class","control-content active");
+		}
+		$(".segmented-control>a").click(function(){
+					var index=$(this).index();
+					$(".segmented-control>a").removeClass('active');
+					$(this).addClass('active');
+					$(".card>span").removeClass('active');
+					$(".card>span").eq(index).addClass('active');
+					initPageHeight();
+		});
+	});
+	function saveUserInfo() {
+		var custNm = $("#custNm").val();
+		if(!custNm){
+			custNm = $("#custNm").text();
+		}
+		if(!(checkEmpty(custNm,"请输入姓名") && checkUserName(custNm))){
+			return;
+		}
+		if($.trim($("#hmAdr").val())!=""){
+			if(!checkHmAdr($("#hmAdr").val())){
+				return;
+			}
+		}
+		if($.trim($("#oprtnPrd").val())!=""){
+			if(!checkoprtnPrd($("#oprtnPrd").val())){
+				return;
+			}
+		}
+		if($.trim($("#hmAdrTel").val())!=""){
+			if(!checkPhoneNum($("#hmAdrTel").val())){
+				return;
+			}
+		}
+		var json = $("#div1").getJson();
+		$(this).IFSAjax({
+			code : "01_200505",
+			data : json,
+			complete : getresult,
+			method : "post"
+		});
+	}
+	function success(data) {
+		if (data) {
+			if (data.head._rd == '0000') {
+				$("#dataContent").bindData(data.body);
+				if(data.body.idNoFlg == "0"){
+					$("#idcustNm").html('<input style="padding:0; margin-top:5px;text-align:right;font-size:15px; margin-bottom:0px;" type="text" id="custNm" value="'+ data.body.custNm + '" name="custNm" ifs_parent="/" maxlength="10" class="float_r ">');
+				}
+				var infoData = data.body.list;
+				var addStr = "";
+				if (infoData) {
+					for (var i = 0; i < infoData.length; i++) {
+						var info = infoData[i];
+						if(info){
+							var id =JSON.stringify({id:info.id});
+						var urlStr = "'info_c.html?id="+encodeURIComponent(id)+"'";
+						addStr += '<li class="table-view-cell loaninfo_li_d">'
+								+ '<div onclick="goTo(' + urlStr + ')" class="navigate-right">'
+								+ info.rltnNm
+								+ '</div>'
+								+ '</li>';
+						}
+					}
+					$("ul.table-view li").before(addStr);
+				}
+				var idCard = $("#idNo").text();
+				var sexValue = sexEscapeByIDCard(idCard);
+				var sex = "";
+				if (sexValue == "1") {
+					var sex = "男";
+				} else if (sexValue == "2") {
+					var sex = "女";
+				} else if (sexValue == "x") {
+					var sex = "未知";
+				}
+				$("#gnrdName").text(sex);
+				$("#gnrd").val(sexValue);
+			}else{
+				errorTip(data);
+			}
+		}
+	}
+	
+	/*保存QQ号码和微信号码
+	*
+	*/
+	function saveRelation(){
+		var qq = $("#qq").val();
+		var wechat = $("#wechat").val();
+		var email = $("#email").val();
+		if (checkqq(qq) && checkwechat(wechat) && checkEmail(email)) {
+				var jsondata = $("#div3").getJson();
+				$(this).IFSAjax({
+					code : "01_200518",
+					data : jsondata,
+					complete : null,
+					method : "post",
+					show : "alert"
+				});
+		}
+	}
+	
+	function getresult(data) {
+		if (data) {
+			if(data.head._rd == 0){
+				_showMsg("处理成功",null);
+			}else{
+				_showMsg("处理失败",null);
+			}
+		}
+	}
+</script> -->
+
+</html>

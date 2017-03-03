@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>房产估值</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="../css/ios/cmbc.css" rel="stylesheet"> 
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script>
+	 	setPageTitle({title: "房产估值"});
+	   	pageUrl = "loanlist.html";        
+	 	loadCss("../");         
+	 	loadJs("../");     
+	 </script>
+</head>
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='ydyloanapplication_a.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span>返回
+			</button>
+			<h1 class="title">房产估值</h1>
+		</header>
+		<div class="content">
+			<div class="content-padded text-center">
+		    		<img src="../img/assess2.png" width="90%" height="auto">
+		    </div>
+			<div class="clearfix font_12 line-height40" >
+				<a href="ydyloanapplication_d.html" class="float_r">
+					跳过认证<span class="iconfont">&#xe6bf;</span>
+				</a>
+			</div>
+			<ul class="table-view">
+				<li class="table-view-cell">
+					<span class="input_b"  style="font-size: 14px;">卡号</span>
+					<div class="input_c" style=" width: 80%;">
+						<input style=" width: 100%; font-size: 14px;" type="text" placeholder="请输入银行卡号" id="crdNo" ifs_parent=                          "/" maxlength="23" />
+						<input type="hidden" id="bkNm" ifs_parent="/" readonly />
+						<input type="hidden" id="bkNo" ifs_parent="/" />
+					</div>
+					<span class="iconfont icon_yy">&#xe604;</span>
+				</li>
+				<li class="table-view-cell">
+					<span class="input_b" style="font-size: 14px;">银行</span>
+					<div class="input_c" id="bkNm" ifs_parent="/" style="font-size: 14px;">
+					</div> 
+					<span class="iconfont icon_yy">&#xe604;</span>
+				</li>
+			</ul>
+			<h5 style="text-align: center;" class="organage" id="bkMsg"> </h5>
+			<div class="content-padded">
+				<h5 class="green" style="line-height: 18px;">
+				点击认证后，小微之家将一笔小额资金转入您的银行卡中，该笔资金用授权认证，请您及时查收。
+				</h5>
+				<h6 class="organage">
+					目前仅对企业注册所在地在上海、太原、石家庄和泉州地区的用户开放申请
+				</h6>
+			</div>
+			<div class="content-padded">
+				<button type="button" id="money" class="btn btn-primary btn-block" onclick="window.location.href='ydyloanapplication_c.html'">认证</button>
+			</div>
+			<div class="font_14 line-height40 text-center" >
+				<a href="ydyloanapplication_a.html">上一步</a>
+			</div>
+			<div class="content-padded ">
+				<p>授权认证主要完成您身份的核实，避免您的身份被盗用，如下信息请注意：</p>
+			</div>
+			<ul class="padding_l10 padding_r10">
+				<li><p>当您点击“认证”后，小微之家将一笔小额资金转入您上述提供的银行卡内，请您查收。</p></li>
+				<li><p>为了您的账户安全，小微之家每年最多提供<span class="organage">3</span>次认证机会，授权动作在每次转账成功后的<span class="organage">7</span>天内有效，超过有效时间后，您需要重新发起贷款申请。</p></li>
+			</ul>
+		</div>
+	</body>
+</html>

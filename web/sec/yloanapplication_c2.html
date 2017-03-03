@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请房产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   	<link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		pageUrl = "usercenter.html";           
+		loadCss("../");
+		loadJs("");
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='yloanapplication_c.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t20" style="position:relative;">
+		         <div class="black padding_l15" >选择已有房产</div>
+	        </div>
+			<div class="signed-detail2" onclick="goTo('yloanapplication_c3e.html.html')">
+		    	<div class="signed-title padding_l15">
+		    		<input type="checkbox" name="fang1" class="margin_r10">
+		    		雨花南路9号花好月苑10幢105
+		    		<a class="float_r padding_r15 font_12" href="yloanapplication_c2b.html">编辑</a>
+		    	</div>
+		    	<ul class="signed-edu background_f8 border_bn padding_l15 padding_r15">
+		    		<li class="overflowh">
+		    			<span class="float_l">房屋城区</span>
+		    			<span class="float_r">江苏省南京市玄武区</span>
+		    		</li>
+		    		<li class="overflowh">
+		    			<span class="float_l">房屋具体地址</span>
+		    			<span class="float_r">雨花南路9号花好月苑10幢105</span>
+		    		</li>
+		    		<li class="overflowh">
+		    			<span class="float_l">房屋面积</span>
+		    			<span class="float_r">119</span>
+		    		</li>
+		    		<li class="overflowh">
+		    			<span class="float_l">是否共有</span>
+		    			<span class="float_r red">是</span>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <ul class="table-view margin_t10 grey_c">
+		        <li class="table-view-cell">
+		            <div onclick="window.location.href='yloanapplication_c2a.html'" class="text-center">
+		                +添加房产信息
+		            </div>
+		        </li>
+		    </ul>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='yloanapplication_c3.html'">下一步</button>
+			</div>
+		</div>
+	</body>
+</html>

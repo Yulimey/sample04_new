@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>小微之家快速注册</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css"/>
+     <link href="css/ios/ratchet.css" rel="stylesheet">
+   <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+   <link href="css/ios/cmbc.css" rel="stylesheet">
+    <script src="js/cmbcForClient.js?v=<VER>"></script>
+    <script src="js/browser.js?v=<VER>"></script>
+   <script>
+       setPageTitleToNav({title:"快速注册"});
+//       pageUrl="login.html";
+       loadCss("");
+       loadJs("");
+   </script>
+    <script src="js/sip.min.js?v=<VER>"></script>
+    <script src="js/password.js?v=<VER>"></script>
+	<!-- <script type="text/javascript">
+		WangYin.checkPage();
+	</script> -->
+</head>
+<body>
+<header class="bar bar-nav">
+    <button onclick="goTo('index.html')" data-transition="fade" class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        返回
+    </button>
+    <h1 class="title">小微之家快速注册</h1>
+</header>
+<div class="content"  id="fastRegister">
+    <div class="content-padded" style="height: 100px;line-height: 100px;">
+        <div class="iconfont login_icon ">&#xe617;</div>
+    </div>
+    <ul class="table-view ">
+        <li class="table-view-cell ">
+            <div class="input_f">姓名</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="custNm" ifs_parent="/"></div>
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">身份证</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="idNo" ifs_parent="/"></div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">手机</div>
+            <div class="input_c menu_font_p " style="padding-left: 13px" id="mobTel" ifs_parent="/"></div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">登录密码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="lgnPwd">
+                <input type="text" id="SIPBox1" name="SIPBox1" maxlength="20" placeholder="请输入登录密码" readonly="true"/>
+            <!--<span class="iconfont icon_yy">&#xe604;</span>-->
+            </div>
+        </li>
+        <li class="table-view-cell ">
+            <div class="input_f">确认密码</div>
+            <div class="input_c">
+                <input type="hidden" ifs_parent="/" id="confirmPwd">
+                <input type="text" id="SIPBox2" name="SIPBox2" maxlength="20" placeholder="请输入确认密码" readonly="true"/>
+            </div>
+           <!-- <span class="iconfont icon_yy">&#xe604;</span>-->
+        </li>
+        <li class="table-view-cell">
+            <div class="input_f">验证码</div>
+            <div class="input_d"><input type="text" placeholder="请输入短信验证码" id="msgNumber" ifs_parent="/" maxlength="6"></div>
+            <div class="repeatmessage"><button id="getMsg" class="btn  btn-primary btn-outlined">验证码</button></div>
+        </li>
+    </ul>
+    <div class="content-padded" style="margin-top:20px;margin-bottom:20px;padding-bottom: 20px;">
+        <input class="float_l " type=checkbox id="servicesPto">
+
+        <div class="float_l menu_font_px" style="margin-top: -5px; margin-left: 5px;">我已阅读并同意<a href="#myModalexample " class="green">《民生小微之家用户服务协议》</a>
+        </div>
+
+    </div>
+    <div class="content-padded" style="margin-top:20px;">
+        <button  type="button" class="btn btn-primary btn-block" onclick="fastRegSubmit();" id="fastRegSubmit">确认</button>
+    </div>
+</div>
+<div id="myModalexample" class="modal">
+
+  <div class="content " >
+    <header class="bar bar-nav">
+      <a class="btn btn-link btn-nav pull-left" href="#myModalexample">
+        <span class="icon icon-close">
+        </span>
+      </a>
+      <h1 class="title">
+        《民生小微之家用户服务协议》
+      </h1>
+    </header>
+    <div class="margint_60 padding_l15 padding_r10" style=" height:500px;overflow:auto;overflow-x:hidden;  ">
+      <p style="text-indent: 2em;">
+
+        “民生小微之家”（下称“小微之家”）是中国民生银行股份有限公司（下称“民生银行”）项下的，服务于广大中小企业主用户的开放式互联网线上综合金融服务平台。小微之家提供小微企业融资和理财的产品、服务及工具等一系列小微金融服务（下称“服务”）；该平台提供服务包括但不限于民生银行提供的金融服务、第三方通过小微之家提供的网络在线服务等。民生银行根据《民生小微之家用户服务协议》（下称“本协议”）为中小企业用户提供上述服务，请用户仔细阅读并遵守该协议。
+      </p>
+      <p >
+        一、接受条款
+      </p>
+      <p style="text-indent: 2em;">
+        1.用户以任何方式进入民生小微之家平台或网站完成注册，或以其他民生银行允许的方式使用服务即表示用户已充分阅读、理解并同意接受本协议的条款和条件(以下合称“条款”)。
+      </p>
+      <p style="text-indent: 2em;">
+
+        2.民生银行有权根据业务需要酌情修订条款，并以网站公告的形式进行更新，不再单独通知予用户。经修订的条款一经在民生银行网站或小微之家网站网站公布，即产生效力。如用户不同意相关修订请用户立即停止使用服务。如用户继续使用服务，则视为用户已完全接受经修订的条款。当用户与民生银行因为小微之家所提供的服务发生争议时，争议解决应以最新的条款为准。
+      </p>
+      <p >
+        二、注册
+      </p>
+      <p style="text-indent: 2em;">
+        1. 服务使用对象
+        <br />
+		<p style="text-indent: 2em;">
+        民生小微之家是面向中国境内中小企业主（自然人）、法人或其他组织提供的，包括但不限于金融服务的，开放式互联网综合金融服务平台。用户确认，在用户完成注册程序或以其民生银行允许的方式实际使用服务时，用户应当是具备完全民事权利能力和与所从事的民事行为相适应的民事行为能力的法人或其他组织。若用户不具备前述主体资格，请勿使用服务，否则用户应承担因此而导致的一切后果，且民生银行有权注销（永久冻结）用户的账户，并向用户索偿。
+      	</p>
+      <p style="text-indent: 2em;">
+        2. 注册账户
+      </p>
+      <p style="text-indent: 2em;">
+        2.1
+        用户充分了解并同意，如用户系在小微之家网站完成的注册程序，只要用户注册成功，用户即可以手机号、身份证或单独设置用户名作为平台登录用户名使用。用户登录网站后，可以直接使用民生银行提供和第三方提供的相关金融服务，以及后续可能提供的其他服务。
+      </p>
+      <p style="text-indent: 2em;">
+        2.2
+        用户应当按照法律法规要求，按民生小微之家相应页面的提示准确提供并及时更新用户及企业的资料，以使之真实、完整和准确。如有合理理由怀疑用户提供的资料错误、不实、过时或不完整的，小微之家及民生银行有权直接做出删除相应资料的处理，直至中止、终止对用户提供部分或全部金融服务，小微之家及民生银行对此不承担任何责任，用户将承担因此产生的任何直接或间接损失及不利后果。
+      </p>
+      <p >
+        三、账户安全
+      </p>
+      <p style="text-indent: 2em;">
+
+
+        用户须自行负责对在小微之家注册使用的信息，包括但不限于用户名、姓名、手机号码、证件号码和密码保密，且须对该用户名、手机号、证件号码和密码下发生的所有活动（包括但不限于信息披露、授权认证、网上点击同意或网上签署/续签协议或购买服务等）承担责任。用户同意：(1) 如发现任何人未经授权使用用户的用户名、手机号、证件号和密码的情况，用户应立即通知小微之家或民生银行，并授权民生银行冻结小微之家用户账户和调查，并根据调查结果相应处理； (2) 确保用户在每个上网时段结束时，以正确方式离开民生小微之家网站，注销或删除上网记录。小微之家或民生银行不因用户未能遵守本协议规定而发生的任何损失或损毁负责。小微之家或民生银行对在采取行动前已经产生的后果（包括但不限于用户的任何损失）不承担任何责任。除非有法律规定或司法裁定，且征得民生银行的同意，否则，用户的用户名、手机号、证件号码和密码不得以任何方式转让、赠与或继承。
+      </p>
+      <p >
+        四、授权
+      </p>
+      <p style="text-indent: 2em;">
+
+
+        用户全部知悉并同意：根据小微之家中产品、服务和使用使用的需求，用户授权小微之家或民生银行向人民银行、监管机构、通信运营商、互联网通讯技术服务商及第三方数据合作机构等采集或核实相关用户个人信息（包括个人身份信息、信贷信息、位置信息等）；并同意小微之家或民生银行接收上述的信息。上述的用户个人信息均仅用于向用户本人提供金融服务及/或进行金融风险管控之目的，不得用于其他目的。      </p>
+      <p >
+        五、隐私条款
+      </p>
+      <p   style="text-indent: 2em;">
+        用户凡浏览本网站、相关网页、或以其民生银行允许的方式实际使用服务时，均表示接受以下条款：
+      </p>
+      <p style="text-indent: 2em;">
+        1小微之家及民生银行收集您的相关信息，目的在于为用户提供更优质的产品和服务。
+      </p>
+      <p style="text-indent: 2em;">
+       2小微之家及民生银行将把以上相关信息用于保证用户的资金安全、了解您的需求以及各项业务的开展。
+      </p>
+      <p style="text-indent: 2em;">
+        3小微之家及民生银行设有严格的安全系统，未经允许的员工不得获取用户的相关信息。
+      </p>
+      <p style="text-indent: 2em;">
+        4在法律规定的情况下，如司法机关、监管机构及其他相关机构需要，小微之家及民生银行可以提供您的相关信息。      </p>
+      <p style="text-indent: 2em;">
+        5小微之家及民生银行在用户本人授权同意下，会把用户的相关信息提供给与我行联合提供业务的合作伙伴，该等合作伙伴仍需对用户的相关信息进行保密。
+      </p>
+      <p style="text-indent: 2em;">
+        6小微之家及民生银行将努力保证用户相关信息的完整和准确，并为用户变更信息提供便利。
+      </p>
+      <p >
+        六、服务终止
+      </p>
+
+      <p style="text-indent: 2em;">
+        1. 用户认可并同意，在未向用户收费的情况下，小微之家或民生银行可自行全权决定以任何理由 (包括但不限于小微之家或民生银行认为用户已违反本协议，或用户以不符合本协议的方式行事) 终止用户的登录密码、账户 (或其任何部份) 或用户对服务的使用。用户进一步承认和同意，小微之家或民生银行根据本协议规定终止用户服务的情况下可立即使用户的账户无效，或注销用户的账户以及与用户的账户所有相关资料和档案，和/或禁止用户进一步接入该等档案或服务。账户终止后，民生银行有权利但没有义务为用户保留原账户中的任何信息，或转发任何未曾阅读或发送的信息给用户。此外，用户同意，小微之家或民生银行不会就终止向用户提供服务而对用户或任何第三者承担任何责任。
+      </p>
+      <p style="text-indent: 2em;">
+        2.
+        用户有权向小微之家或民生银行要求注销用户的账户，经民生银行审核同意的，小微之家将注销用户的账户。届时，用户与小微之家基于本协议的合同关系即终止。用户的账户被注销后，小微之家或民生银行有权利没有义务为用户保留或向用户披露用户账户中的任何信息，也没有义务向用户或第三方转发任何用户未曾阅读或发送过的信息。
+      </p>
+
+      <p style="text-indent: 2em;">
+        3. 用户理解并同意，用户与小微之家的合同关系终止后：
+        <br />
+        <p style="text-indent: 2em;">
+        a) 小微之家和民生银行有权继续保存用户的资料。 </p>       <br />
+        <p style="text-indent: 2em;">
+        b) 用户在使用服务期间存在违法行为或违反本协议的行为的，小微之家或民生银行仍可依据本协议向用户主张权利。
+        </p>
+        <br />
+         <p style="text-indent: 2em;">
+       	 c）用户在使用服务期间因使用服务与其他第三方之间发生的关系，不因本协议的终止而终止，向用户提供服务的其他第三方仍有权向用户主张权利，用户应继续按用户与其他第三方的协议/合同履行义务。
+     	</p>
+      </p>
+      <p >
+        七、第三方服务
+      </p>
+      <p style="text-indent: 2em;">
+        1. 用户同意：通过小企业e家接受或购买第三方提供的服务时，用户与第三方的权利义务关系取决于用户与第三方签署的协议/合同。如因第三方提供的服务用户与第三方发生纠纷的，用户与第三方自行解决，与小微之家或民生银行无关。
+      </p>
+      <p style="text-indent: 2em;">
+        2.
+        小微之家所提供服务的信息随时都有可能发生变动，对此民生银行不作特别通知。另外由于第三方通过小微之家提供服务的信息数量会不断增多，极其庞大，虽然民生银行会尽最大努力保证用户所浏览信息的准确性，但由于众所周知的互联网技术因素等客观原因存在，小微之家网页显示的信息可能会有一定的滞后性或差错，用户对此予以理解和认可。
+      </p>
+      <p >
+        八、不可抗力
+      </p>
+      <p style="text-indent: 2em;">
+
+        由于不能预见、不可克服、不可避免的不可抗力因素或其他无法控制的客观因素，包括但不限于自然灾害、罢工或骚乱、物质短缺或定量配给、暴动、战争行为、政府行为、通讯或其他设施故障或严重伤亡事故等，致使小微之家或民生银行延迟或未能履约的，小微之家或民生银行不对用户承担任何责任。
+      </p>
+      <p >
+        九、法律适用、管辖及其他
+      </p>
+      <p style="text-indent: 2em;">
+        1. 本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律，如无相关法律规定的，则应参照通用国际商业惯例和（或）行业惯例。
+      </p>
+      <p style="text-indent: 2em;">
+        2. 用户与小微之家仅为独立订约人关系。本协议无意结成或创设任何代理、合伙、合营、雇佣与被雇佣或特性授权与被授权关系。
+      </p>
+      <p style="text-indent: 2em;">
+        3. 用户同意小微之家或民生银行因经营业务需要有权将本协议项下的权利义务部分或全部进行转让，而无须再通知予用户并取得用户的同意。
+      </p>
+      <p style="text-indent: 2em;">
+        4. 因本协议所引起或与其有关的任何争议应向北京市有管辖权的人民法院提起诉讼解决。
+      </p>
+      <p style="text-indent: 2em;">
+        5. 本协议取代用户和民生银行先前就相同事项订立的任何书面或口头协议。倘若本协议任何条款被裁定为无效，该项条款应被撤销，而其余条款应予遵守和执行。条款标题仅为方便参阅而设，并不以任何方式界定、限制、解释或描述该条款的范围或限度。民生银行未就用户或其他人士的某项违约行为采取行动，并不表明民生银行撤回就任何继后或类似的违约事件采取动的权利。
+      </p>
+      <p style="text-indent: 2em;">
+        6. 民生银行或小微之家已提请用户特别注意本服务条款中有关免除或限制银行责任、银行单方拥有某些权利、增加用户责任或限制用户权利的条款，并对其作全面、准确的理解。用户同意接受本服务条款和民生银行相关规定的约束。
+      </p>
+      <div style="height:200px;"></div>
+    </div>
+
+  </div>
+</div>
+<DIV id="CompleteKeyboard"></DIV>
+</body>
+<!-- <script type="text/javascript">
+$(function(){
+    getRandom();
+    initInput("SIPBox1");
+    initInput("SIPBox2");
+    var noNeedHideIds = ["CompleteKeyboard",
+        "SIPBox1","SIPBox2"
+    ];
+    setNeedHide(noNeedHideIds);
+	WangYin.fastRegisterLoad(function(json){
+	   	 $("#fastRegister").bindData(json.body);
+	});
+});
+function fastRegSubmit(){
+
+    var password = getEncrypt("SIPBox1");
+    $('#lgnPwd').val(password);
+    if(password == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox1")){
+        _showMsg("登录密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+
+    var confirmPwd = getEncrypt("SIPBox2");
+    $('#confirmPwd').val(confirmPwd);
+    if(confirmPwd == undefined){
+        return;
+    }
+
+    if(!checkStrength("SIPBox2")){
+        _showMsg("确认密码必须由6-20位字符，建议由字母，数字和符号两种以上组合");
+        return;
+    }
+	var dataContent = $("#fastRegister").getJsonData();
+    if(!(checkEmpty(dataContent.msgNumber,"请输入短信验证码"))){
+        return;
+    }
+    if(!($("#servicesPto").attr('checked'))){
+        _showMsg("请阅读并同意民生小微之家用户服务协议",null);
+        return;
+    }
+	WangYin.fastRegisterSubmit(dataContent);
+}
+
+$("div.repeatmessage").click(function(){
+	var mobTel = $("#mobTel").text();
+	var mobTelStr = {"mobTel" : mobTel , "bsnessTyp" : "01"};
+	$(this).IFSAjax({
+	    code : "01_200301",
+	    data : mobTelStr,
+	    method : "post",
+	    complete : function(data){
+	    	if(data.head._rd == "0000"){
+	    		$("#getMsg").attr("disabled","disabled");
+	    		controlBtn(setting.countDownIntervalTime);
+	    	}
+	    	_showMsg(data.head._rm);
+	    }
+	  });
+});
+
+function controlBtn(timer){
+	if(timer == 0){
+		$("#getMsg").removeAttr("disabled","disabled").html("验证码");
+		return;
+	}
+	setTimeout(function(){
+		$("#getMsg").html("验证码"+(--timer));
+		controlBtn(timer);
+	},1000);
+}
+</script> -->
+</html>

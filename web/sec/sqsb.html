@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>小民生银行小微之家</title>
+    			<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/ios/ratchet.css" rel="stylesheet">
+        <link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+        <link href="css/ios/cmbc.css" rel="stylesheet">
+		<script src="../js/cmbcForClient.js?v=<VER>"></script>
+		<script src="../js/browser.js?v=<VER>"></script>
+		<script>
+			setPageTitle({title: "授权失败"});
+	   		pageUrl = "loanlist.html";          
+			loadCss("../");         
+			loadJs("../");     
+		</script>
+	<!-- <script src="../js/islogin.js?v=<VER>"></script> -->
+	</head>
+	<body>
+		<header class="bar bar-nav">
+	  	<h1 class="title">授权失败</h1>
+		</header>
+		<div class="content content-height">
+			<div class="content-padded padding_t50d50">
+				<div class="iconfont login_icon organage ">&#xe604;</div>
+			</div>
+			<div class="aglin_center" >
+				<span class="organage" >授权失败！</span>
+				<h5>您好，您输入的信息有误。</h5>
+			</div>
+        
+			<div class="content-padded padding_t20 width_70 " style="margin-left: 15%;" >
+				<div onclick="goTo('loanlist.html')" class="btn btn-primary btn-outlined btn-block " >返回</div>
+			</div>
+		</div>
+	</body>
+</html>

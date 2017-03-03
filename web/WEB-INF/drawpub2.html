@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>抽奖活动</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/ios/ratchet.css" rel="stylesheet">
+		<link href="css/ios/cmbc.css" rel="stylesheet">
+		<link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css" />
+		<link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+		<script src="js/cmbcForClient.js?v=<VER>"></script>
+		<script src="js/browser.js?v=<VER>"></script>
+		<script>
+			loadCss("");
+			loadJs("");
+		</script>
+	</head>
+	<body class="choujiang" style="background-color: #FFFFFF;">
+		<div>
+			<img src="img/choujiangback.png" width="100%" height="auto">
+		</div>
+		<div class="choujiang-search" style="margin-top: -16px;">
+			<p style=" width:30%;margin: auto;color: #333333;">看看我有没有中奖</p>
+			<div class="choujiang-input">
+                <input type="text" placeholder="请输入手机号查询" style="font-size: 14px;">
+                <i class="iconfont position_icon" style="font-size: 24px;line-height: 36px;">&#xe6e5;</i>
+			</div>
+		</div>
+		<!--查询结果-->
+			<div class="choujiangcard" style="display: none;">
+				<!--没有中奖的情况-->
+				<div class="choujno" style="display: none;">
+				    <img src="img/choujiangnoreward.png" class="cjnoreward">
+				    <p class="color_fff margin_t10">抱歉，您没有中奖，送你一枝青丘的桃花吧！</p>
+				</div>
+				<!--没中奖结束-->
+				<!--中奖的情况-->
+				<div class="choujiangcontent">
+					<p class="color_fff">恭喜您，四海八荒都知道您中奖了</p>
+					<ul class="chujiangresult">
+						<li>iPad mini</li>
+						<li>2017-01-20</li>
+					</ul>
+					<!--中两次奖的情况-->
+				     <div>
+					     <ul class="chujiangresult">
+						      <li>100元京东购物卡</li>
+						      <li>2017-02-10</li>
+					     </ul>
+				     </div>
+				    <!--中两次奖结束-->
+					<div class="clearfix"></div>
+					<div class="color_fff margin_t30">刘*萍&nbsp;&nbsp;&nbsp;152****0147</div>
+				</div>
+				<!--中奖结束-->
+				
+			</div>
+		<!--查询结果结束-->	
+		<!--文字段落-->
+		<div class="choujiang-text margin_auto margin_t10">
+			<div class="choujiang-decration">
+			    <p style="color: #666666;">iPhone7、iPad mini、kindle等实物奖品将通过邮寄的方式送达给各位中奖者。近期我行已安排客服人员致电您核实收件信息，信息确认后将会于3月底前统一寄出礼品。
+京东E卡和话费将由礼品供应商于3月底前将充值卡账号和密码以短信的方式发送至中奖客户手机上(注册民生银行小微之家平台时的预留手机号)，请注意查收。</p>
+		    </div>
+		<!--文字结束-->
+		<button type="button" class="btn-pink">查看中奖公布名单</button>
+	</body>
+</html>

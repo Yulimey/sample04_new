@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>贷款申请企业信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link href="../css/ios/ratchet.css" rel="stylesheet">
+   <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='loanapplication_c.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">步骤2.提交申请</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+            <div class="padding_t15">
+		         <div class="menu_font_p black padding_l15" >企业信息</div>
+	        </div>
+	        <div>
+				<ul class="table-view margin_t15 margin_b0">
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">企业名称</div>
+						<div class="input_i fontright">
+							<label id="custNm" ifs_parent="/">北京某某公司</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f">营业执照</div>
+						<div class="input_i fontright">
+							<label id="idNo" ifs_parent="/">129312423459523523</label>
+						</div>
+					</li>
+					<li class="table-view-cell" style="padding-right: 15px;">
+						<div class="input_f" style="width: 40%;">纳税识别号</div>
+						<div class="input_i fontright" style="width: 60%;">
+							<label id="mobTel" ifs_parent="/">129312423459523523</label>
+						</div>
+					</li>
+					<li class="table-view-cell font_14" style="padding-right: 15px;">
+						<div style="color: #999;">企业所在地</div>
+						<div style="color:#333;">北京市顺义区顺安南路101号</div>
+					</li>
+				</ul>
+				<div class="loaninfo_li_e border_b" style="padding:0;">
+					<div class="float_l width_70 "><input class="font_14" type="text" placeholder="请输入短信验证码"></div>
+					<div class="float_r width_30" style="padding-top:10px;float:right;">
+	                    <button class="btn btn-primary btn-outlined">获取短信验证码</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="window.location.href='loaninfo_a.html'">提交申请</button>
+			</div>
+		</div>
+	</body>
+</html>

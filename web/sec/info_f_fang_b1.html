@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>资产信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../css/ios/ratchet.css" rel="stylesheet">
+    <link href="../css/ios/ratchet-theme-ios.css" rel="stylesheet"> 
+    <link href="../css/ios/cmbc.css" rel="stylesheet">
+    <script src="../js/cmbcForClient.js?v=<VER>"></script>
+	<script src="../js/browser.js?v=<VER>"></script>
+    <script> 
+		setPageTitle({title: "基本信息"});
+   		 pageUrl = "usercenter.html";           
+		loadCss("../");             
+   	</script>
+</head>
+
+	<body>
+		<header class="bar bar-nav">
+			<button onclick="window.location.href='info_f_fang_b.html'" class="btn btn-link btn-nav pull-left">
+				<span class="icon icon-left-nav"></span> 返回
+			</button>
+			<h1 class="title">添加共有人信息</h1>
+		</header>
+		<div class="content content-heightc" id="dataContent">
+			<div class="prod-card margin_t20">
+				<div class="control-content active">
+                    <div class="loaninfo_li_e border_b">
+						<div class="float_l width_50">是否是配偶</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>否</option>
+								<option>是</option>
+							</select>
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_50">共有人关系</div>
+						<div class="float_r width_50">
+							<select style="width: 70%; float: right; font-size: 14px;margin-left: 5%; padding-left: 20px;text-align:left;  margin-top:4px;" class="selectdiv selectdivz margin_b0" >
+								<option>父亲</option>
+								<option>母亲</option>
+								<option>兄弟</option>
+								<option>姐妹</option>
+								<option>其它</option>
+							</select>
+						</div>
+					</div>
+					<div class="loaninfo_li_e border_b">
+						<div class="float_l width_30">共有人姓名</div>
+						<div class="float_r width_70">
+							<input class="width_100 fontright font_14" type="text" id="licNo" ifs_parent="/" placeholder="请输入共有人姓名" maxlength="15">
+						</div>
+					</div>
+		            <div class="loaninfo_li_e  border_b">
+						<div class="float_l width_40">共有人证件号码</div>
+						<div class="float_r width_60">
+							<input class="width_100 fontright font_14 margin_b0" type="text" id="licNo" ifs_parent="/" placeholder="请输入18位证件号码" maxlength="15">
+						</div>
+					</div>
+					<div class="loaninfo_li_e">
+						<div class="float_l width_40">共有人联系方式</div>
+						<div class="float_r width_60">
+							<input class="width_100 fontright font_14 margin_b0" type="text" id="licNo" ifs_parent="/" placeholder="请输入手机号码" maxlength="15">
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="content-padded">
+				<button type="button" class="btn btn-primary btn-block margin_t20" onclick="save()">保存</button>
+			</div>
+		</div>
+	</body>
+</html>

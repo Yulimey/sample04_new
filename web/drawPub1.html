@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>抽奖活动结果公布</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/ios/ratchet.css" rel="stylesheet">
+		<link href="css/ios/cmbc.css" rel="stylesheet">
+		<link href="css/keyboard.css?v=<VER>" rel="stylesheet" type="text/css" />
+		<link href="css/ios/ratchet-theme-ios.css" rel="stylesheet">
+		<script src="js/cmbcForClient.js?v=<VER>"></script>
+		<script src="js/browser.js?v=<VER>"></script>
+		<script>
+			loadCss("");
+			loadJs("");
+		</script>
+	</head>
+	<body class="choujiang" style="background-color: #FFFFFF;">
+		<div>
+			<img src="img/draw-banner.png" width="100%" height="auto">
+		</div>
+		<div class="draw-search margin_t6 line-height30">
+                <input type="text" placeholder="请输入手机号查询" class="draw-input font_14">
+                <i class="iconfont draw-search-icon" style="font-size:3.3vh;">&#xe6e5;</i>
+		</div>
+		<!--查询结果-->
+		<!--没有中奖的情况-->
+			<div class="draw-result-bg" style="display: none;">
+				<div class="draw-noreward">
+				    <img src="img/choujiangnoreward.png" class="draw-flower">
+				    <p class="color_fff margin_t10">抱歉，您没有中奖，送你一枝青丘的桃花吧！</p>
+				</div>
+			</div>
+		    <!--中一次奖的情况-->
+		    <div class="draw-result-bg" style="display:none;">
+				<div class="draw-reward">
+					<p class="color_fff p padding_t8">恭喜您，四海八荒都知道您中奖了</p>
+					<ul class="draw-result-content">
+						<li>Kindle</li>
+						<li>2017-01-20</li>
+					</ul>
+					<div class="color_fff margin_t30">刘*萍&nbsp;&nbsp;&nbsp;152****0147</div>
+				</div>
+		    </div>
+		    <!--中两次奖的情况-->
+		    <div class="draw-result-bg">
+			    <div class="draw-reward">
+				    <p class="color_fff  padding_t8">恭喜您，四海八荒都知道您中奖了</p>
+				    <ul class="draw-result-content">
+					    <li>Kindle</li>
+					    <li>2017-01-20</li>
+				    </ul>
+				    <ul class="draw-result-content">
+					    <li>100元京东购物卡</li>
+					    <li>2017-02-10</li>
+				    </ul>
+				    <div class="clearfix"></div>
+				    <div class="color_fff padding_t3v">刘*萍&nbsp;&nbsp;&nbsp;152****0147</div>
+			    </div>
+		    </div>
+		<!--查询结果结束-->
+		<!--文字段落-->
+			    <p class="draw-explain">iPhone7、iPad mini、kindle等实物奖品将通过邮寄的方式送达给各位中奖者。近期我行已安排客服人员致电您核实收件信息，信息确认后将会于3月底前统一寄出礼品。
+京东E卡和话费将由礼品供应商于3月底前将充值卡账号和密码以短信的方式发送至中奖客户手机上(注册民生银行小微之家平台时的预留手机号)，请注意查收。</p>
+		<!--文字结束-->
+		<button type="button" class="btn-pink">查看中奖公布名单</button>
+	</body>
+</html>
